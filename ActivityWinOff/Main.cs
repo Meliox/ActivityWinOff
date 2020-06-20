@@ -153,6 +153,7 @@ namespace ActivityWinOff
             ForceShutdowncheckBox.Checked = Interface.ShutdownForced;
             StartupProgramscheckBox.Checked = Interface.StartupProgramsEnabled;
 
+            SetBootMethod();
 
             // set shutdown type
             switch (Interface.ShutdownType)
@@ -539,7 +540,7 @@ namespace ActivityWinOff
             if (Interface.RunAtWindowsStart)
             {
                 // Add the value in the registry so that the application runs at startup
-                rkApp.SetValue("ActivityWinOff", "\"" + Application.ExecutablePath + "\"" + " /min /boot");
+                rkApp.SetValue("ActivityWinOff", "\"" + Application.ExecutablePath + "\"" + " /autostart");
             }
             else
             {
@@ -884,17 +885,21 @@ namespace ActivityWinOff
             switch (button.Name)
             {
                 case "ShellActivityWinOffradioButton":
-                    Helper.SetCurrentShell("\"" + Process.GetCurrentProcess().MainModule.FileName + "\"");
+                    if (Interface.StartupProgramsEnabled)
+                        Helper.SetCurrentShell("\"" + Process.GetCurrentProcess().MainModule.FileName + "\"" + " /autostart");
+                    else
+                        Helper.SetCurrentShell("\"" + Process.GetCurrentProcess().MainModule.FileName + "\"");
                     break;
                 case "ShellExplorerradioButton":
                     Helper.SetCurrentShell("\"explorer.exe\"");
                     break;
             }
+            SetBootMethod();
         }
 
         private void ShutdownAddbutton_Click(object sender, EventArgs e)
         {
-            ShutdownSequencedataGridView.Rows.Add("", "", "", 1, 0, 0, false);
+            ShutdownSequencedataGridView.Rows.Add("", "", "", "Normal", 0, 0, false);
             DataGridViewHelpers.DataGridViewAddOrder(ShutdownSequencedataGridView);
         }
 
@@ -937,11 +942,12 @@ namespace ActivityWinOff
             {
                 switch (argument)
                 {
-                    case "/boot":
+                    case "/autostart":
                         if (Interface.StartupProgramsEnabled)
                         {
-                            Logger.add(2, "Console: /boot");
+                            Logger.add(2, "Console: /autostart");
                             DataGridViewHelpers.DataGridViewExecutor(StartupSequencedataGridView);
+                            MinimizeToTraybutton_Click(null, null);
                         }
                         break;
                     case "/min":
@@ -957,6 +963,7 @@ namespace ActivityWinOff
             //only attempt to start if not already lunched from console
             if (!ApplicationArguments.Contains("activate"))
             {
+                Logger.add(2, "Console: no arguments");
                 if (Interface.StartActivated)
                 {
                     Interface.Enabled = true;
@@ -973,7 +980,7 @@ namespace ActivityWinOff
 
         private void StartAddbutton_Click(object sender, EventArgs e)
         {
-            StartupSequencedataGridView.Rows.Add("", "", "", 1, 0, 0, false);
+            StartupSequencedataGridView.Rows.Add("", "", "", "Normal", 0, 0, false);
             DataGridViewHelpers.DataGridViewAddOrder(StartupSequencedataGridView);
         }
 
@@ -1047,10 +1054,27 @@ namespace ActivityWinOff
             Interface.ShutdownForced = senderCheckBox.Checked;
         }
 
+        private void SetBootMethod()
+        {
+            // add to startup
+            if (Interface.StartupProgramsEnabled && !Helper.GetCurrentShell().Contains(Process.GetCurrentProcess().MainModule.FileName))
+            {
+                Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+                key.SetValue("ActivityWinOff", "\"" + Application.ExecutablePath + "\"" + " /autostart");
+            }
+            else
+            {
+                Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+                key.DeleteValue("ActivityWinOff", false);
+            }
+        }
+
+
         private void StartupProgramscheckBox_CheckChanged(object sender, EventArgs e)
         {
             CheckBox senderCheckBox = (CheckBox)sender;
             Interface.StartupProgramsEnabled = senderCheckBox.Checked;
+            SetBootMethod();
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -1077,6 +1101,26 @@ namespace ActivityWinOff
                     break;
             }
             Logger.add(1, "LogLevel: " + senderComboBox.SelectedItem.ToString());
+        }
+
+        private void StartupUpbutton_Click(object sender, EventArgs e)
+        {
+            DataGridViewHelpers.DataGridViewMoveUp(StartupSequencedataGridView, StartupSequencedataGridView.CurrentRow);
+        }
+
+        private void StartupDownbutton_Click(object sender, EventArgs e)
+        {
+            DataGridViewHelpers.DataGridViewMoveDown(StartupSequencedataGridView, StartupSequencedataGridView.CurrentRow);
+        }
+
+        private void ShutdownUpbutton_Click(object sender, EventArgs e)
+        {
+            DataGridViewHelpers.DataGridViewMoveUp(ShutdownSequencedataGridView, ShutdownSequencedataGridView.CurrentRow);
+        }
+
+        private void ShutdownDownbutton_Click(object sender, EventArgs e)
+        {
+            DataGridViewHelpers.DataGridViewMoveDown(ShutdownSequencedataGridView, ShutdownSequencedataGridView.CurrentRow);
         }
     }
 

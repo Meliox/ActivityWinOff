@@ -148,5 +148,43 @@ namespace ActivityWinOff
             }
 
         }
+
+        public static void DataGridViewMoveUp(DataGridView dgv, DataGridViewRow row)
+        {
+            if (row == null)
+                return;
+
+            if (dgv.Rows.Count > 0 && row.Index > 0)
+            {
+                DataGridViewRowCollection rows = dgv.Rows;
+
+                // remove the previous row and add it behind the selected row.
+                DataGridViewRow prevRow = rows[row.Index - 1];
+                rows.Remove(prevRow);
+                prevRow.Frozen = false;
+                rows.Insert(row.Index, prevRow);
+                dgv.ClearSelection();
+                dgv.Rows[row.Index - 1].Selected = true;
+            } 
+        }
+
+        public static void DataGridViewMoveDown(DataGridView dgv, DataGridViewRow row)
+        {
+            if (row == null)
+                return;
+
+            if (dgv.Rows.Count > 0 && row.Index > 0)
+            {
+                DataGridViewRowCollection rows = dgv.Rows;
+
+                // remove the previous row and add it behind the selected row.
+                DataGridViewRow prevRow = rows[row.Index + 1];
+                rows.Remove(prevRow);
+                prevRow.Frozen = false;
+                rows.Insert(row.Index, prevRow);
+                dgv.ClearSelection();
+                dgv.Rows[row.Index + 1].Selected = true;
+            }
+        }
     }
 }

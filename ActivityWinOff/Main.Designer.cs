@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NetworkAdapterscomboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -94,6 +94,7 @@
             this.UserActivityTriggerTimetextBox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.WaitForProgramTimeFormatcomboBox = new System.Windows.Forms.ComboBox();
             this.WaitForProgramActionlabel = new System.Windows.Forms.Label();
             this.WaitForProgramTriggerTimetextBox = new System.Windows.Forms.TextBox();
@@ -168,6 +169,7 @@
             this.FocusProgramPoolIntervaltextBox = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.LogLevelcomboBox = new System.Windows.Forms.ComboBox();
             this.DisableScreensavercheckBox = new System.Windows.Forms.CheckBox();
             this.OpenLogbutton = new System.Windows.Forms.Button();
             this.OpenConfigbutton = new System.Windows.Forms.Button();
@@ -194,8 +196,10 @@
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.FinalActionlabel = new System.Windows.Forms.Label();
             this.ReloadSettingsbutton = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.LogLevelcomboBox = new System.Windows.Forms.ComboBox();
+            this.StartupUpbutton = new System.Windows.Forms.Button();
+            this.StartupDownbutton = new System.Windows.Forms.Button();
+            this.ShutdownDownbutton = new System.Windows.Forms.Button();
+            this.ShutdownUpbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.ShutdownTypegroupBox.SuspendLayout();
             this.ConditiongroupBox.SuspendLayout();
@@ -227,7 +231,7 @@
             this.NetworkAdapterscomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.NetworkAdapterscomboBox.FormattingEnabled = true;
             this.NetworkAdapterscomboBox.Location = new System.Drawing.Point(115, 36);
-            this.NetworkAdapterscomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NetworkAdapterscomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.NetworkAdapterscomboBox.Name = "NetworkAdapterscomboBox";
             this.NetworkAdapterscomboBox.Size = new System.Drawing.Size(273, 21);
             this.NetworkAdapterscomboBox.TabIndex = 0;
@@ -262,7 +266,7 @@
             "Output",
             "Combined"});
             this.TrafficTypecomboBox.Location = new System.Drawing.Point(116, 69);
-            this.TrafficTypecomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TrafficTypecomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.TrafficTypecomboBox.Name = "TrafficTypecomboBox";
             this.TrafficTypecomboBox.Size = new System.Drawing.Size(95, 21);
             this.TrafficTypecomboBox.TabIndex = 5;
@@ -272,7 +276,7 @@
             // 
             this.TrafficcheckBox.AutoSize = true;
             this.TrafficcheckBox.Location = new System.Drawing.Point(17, 17);
-            this.TrafficcheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TrafficcheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.TrafficcheckBox.Name = "TrafficcheckBox";
             this.TrafficcheckBox.Size = new System.Drawing.Size(65, 17);
             this.TrafficcheckBox.TabIndex = 7;
@@ -300,9 +304,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(2, 258);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(1115, 132);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
@@ -325,7 +329,7 @@
             // 
             this.NetworkAveragecheckBox.AutoSize = true;
             this.NetworkAveragecheckBox.Location = new System.Drawing.Point(362, 71);
-            this.NetworkAveragecheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NetworkAveragecheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.NetworkAveragecheckBox.Name = "NetworkAveragecheckBox";
             this.NetworkAveragecheckBox.Size = new System.Drawing.Size(66, 17);
             this.NetworkAveragecheckBox.TabIndex = 18;
@@ -346,7 +350,7 @@
             // SpeedtextBox
             // 
             this.SpeedtextBox.Location = new System.Drawing.Point(282, 68);
-            this.SpeedtextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SpeedtextBox.Margin = new System.Windows.Forms.Padding(2);
             this.SpeedtextBox.Name = "SpeedtextBox";
             this.SpeedtextBox.Size = new System.Drawing.Size(38, 20);
             this.SpeedtextBox.TabIndex = 13;
@@ -411,7 +415,7 @@
             "min",
             "hour"});
             this.NetworkTriggerTimeFormatcomboBox.Location = new System.Drawing.Point(141, 99);
-            this.NetworkTriggerTimeFormatcomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NetworkTriggerTimeFormatcomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.NetworkTriggerTimeFormatcomboBox.Name = "NetworkTriggerTimeFormatcomboBox";
             this.NetworkTriggerTimeFormatcomboBox.Size = new System.Drawing.Size(47, 21);
             this.NetworkTriggerTimeFormatcomboBox.TabIndex = 10;
@@ -420,7 +424,7 @@
             // NetworkTriggerTimetextBox
             // 
             this.NetworkTriggerTimetextBox.Location = new System.Drawing.Point(101, 99);
-            this.NetworkTriggerTimetextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NetworkTriggerTimetextBox.Margin = new System.Windows.Forms.Padding(2);
             this.NetworkTriggerTimetextBox.Name = "NetworkTriggerTimetextBox";
             this.NetworkTriggerTimetextBox.Size = new System.Drawing.Size(38, 20);
             this.NetworkTriggerTimetextBox.TabIndex = 9;
@@ -445,9 +449,9 @@
             this.ShutdownTypegroupBox.Controls.Add(this.ShutdownTypeRestartradioButton);
             this.ShutdownTypegroupBox.Controls.Add(this.ShutdownTypePoweroffradioButton);
             this.ShutdownTypegroupBox.Location = new System.Drawing.Point(2, 677);
-            this.ShutdownTypegroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShutdownTypegroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.ShutdownTypegroupBox.Name = "ShutdownTypegroupBox";
-            this.ShutdownTypegroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShutdownTypegroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.ShutdownTypegroupBox.Size = new System.Drawing.Size(1115, 57);
             this.ShutdownTypegroupBox.TabIndex = 9;
             this.ShutdownTypegroupBox.TabStop = false;
@@ -457,7 +461,7 @@
             // 
             this.ForceShutdowncheckBox.AutoSize = true;
             this.ForceShutdowncheckBox.Location = new System.Drawing.Point(290, 18);
-            this.ForceShutdowncheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ForceShutdowncheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.ForceShutdowncheckBox.Name = "ForceShutdowncheckBox";
             this.ForceShutdowncheckBox.Size = new System.Drawing.Size(59, 17);
             this.ForceShutdowncheckBox.TabIndex = 8;
@@ -469,7 +473,7 @@
             // 
             this.ShutdownTypeHibernateradioButton.AutoSize = true;
             this.ShutdownTypeHibernateradioButton.Location = new System.Drawing.Point(215, 17);
-            this.ShutdownTypeHibernateradioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShutdownTypeHibernateradioButton.Margin = new System.Windows.Forms.Padding(2);
             this.ShutdownTypeHibernateradioButton.Name = "ShutdownTypeHibernateradioButton";
             this.ShutdownTypeHibernateradioButton.Size = new System.Drawing.Size(71, 17);
             this.ShutdownTypeHibernateradioButton.TabIndex = 3;
@@ -482,7 +486,7 @@
             // 
             this.ShutdownTypeSleepradioButton.AutoSize = true;
             this.ShutdownTypeSleepradioButton.Location = new System.Drawing.Point(159, 17);
-            this.ShutdownTypeSleepradioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShutdownTypeSleepradioButton.Margin = new System.Windows.Forms.Padding(2);
             this.ShutdownTypeSleepradioButton.Name = "ShutdownTypeSleepradioButton";
             this.ShutdownTypeSleepradioButton.Size = new System.Drawing.Size(52, 17);
             this.ShutdownTypeSleepradioButton.TabIndex = 2;
@@ -495,7 +499,7 @@
             // 
             this.ShutdownTypeRestartradioButton.AutoSize = true;
             this.ShutdownTypeRestartradioButton.Location = new System.Drawing.Point(96, 17);
-            this.ShutdownTypeRestartradioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShutdownTypeRestartradioButton.Margin = new System.Windows.Forms.Padding(2);
             this.ShutdownTypeRestartradioButton.Name = "ShutdownTypeRestartradioButton";
             this.ShutdownTypeRestartradioButton.Size = new System.Drawing.Size(59, 17);
             this.ShutdownTypeRestartradioButton.TabIndex = 1;
@@ -508,7 +512,7 @@
             // 
             this.ShutdownTypePoweroffradioButton.AutoSize = true;
             this.ShutdownTypePoweroffradioButton.Location = new System.Drawing.Point(17, 17);
-            this.ShutdownTypePoweroffradioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShutdownTypePoweroffradioButton.Margin = new System.Windows.Forms.Padding(2);
             this.ShutdownTypePoweroffradioButton.Name = "ShutdownTypePoweroffradioButton";
             this.ShutdownTypePoweroffradioButton.Size = new System.Drawing.Size(70, 17);
             this.ShutdownTypePoweroffradioButton.TabIndex = 0;
@@ -522,9 +526,9 @@
             this.ConditiongroupBox.Controls.Add(this.ConditionAllradioButton);
             this.ConditiongroupBox.Controls.Add(this.ConditionOneradioButton);
             this.ConditiongroupBox.Location = new System.Drawing.Point(2, 2);
-            this.ConditiongroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConditiongroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.ConditiongroupBox.Name = "ConditiongroupBox";
-            this.ConditiongroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConditiongroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.ConditiongroupBox.Size = new System.Drawing.Size(1115, 49);
             this.ConditiongroupBox.TabIndex = 10;
             this.ConditiongroupBox.TabStop = false;
@@ -534,7 +538,7 @@
             // 
             this.ConditionAllradioButton.AutoSize = true;
             this.ConditionAllradioButton.Location = new System.Drawing.Point(232, 17);
-            this.ConditionAllradioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConditionAllradioButton.Margin = new System.Windows.Forms.Padding(2);
             this.ConditionAllradioButton.Name = "ConditionAllradioButton";
             this.ConditionAllradioButton.Size = new System.Drawing.Size(171, 17);
             this.ConditionAllradioButton.TabIndex = 5;
@@ -547,7 +551,7 @@
             // 
             this.ConditionOneradioButton.AutoSize = true;
             this.ConditionOneradioButton.Location = new System.Drawing.Point(17, 17);
-            this.ConditionOneradioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConditionOneradioButton.Margin = new System.Windows.Forms.Padding(2);
             this.ConditionOneradioButton.Name = "ConditionOneradioButton";
             this.ConditionOneradioButton.Size = new System.Drawing.Size(211, 17);
             this.ConditionOneradioButton.TabIndex = 4;
@@ -571,9 +575,9 @@
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Location = new System.Drawing.Point(2, 148);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(1115, 106);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
@@ -699,7 +703,7 @@
             "99",
             "100"});
             this.CPUUtilcomboBox.Location = new System.Drawing.Point(92, 33);
-            this.CPUUtilcomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CPUUtilcomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.CPUUtilcomboBox.Name = "CPUUtilcomboBox";
             this.CPUUtilcomboBox.Size = new System.Drawing.Size(42, 21);
             this.CPUUtilcomboBox.TabIndex = 27;
@@ -739,7 +743,7 @@
             // 
             this.CPUUtilAveragecheckBox.AutoSize = true;
             this.CPUUtilAveragecheckBox.Location = new System.Drawing.Point(184, 37);
-            this.CPUUtilAveragecheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CPUUtilAveragecheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.CPUUtilAveragecheckBox.Name = "CPUUtilAveragecheckBox";
             this.CPUUtilAveragecheckBox.Size = new System.Drawing.Size(66, 17);
             this.CPUUtilAveragecheckBox.TabIndex = 11;
@@ -751,7 +755,7 @@
             // 
             this.CPUUtilcheckBox.AutoSize = true;
             this.CPUUtilcheckBox.Location = new System.Drawing.Point(17, 17);
-            this.CPUUtilcheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CPUUtilcheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.CPUUtilcheckBox.Name = "CPUUtilcheckBox";
             this.CPUUtilcheckBox.Size = new System.Drawing.Size(65, 17);
             this.CPUUtilcheckBox.TabIndex = 11;
@@ -768,7 +772,7 @@
             "min",
             "hour"});
             this.CPUUtilTriggerTimeFormatcomboBox.Location = new System.Drawing.Point(141, 64);
-            this.CPUUtilTriggerTimeFormatcomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CPUUtilTriggerTimeFormatcomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.CPUUtilTriggerTimeFormatcomboBox.Name = "CPUUtilTriggerTimeFormatcomboBox";
             this.CPUUtilTriggerTimeFormatcomboBox.Size = new System.Drawing.Size(47, 21);
             this.CPUUtilTriggerTimeFormatcomboBox.TabIndex = 11;
@@ -777,7 +781,7 @@
             // CPUUtilTriggerTimetextBox
             // 
             this.CPUUtilTriggerTimetextBox.Location = new System.Drawing.Point(101, 65);
-            this.CPUUtilTriggerTimetextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CPUUtilTriggerTimetextBox.Margin = new System.Windows.Forms.Padding(2);
             this.CPUUtilTriggerTimetextBox.Name = "CPUUtilTriggerTimetextBox";
             this.CPUUtilTriggerTimetextBox.Size = new System.Drawing.Size(38, 20);
             this.CPUUtilTriggerTimetextBox.TabIndex = 11;
@@ -817,7 +821,7 @@
             // 
             this.Savebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Savebutton.Location = new System.Drawing.Point(7, 28);
-            this.Savebutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Savebutton.Margin = new System.Windows.Forms.Padding(2);
             this.Savebutton.Name = "Savebutton";
             this.Savebutton.Size = new System.Drawing.Size(96, 41);
             this.Savebutton.TabIndex = 12;
@@ -829,7 +833,7 @@
             // 
             this.MinimizeToTraybutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimizeToTraybutton.Location = new System.Drawing.Point(207, 28);
-            this.MinimizeToTraybutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimizeToTraybutton.Margin = new System.Windows.Forms.Padding(2);
             this.MinimizeToTraybutton.Name = "MinimizeToTraybutton";
             this.MinimizeToTraybutton.Size = new System.Drawing.Size(96, 41);
             this.MinimizeToTraybutton.TabIndex = 13;
@@ -870,7 +874,7 @@
             // 
             this.ActivateDeactivatebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ActivateDeactivatebutton.Location = new System.Drawing.Point(307, 28);
-            this.ActivateDeactivatebutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ActivateDeactivatebutton.Margin = new System.Windows.Forms.Padding(2);
             this.ActivateDeactivatebutton.Name = "ActivateDeactivatebutton";
             this.ActivateDeactivatebutton.Size = new System.Drawing.Size(96, 41);
             this.ActivateDeactivatebutton.TabIndex = 16;
@@ -888,7 +892,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(7, 80);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1153, 550);
@@ -898,9 +902,9 @@
             // 
             this.tabPage1.Controls.Add(this.flowLayoutPanel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(1145, 524);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Shutdown plan";
@@ -920,7 +924,7 @@
             this.flowLayoutPanel1.Controls.Add(this.groupBox2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 2);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1141, 520);
             this.flowLayoutPanel1.TabIndex = 14;
@@ -939,9 +943,9 @@
             this.groupBox6.Controls.Add(this.UserActivityTriggerTimetextBox);
             this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Location = new System.Drawing.Point(2, 55);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox6.Size = new System.Drawing.Size(1115, 89);
             this.groupBox6.TabIndex = 13;
             this.groupBox6.TabStop = false;
@@ -994,7 +998,7 @@
             // 
             this.UserActivityKeyboardcheckBox.AutoSize = true;
             this.UserActivityKeyboardcheckBox.Location = new System.Drawing.Point(84, 38);
-            this.UserActivityKeyboardcheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserActivityKeyboardcheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.UserActivityKeyboardcheckBox.Name = "UserActivityKeyboardcheckBox";
             this.UserActivityKeyboardcheckBox.Size = new System.Drawing.Size(71, 17);
             this.UserActivityKeyboardcheckBox.TabIndex = 24;
@@ -1006,7 +1010,7 @@
             // 
             this.UserActivityMousecheckBox.AutoSize = true;
             this.UserActivityMousecheckBox.Location = new System.Drawing.Point(22, 38);
-            this.UserActivityMousecheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserActivityMousecheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.UserActivityMousecheckBox.Name = "UserActivityMousecheckBox";
             this.UserActivityMousecheckBox.Size = new System.Drawing.Size(58, 17);
             this.UserActivityMousecheckBox.TabIndex = 20;
@@ -1018,7 +1022,7 @@
             // 
             this.UserActivityEnabledcheckBox.AutoSize = true;
             this.UserActivityEnabledcheckBox.Location = new System.Drawing.Point(17, 17);
-            this.UserActivityEnabledcheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserActivityEnabledcheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.UserActivityEnabledcheckBox.Name = "UserActivityEnabledcheckBox";
             this.UserActivityEnabledcheckBox.Size = new System.Drawing.Size(65, 17);
             this.UserActivityEnabledcheckBox.TabIndex = 20;
@@ -1045,7 +1049,7 @@
             "min",
             "hour"});
             this.UserActivityTriggerTimeFormatcomboBox.Location = new System.Drawing.Point(141, 59);
-            this.UserActivityTriggerTimeFormatcomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserActivityTriggerTimeFormatcomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.UserActivityTriggerTimeFormatcomboBox.Name = "UserActivityTriggerTimeFormatcomboBox";
             this.UserActivityTriggerTimeFormatcomboBox.Size = new System.Drawing.Size(47, 21);
             this.UserActivityTriggerTimeFormatcomboBox.TabIndex = 20;
@@ -1054,7 +1058,7 @@
             // UserActivityTriggerTimetextBox
             // 
             this.UserActivityTriggerTimetextBox.Location = new System.Drawing.Point(101, 59);
-            this.UserActivityTriggerTimetextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserActivityTriggerTimetextBox.Margin = new System.Windows.Forms.Padding(2);
             this.UserActivityTriggerTimetextBox.Name = "UserActivityTriggerTimetextBox";
             this.UserActivityTriggerTimetextBox.Size = new System.Drawing.Size(38, 20);
             this.UserActivityTriggerTimetextBox.TabIndex = 21;
@@ -1084,13 +1088,23 @@
             this.groupBox7.Controls.Add(this.WaitForProgramcheckBox);
             this.groupBox7.Controls.Add(this.label3);
             this.groupBox7.Location = new System.Drawing.Point(2, 394);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox7.Size = new System.Drawing.Size(1115, 115);
             this.groupBox7.TabIndex = 15;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Wait for program";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(29, 82);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(40, 13);
+            this.label32.TabIndex = 31;
+            this.label32.Text = "Trigger";
             // 
             // WaitForProgramTimeFormatcomboBox
             // 
@@ -1101,7 +1115,7 @@
             "min",
             "hour"});
             this.WaitForProgramTimeFormatcomboBox.Location = new System.Drawing.Point(141, 78);
-            this.WaitForProgramTimeFormatcomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WaitForProgramTimeFormatcomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.WaitForProgramTimeFormatcomboBox.Name = "WaitForProgramTimeFormatcomboBox";
             this.WaitForProgramTimeFormatcomboBox.Size = new System.Drawing.Size(47, 21);
             this.WaitForProgramTimeFormatcomboBox.TabIndex = 33;
@@ -1123,7 +1137,7 @@
             // WaitForProgramTriggerTimetextBox
             // 
             this.WaitForProgramTriggerTimetextBox.Location = new System.Drawing.Point(101, 79);
-            this.WaitForProgramTriggerTimetextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WaitForProgramTriggerTimetextBox.Margin = new System.Windows.Forms.Padding(2);
             this.WaitForProgramTriggerTimetextBox.Name = "WaitForProgramTriggerTimetextBox";
             this.WaitForProgramTriggerTimetextBox.Size = new System.Drawing.Size(38, 20);
             this.WaitForProgramTriggerTimetextBox.TabIndex = 32;
@@ -1143,7 +1157,7 @@
             // WaitForProgramCleanbutton
             // 
             this.WaitForProgramCleanbutton.Location = new System.Drawing.Point(504, 35);
-            this.WaitForProgramCleanbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WaitForProgramCleanbutton.Margin = new System.Windows.Forms.Padding(2);
             this.WaitForProgramCleanbutton.Name = "WaitForProgramCleanbutton";
             this.WaitForProgramCleanbutton.Size = new System.Drawing.Size(63, 24);
             this.WaitForProgramCleanbutton.TabIndex = 20;
@@ -1154,7 +1168,7 @@
             // WaitForProgrambutton
             // 
             this.WaitForProgrambutton.Location = new System.Drawing.Point(432, 35);
-            this.WaitForProgrambutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WaitForProgrambutton.Margin = new System.Windows.Forms.Padding(2);
             this.WaitForProgrambutton.Name = "WaitForProgrambutton";
             this.WaitForProgrambutton.Size = new System.Drawing.Size(68, 24);
             this.WaitForProgrambutton.TabIndex = 4;
@@ -1165,7 +1179,7 @@
             // WaitForProgramtextBox
             // 
             this.WaitForProgramtextBox.Location = new System.Drawing.Point(145, 35);
-            this.WaitForProgramtextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WaitForProgramtextBox.Margin = new System.Windows.Forms.Padding(2);
             this.WaitForProgramtextBox.Name = "WaitForProgramtextBox";
             this.WaitForProgramtextBox.ReadOnly = true;
             this.WaitForProgramtextBox.Size = new System.Drawing.Size(283, 20);
@@ -1175,7 +1189,7 @@
             // 
             this.WaitForProgramcheckBox.AutoSize = true;
             this.WaitForProgramcheckBox.Location = new System.Drawing.Point(8, 19);
-            this.WaitForProgramcheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WaitForProgramcheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.WaitForProgramcheckBox.Name = "WaitForProgramcheckBox";
             this.WaitForProgramcheckBox.Size = new System.Drawing.Size(65, 17);
             this.WaitForProgramcheckBox.TabIndex = 19;
@@ -1207,9 +1221,9 @@
             this.groupBox3.Controls.Add(this.TimerMinscomboBox);
             this.groupBox3.Controls.Add(this.TimercheckBox);
             this.groupBox3.Location = new System.Drawing.Point(2, 513);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(1115, 79);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
@@ -1314,7 +1328,7 @@
             "58",
             "59"});
             this.TimerSecondscomboBox.Location = new System.Drawing.Point(300, 38);
-            this.TimerSecondscomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TimerSecondscomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.TimerSecondscomboBox.Name = "TimerSecondscomboBox";
             this.TimerSecondscomboBox.Size = new System.Drawing.Size(41, 21);
             this.TimerSecondscomboBox.TabIndex = 25;
@@ -1396,7 +1410,7 @@
             "58",
             "59"});
             this.TimerDayscomboBox.Location = new System.Drawing.Point(55, 38);
-            this.TimerDayscomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TimerDayscomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.TimerDayscomboBox.Name = "TimerDayscomboBox";
             this.TimerDayscomboBox.Size = new System.Drawing.Size(41, 21);
             this.TimerDayscomboBox.TabIndex = 23;
@@ -1442,7 +1456,7 @@
             "22",
             "23"});
             this.TimerHourscomboBox.Location = new System.Drawing.Point(138, 38);
-            this.TimerHourscomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TimerHourscomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.TimerHourscomboBox.Name = "TimerHourscomboBox";
             this.TimerHourscomboBox.Size = new System.Drawing.Size(41, 21);
             this.TimerHourscomboBox.TabIndex = 21;
@@ -1524,7 +1538,7 @@
             "58",
             "59"});
             this.TimerMinscomboBox.Location = new System.Drawing.Point(223, 38);
-            this.TimerMinscomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TimerMinscomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.TimerMinscomboBox.Name = "TimerMinscomboBox";
             this.TimerMinscomboBox.Size = new System.Drawing.Size(41, 21);
             this.TimerMinscomboBox.TabIndex = 19;
@@ -1534,7 +1548,7 @@
             // 
             this.TimercheckBox.AutoSize = true;
             this.TimercheckBox.Location = new System.Drawing.Point(17, 17);
-            this.TimercheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TimercheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.TimercheckBox.Name = "TimercheckBox";
             this.TimercheckBox.Size = new System.Drawing.Size(65, 17);
             this.TimercheckBox.TabIndex = 20;
@@ -1552,9 +1566,9 @@
             this.groupBox11.Controls.Add(this.label36);
             this.groupBox11.Controls.Add(this.SpecificTimercheckBox);
             this.groupBox11.Location = new System.Drawing.Point(2, 596);
-            this.groupBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox11.Size = new System.Drawing.Size(1115, 77);
             this.groupBox11.TabIndex = 28;
             this.groupBox11.TabStop = false;
@@ -1595,7 +1609,7 @@
             this.SpecificTimerTime.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.SpecificTimerTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.SpecificTimerTime.Location = new System.Drawing.Point(219, 34);
-            this.SpecificTimerTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SpecificTimerTime.Margin = new System.Windows.Forms.Padding(2);
             this.SpecificTimerTime.Name = "SpecificTimerTime";
             this.SpecificTimerTime.ShowUpDown = true;
             this.SpecificTimerTime.Size = new System.Drawing.Size(77, 20);
@@ -1607,7 +1621,7 @@
             this.SpecificTimerDate.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.SpecificTimerDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.SpecificTimerDate.Location = new System.Drawing.Point(94, 34);
-            this.SpecificTimerDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SpecificTimerDate.Margin = new System.Windows.Forms.Padding(2);
             this.SpecificTimerDate.Name = "SpecificTimerDate";
             this.SpecificTimerDate.Size = new System.Drawing.Size(85, 20);
             this.SpecificTimerDate.TabIndex = 28;
@@ -1630,7 +1644,7 @@
             // 
             this.SpecificTimercheckBox.AutoSize = true;
             this.SpecificTimercheckBox.Location = new System.Drawing.Point(17, 17);
-            this.SpecificTimercheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SpecificTimercheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.SpecificTimercheckBox.Name = "SpecificTimercheckBox";
             this.SpecificTimercheckBox.Size = new System.Drawing.Size(65, 17);
             this.SpecificTimercheckBox.TabIndex = 20;
@@ -1640,15 +1654,17 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.ShutdownDownbutton);
+            this.groupBox2.Controls.Add(this.ShutdownUpbutton);
             this.groupBox2.Controls.Add(this.ShutdownRemovebutton);
             this.groupBox2.Controls.Add(this.ShutdownAddbutton);
             this.groupBox2.Controls.Add(this.ShutdownSequencedataGridView);
             this.groupBox2.Controls.Add(this.ActionProgramcheckBox);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Location = new System.Drawing.Point(2, 738);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(1115, 265);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
@@ -1657,7 +1673,7 @@
             // ShutdownRemovebutton
             // 
             this.ShutdownRemovebutton.Location = new System.Drawing.Point(907, 89);
-            this.ShutdownRemovebutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShutdownRemovebutton.Margin = new System.Windows.Forms.Padding(2);
             this.ShutdownRemovebutton.Name = "ShutdownRemovebutton";
             this.ShutdownRemovebutton.Size = new System.Drawing.Size(66, 25);
             this.ShutdownRemovebutton.TabIndex = 37;
@@ -1668,7 +1684,7 @@
             // ShutdownAddbutton
             // 
             this.ShutdownAddbutton.Location = new System.Drawing.Point(907, 60);
-            this.ShutdownAddbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShutdownAddbutton.Margin = new System.Windows.Forms.Padding(2);
             this.ShutdownAddbutton.Name = "ShutdownAddbutton";
             this.ShutdownAddbutton.Size = new System.Drawing.Size(66, 25);
             this.ShutdownAddbutton.TabIndex = 36;
@@ -1682,8 +1698,8 @@
             this.ShutdownSequencedataGridView.AllowUserToDeleteRows = false;
             this.ShutdownSequencedataGridView.AllowUserToResizeColumns = false;
             this.ShutdownSequencedataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ShutdownSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ShutdownSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ShutdownSequencedataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.ShutdownSequencedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ShutdownSequencedataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1695,7 +1711,8 @@
             this.DelayAfterExecution,
             this.WaitUntilExit});
             this.ShutdownSequencedataGridView.Location = new System.Drawing.Point(22, 60);
-            this.ShutdownSequencedataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShutdownSequencedataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.ShutdownSequencedataGridView.MultiSelect = false;
             this.ShutdownSequencedataGridView.Name = "ShutdownSequencedataGridView";
             this.ShutdownSequencedataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.ShutdownSequencedataGridView.Size = new System.Drawing.Size(881, 200);
@@ -1777,7 +1794,7 @@
             // 
             this.ActionProgramcheckBox.AutoSize = true;
             this.ActionProgramcheckBox.Location = new System.Drawing.Point(17, 17);
-            this.ActionProgramcheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ActionProgramcheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.ActionProgramcheckBox.Name = "ActionProgramcheckBox";
             this.ActionProgramcheckBox.Size = new System.Drawing.Size(65, 17);
             this.ActionProgramcheckBox.TabIndex = 20;
@@ -1799,7 +1816,7 @@
             // 
             this.tabPage2.Controls.Add(this.flowLayoutPanel2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(1145, 524);
             this.tabPage2.TabIndex = 2;
@@ -1812,22 +1829,24 @@
             this.flowLayoutPanel2.Controls.Add(this.groupBox9);
             this.flowLayoutPanel2.Controls.Add(this.ShellgroupBox);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(1145, 497);
             this.flowLayoutPanel2.TabIndex = 11;
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.StartupDownbutton);
+            this.groupBox9.Controls.Add(this.StartupUpbutton);
             this.groupBox9.Controls.Add(this.StartupRemovebutton);
             this.groupBox9.Controls.Add(this.StartAddbutton);
             this.groupBox9.Controls.Add(this.StartupSequencedataGridView);
             this.groupBox9.Controls.Add(this.label31);
             this.groupBox9.Controls.Add(this.StartupProgramscheckBox);
             this.groupBox9.Location = new System.Drawing.Point(2, 2);
-            this.groupBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox9.Size = new System.Drawing.Size(1131, 274);
             this.groupBox9.TabIndex = 12;
             this.groupBox9.TabStop = false;
@@ -1836,7 +1855,7 @@
             // StartupRemovebutton
             // 
             this.StartupRemovebutton.Location = new System.Drawing.Point(911, 87);
-            this.StartupRemovebutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartupRemovebutton.Margin = new System.Windows.Forms.Padding(2);
             this.StartupRemovebutton.Name = "StartupRemovebutton";
             this.StartupRemovebutton.Size = new System.Drawing.Size(66, 25);
             this.StartupRemovebutton.TabIndex = 41;
@@ -1847,7 +1866,7 @@
             // StartAddbutton
             // 
             this.StartAddbutton.Location = new System.Drawing.Point(911, 60);
-            this.StartAddbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartAddbutton.Margin = new System.Windows.Forms.Padding(2);
             this.StartAddbutton.Name = "StartAddbutton";
             this.StartAddbutton.Size = new System.Drawing.Size(66, 25);
             this.StartAddbutton.TabIndex = 40;
@@ -1861,8 +1880,8 @@
             this.StartupSequencedataGridView.AllowUserToDeleteRows = false;
             this.StartupSequencedataGridView.AllowUserToResizeColumns = false;
             this.StartupSequencedataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.StartupSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.StartupSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.StartupSequencedataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.StartupSequencedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StartupSequencedataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1874,7 +1893,8 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewCheckBoxColumn1});
             this.StartupSequencedataGridView.Location = new System.Drawing.Point(17, 60);
-            this.StartupSequencedataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartupSequencedataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.StartupSequencedataGridView.MultiSelect = false;
             this.StartupSequencedataGridView.Name = "StartupSequencedataGridView";
             this.StartupSequencedataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.StartupSequencedataGridView.Size = new System.Drawing.Size(881, 200);
@@ -1964,7 +1984,7 @@
             // 
             this.StartupProgramscheckBox.AutoSize = true;
             this.StartupProgramscheckBox.Location = new System.Drawing.Point(17, 17);
-            this.StartupProgramscheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartupProgramscheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.StartupProgramscheckBox.Name = "StartupProgramscheckBox";
             this.StartupProgramscheckBox.Size = new System.Drawing.Size(65, 17);
             this.StartupProgramscheckBox.TabIndex = 0;
@@ -1978,9 +1998,9 @@
             this.ShellgroupBox.Controls.Add(this.ShellActivityWinOffradioButton);
             this.ShellgroupBox.Controls.Add(this.ShellExplorerradioButton);
             this.ShellgroupBox.Location = new System.Drawing.Point(2, 280);
-            this.ShellgroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShellgroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.ShellgroupBox.Name = "ShellgroupBox";
-            this.ShellgroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShellgroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.ShellgroupBox.Size = new System.Drawing.Size(1131, 70);
             this.ShellgroupBox.TabIndex = 11;
             this.ShellgroupBox.TabStop = false;
@@ -1990,7 +2010,7 @@
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(17, 38);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(216, 17);
             this.checkBox4.TabIndex = 8;
@@ -2001,7 +2021,7 @@
             // 
             this.ShellActivityWinOffradioButton.AutoSize = true;
             this.ShellActivityWinOffradioButton.Location = new System.Drawing.Point(143, 17);
-            this.ShellActivityWinOffradioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShellActivityWinOffradioButton.Margin = new System.Windows.Forms.Padding(2);
             this.ShellActivityWinOffradioButton.Name = "ShellActivityWinOffradioButton";
             this.ShellActivityWinOffradioButton.Size = new System.Drawing.Size(92, 17);
             this.ShellActivityWinOffradioButton.TabIndex = 1;
@@ -2014,7 +2034,7 @@
             // 
             this.ShellExplorerradioButton.AutoSize = true;
             this.ShellExplorerradioButton.Location = new System.Drawing.Point(17, 17);
-            this.ShellExplorerradioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShellExplorerradioButton.Margin = new System.Windows.Forms.Padding(2);
             this.ShellExplorerradioButton.Name = "ShellExplorerradioButton";
             this.ShellExplorerradioButton.Size = new System.Drawing.Size(110, 17);
             this.ShellExplorerradioButton.TabIndex = 0;
@@ -2027,7 +2047,7 @@
             // 
             this.tabPage3.Controls.Add(this.flowLayoutPanel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1145, 524);
             this.tabPage3.TabIndex = 3;
@@ -2038,7 +2058,7 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.FocusgroupBox);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(1145, 524);
             this.flowLayoutPanel3.TabIndex = 15;
@@ -2056,9 +2076,9 @@
             this.FocusgroupBox.Controls.Add(this.SelectFocusProgrambutton);
             this.FocusgroupBox.Controls.Add(this.FocusProgramPoolIntervaltextBox);
             this.FocusgroupBox.Location = new System.Drawing.Point(2, 2);
-            this.FocusgroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FocusgroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.FocusgroupBox.Name = "FocusgroupBox";
-            this.FocusgroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FocusgroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.FocusgroupBox.Size = new System.Drawing.Size(1141, 100);
             this.FocusgroupBox.TabIndex = 14;
             this.FocusgroupBox.TabStop = false;
@@ -2068,7 +2088,7 @@
             // 
             this.FocusProgramcheckBox.AutoSize = true;
             this.FocusProgramcheckBox.Location = new System.Drawing.Point(17, 17);
-            this.FocusProgramcheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FocusProgramcheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.FocusProgramcheckBox.Name = "FocusProgramcheckBox";
             this.FocusProgramcheckBox.Size = new System.Drawing.Size(83, 17);
             this.FocusProgramcheckBox.TabIndex = 8;
@@ -2079,7 +2099,7 @@
             // FocusProgramtextBox
             // 
             this.FocusProgramtextBox.Location = new System.Drawing.Point(66, 39);
-            this.FocusProgramtextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FocusProgramtextBox.Margin = new System.Windows.Forms.Padding(2);
             this.FocusProgramtextBox.Name = "FocusProgramtextBox";
             this.FocusProgramtextBox.Size = new System.Drawing.Size(340, 20);
             this.FocusProgramtextBox.TabIndex = 8;
@@ -2087,7 +2107,7 @@
             // FocusProgramClearbutton
             // 
             this.FocusProgramClearbutton.Location = new System.Drawing.Point(481, 36);
-            this.FocusProgramClearbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FocusProgramClearbutton.Margin = new System.Windows.Forms.Padding(2);
             this.FocusProgramClearbutton.Name = "FocusProgramClearbutton";
             this.FocusProgramClearbutton.Size = new System.Drawing.Size(62, 25);
             this.FocusProgramClearbutton.TabIndex = 11;
@@ -2128,7 +2148,7 @@
             // SelectFocusProgrambutton
             // 
             this.SelectFocusProgrambutton.Location = new System.Drawing.Point(410, 36);
-            this.SelectFocusProgrambutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SelectFocusProgrambutton.Margin = new System.Windows.Forms.Padding(2);
             this.SelectFocusProgrambutton.Name = "SelectFocusProgrambutton";
             this.SelectFocusProgrambutton.Size = new System.Drawing.Size(67, 25);
             this.SelectFocusProgrambutton.TabIndex = 10;
@@ -2139,7 +2159,7 @@
             // FocusProgramPoolIntervaltextBox
             // 
             this.FocusProgramPoolIntervaltextBox.Location = new System.Drawing.Point(605, 39);
-            this.FocusProgramPoolIntervaltextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FocusProgramPoolIntervaltextBox.Margin = new System.Windows.Forms.Padding(2);
             this.FocusProgramPoolIntervaltextBox.Name = "FocusProgramPoolIntervaltextBox";
             this.FocusProgramPoolIntervaltextBox.Size = new System.Drawing.Size(40, 20);
             this.FocusProgramPoolIntervaltextBox.TabIndex = 13;
@@ -2150,9 +2170,9 @@
             // 
             this.tabPage4.Controls.Add(this.groupBox5);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage4.Size = new System.Drawing.Size(1145, 524);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Options";
@@ -2177,18 +2197,32 @@
             this.groupBox5.Controls.Add(this.EnableLoggercheckBox);
             this.groupBox5.Controls.Add(this.LoadOnWindowsStartcheckBox);
             this.groupBox5.Location = new System.Drawing.Point(4, 4);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(1137, 401);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
+            // 
+            // LogLevelcomboBox
+            // 
+            this.LogLevelcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.LogLevelcomboBox.FormattingEnabled = true;
+            this.LogLevelcomboBox.Items.AddRange(new object[] {
+            "Normal",
+            "Debug"});
+            this.LogLevelcomboBox.Location = new System.Drawing.Point(107, 104);
+            this.LogLevelcomboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.LogLevelcomboBox.Name = "LogLevelcomboBox";
+            this.LogLevelcomboBox.Size = new System.Drawing.Size(90, 21);
+            this.LogLevelcomboBox.TabIndex = 16;
+            this.LogLevelcomboBox.SelectedIndexChanged += new System.EventHandler(this.LogLevelcomboBox_SelectedIndexChanged);
             // 
             // DisableScreensavercheckBox
             // 
             this.DisableScreensavercheckBox.AutoSize = true;
             this.DisableScreensavercheckBox.Location = new System.Drawing.Point(7, 174);
-            this.DisableScreensavercheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DisableScreensavercheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.DisableScreensavercheckBox.Name = "DisableScreensavercheckBox";
             this.DisableScreensavercheckBox.Size = new System.Drawing.Size(223, 17);
             this.DisableScreensavercheckBox.TabIndex = 15;
@@ -2199,7 +2233,7 @@
             // OpenLogbutton
             // 
             this.OpenLogbutton.Location = new System.Drawing.Point(573, 40);
-            this.OpenLogbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OpenLogbutton.Margin = new System.Windows.Forms.Padding(2);
             this.OpenLogbutton.Name = "OpenLogbutton";
             this.OpenLogbutton.Size = new System.Drawing.Size(49, 20);
             this.OpenLogbutton.TabIndex = 14;
@@ -2210,7 +2244,7 @@
             // OpenConfigbutton
             // 
             this.OpenConfigbutton.Location = new System.Drawing.Point(573, 11);
-            this.OpenConfigbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OpenConfigbutton.Margin = new System.Windows.Forms.Padding(2);
             this.OpenConfigbutton.Name = "OpenConfigbutton";
             this.OpenConfigbutton.Size = new System.Drawing.Size(49, 21);
             this.OpenConfigbutton.TabIndex = 13;
@@ -2221,7 +2255,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(151, 146);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 24);
             this.button1.TabIndex = 12;
@@ -2233,7 +2267,7 @@
             // 
             this.ShowWarningcheckBox.AutoSize = true;
             this.ShowWarningcheckBox.Location = new System.Drawing.Point(7, 127);
-            this.ShowWarningcheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ShowWarningcheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.ShowWarningcheckBox.Name = "ShowWarningcheckBox";
             this.ShowWarningcheckBox.Size = new System.Drawing.Size(142, 17);
             this.ShowWarningcheckBox.TabIndex = 11;
@@ -2278,7 +2312,7 @@
             "45",
             "60"});
             this.WarningTimecomboBox.Location = new System.Drawing.Point(59, 146);
-            this.WarningTimecomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WarningTimecomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.WarningTimecomboBox.Name = "WarningTimecomboBox";
             this.WarningTimecomboBox.Size = new System.Drawing.Size(37, 21);
             this.WarningTimecomboBox.TabIndex = 8;
@@ -2297,7 +2331,7 @@
             // ConfigLocationtextBox
             // 
             this.ConfigLocationtextBox.Location = new System.Drawing.Point(88, 13);
-            this.ConfigLocationtextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConfigLocationtextBox.Margin = new System.Windows.Forms.Padding(2);
             this.ConfigLocationtextBox.Name = "ConfigLocationtextBox";
             this.ConfigLocationtextBox.ReadOnly = true;
             this.ConfigLocationtextBox.Size = new System.Drawing.Size(481, 20);
@@ -2307,7 +2341,7 @@
             // 
             this.StartActivatedcheckBox.AutoSize = true;
             this.StartActivatedcheckBox.Location = new System.Drawing.Point(7, 85);
-            this.StartActivatedcheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartActivatedcheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.StartActivatedcheckBox.Name = "StartActivatedcheckBox";
             this.StartActivatedcheckBox.Size = new System.Drawing.Size(95, 17);
             this.StartActivatedcheckBox.TabIndex = 4;
@@ -2328,7 +2362,7 @@
             // LogPathtextBox
             // 
             this.LogPathtextBox.Location = new System.Drawing.Point(88, 40);
-            this.LogPathtextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LogPathtextBox.Margin = new System.Windows.Forms.Padding(2);
             this.LogPathtextBox.Name = "LogPathtextBox";
             this.LogPathtextBox.ReadOnly = true;
             this.LogPathtextBox.Size = new System.Drawing.Size(481, 20);
@@ -2338,7 +2372,7 @@
             // 
             this.EnableLoggercheckBox.AutoSize = true;
             this.EnableLoggercheckBox.Location = new System.Drawing.Point(7, 106);
-            this.EnableLoggercheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EnableLoggercheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.EnableLoggercheckBox.Name = "EnableLoggercheckBox";
             this.EnableLoggercheckBox.Size = new System.Drawing.Size(96, 17);
             this.EnableLoggercheckBox.TabIndex = 1;
@@ -2350,7 +2384,7 @@
             // 
             this.LoadOnWindowsStartcheckBox.AutoSize = true;
             this.LoadOnWindowsStartcheckBox.Location = new System.Drawing.Point(7, 64);
-            this.LoadOnWindowsStartcheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LoadOnWindowsStartcheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.LoadOnWindowsStartcheckBox.Name = "LoadOnWindowsStartcheckBox";
             this.LoadOnWindowsStartcheckBox.Size = new System.Drawing.Size(190, 17);
             this.LoadOnWindowsStartcheckBox.TabIndex = 0;
@@ -2449,7 +2483,7 @@
             // 
             this.ReloadSettingsbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReloadSettingsbutton.Location = new System.Drawing.Point(107, 28);
-            this.ReloadSettingsbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ReloadSettingsbutton.Margin = new System.Windows.Forms.Padding(2);
             this.ReloadSettingsbutton.Name = "ReloadSettingsbutton";
             this.ReloadSettingsbutton.Size = new System.Drawing.Size(96, 41);
             this.ReloadSettingsbutton.TabIndex = 32;
@@ -2457,29 +2491,49 @@
             this.ReloadSettingsbutton.UseVisualStyleBackColor = true;
             this.ReloadSettingsbutton.Click += new System.EventHandler(this.ReloadSettingsbutton_Click);
             // 
-            // label32
+            // StartupUpbutton
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(29, 82);
-            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(40, 13);
-            this.label32.TabIndex = 31;
-            this.label32.Text = "Trigger";
+            this.StartupUpbutton.Location = new System.Drawing.Point(911, 116);
+            this.StartupUpbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.StartupUpbutton.Name = "StartupUpbutton";
+            this.StartupUpbutton.Size = new System.Drawing.Size(66, 25);
+            this.StartupUpbutton.TabIndex = 42;
+            this.StartupUpbutton.Text = "Up";
+            this.StartupUpbutton.UseVisualStyleBackColor = true;
+            this.StartupUpbutton.Click += new System.EventHandler(this.StartupUpbutton_Click);
             // 
-            // LogLevelcomboBox
+            // StartupDownbutton
             // 
-            this.LogLevelcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.LogLevelcomboBox.FormattingEnabled = true;
-            this.LogLevelcomboBox.Items.AddRange(new object[] {
-            "Normal",
-            "Debug"});
-            this.LogLevelcomboBox.Location = new System.Drawing.Point(107, 104);
-            this.LogLevelcomboBox.Margin = new System.Windows.Forms.Padding(2);
-            this.LogLevelcomboBox.Name = "LogLevelcomboBox";
-            this.LogLevelcomboBox.Size = new System.Drawing.Size(90, 21);
-            this.LogLevelcomboBox.TabIndex = 16;
-            this.LogLevelcomboBox.SelectedIndexChanged += new System.EventHandler(this.LogLevelcomboBox_SelectedIndexChanged);
+            this.StartupDownbutton.Location = new System.Drawing.Point(911, 145);
+            this.StartupDownbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.StartupDownbutton.Name = "StartupDownbutton";
+            this.StartupDownbutton.Size = new System.Drawing.Size(66, 25);
+            this.StartupDownbutton.TabIndex = 43;
+            this.StartupDownbutton.Text = "Down";
+            this.StartupDownbutton.UseVisualStyleBackColor = true;
+            this.StartupDownbutton.Click += new System.EventHandler(this.StartupDownbutton_Click);
+            // 
+            // ShutdownDownbutton
+            // 
+            this.ShutdownDownbutton.Location = new System.Drawing.Point(907, 147);
+            this.ShutdownDownbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.ShutdownDownbutton.Name = "ShutdownDownbutton";
+            this.ShutdownDownbutton.Size = new System.Drawing.Size(66, 25);
+            this.ShutdownDownbutton.TabIndex = 45;
+            this.ShutdownDownbutton.Text = "Down";
+            this.ShutdownDownbutton.UseVisualStyleBackColor = true;
+            this.ShutdownDownbutton.Click += new System.EventHandler(this.ShutdownDownbutton_Click);
+            // 
+            // ShutdownUpbutton
+            // 
+            this.ShutdownUpbutton.Location = new System.Drawing.Point(907, 118);
+            this.ShutdownUpbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.ShutdownUpbutton.Name = "ShutdownUpbutton";
+            this.ShutdownUpbutton.Size = new System.Drawing.Size(66, 25);
+            this.ShutdownUpbutton.TabIndex = 44;
+            this.ShutdownUpbutton.Text = "Up";
+            this.ShutdownUpbutton.UseVisualStyleBackColor = true;
+            this.ShutdownUpbutton.Click += new System.EventHandler(this.ShutdownUpbutton_Click);
             // 
             // Main
             // 
@@ -2497,7 +2551,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(696, 556);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -2714,6 +2768,10 @@
         private System.Windows.Forms.CheckBox ForceShutdowncheckBox;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.ComboBox LogLevelcomboBox;
+        private System.Windows.Forms.Button StartupDownbutton;
+        private System.Windows.Forms.Button StartupUpbutton;
+        private System.Windows.Forms.Button ShutdownDownbutton;
+        private System.Windows.Forms.Button ShutdownUpbutton;
     }
 }
 

@@ -43,7 +43,7 @@ namespace ActivityWinOff
             {
                 switch (argument)
                 {
-                    case "boot":
+                    case "/autostart":
                         continue;
                     case "/min":
                         continue;
@@ -74,6 +74,8 @@ namespace ActivityWinOff
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("Format: ActivityWinOff [/args]" + Environment.NewLine
                 + "     /?     Show help" + Environment.NewLine
+                + "     /activate   Start activated" + Environment.NewLine
+                + "     /autostart   Start on windows startup" + Environment.NewLine
                 + "     /min   Start minimized" + Environment.NewLine
                 );
             SendKeys.SendWait("{ENTER}");
