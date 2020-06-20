@@ -56,9 +56,11 @@ namespace ActivityWinOff
                 row.Cells[0].Value = String.Format("{0}", row.Index + 1);
         }
 
-        public static void DataGridViewFileInput(object sender, DataGridViewCellEventArgs e)
+        public static void InputHandler(object sender, DataGridViewCellEventArgs e)
         {
             var dgv = (DataGridView)sender;
+
+            // file selector
             if (e.ColumnIndex == 1 && e.RowIndex != -1)
             {
                 OpenFileDialog dialog = new OpenFileDialog();
@@ -66,6 +68,20 @@ namespace ActivityWinOff
                     dialog.FileName = dgv[e.ColumnIndex, e.RowIndex].Value.ToString();
                 if (dialog.ShowDialog() == DialogResult.OK)
                     dgv[e.ColumnIndex, e.RowIndex].Value = dialog.FileName;
+            }
+
+            // arguments
+            if (e.ColumnIndex == 2 && e.RowIndex != -1)
+            {
+                string Argument = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                using (Arguments f1 = new Arguments(Argument))
+                {
+                    DialogResult result = f1.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = f1.ReturnValue;
+                    }
+                }
             }
         }
 

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NetworkAdapterscomboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -128,13 +128,6 @@
             this.ShutdownRemovebutton = new System.Windows.Forms.Button();
             this.ShutdownAddbutton = new System.Windows.Forms.Button();
             this.ShutdownSequencedataGridView = new System.Windows.Forms.DataGridView();
-            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CommandProgram = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Arguments = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WindowStyle = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.DelayBeforeExecution = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DelayAfterExecution = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WaitUntilExit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ActionProgramcheckBox = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -143,13 +136,6 @@
             this.StartupRemovebutton = new System.Windows.Forms.Button();
             this.StartAddbutton = new System.Windows.Forms.Button();
             this.StartupSequencedataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label31 = new System.Windows.Forms.Label();
             this.StartupProgramscheckBox = new System.Windows.Forms.CheckBox();
             this.ShellgroupBox = new System.Windows.Forms.GroupBox();
@@ -200,6 +186,20 @@
             this.StartupDownbutton = new System.Windows.Forms.Button();
             this.ShutdownDownbutton = new System.Windows.Forms.Button();
             this.ShutdownUpbutton = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CommandProgram = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arguments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WindowStyle = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.DelayBeforeExecution = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelayAfterExecution = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WaitUntilExit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             this.ShutdownTypegroupBox.SuspendLayout();
             this.ConditiongroupBox.SuspendLayout();
@@ -1698,8 +1698,8 @@
             this.ShutdownSequencedataGridView.AllowUserToDeleteRows = false;
             this.ShutdownSequencedataGridView.AllowUserToResizeColumns = false;
             this.ShutdownSequencedataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ShutdownSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ShutdownSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ShutdownSequencedataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.ShutdownSequencedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ShutdownSequencedataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1720,75 +1720,6 @@
             this.ShutdownSequencedataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShutdownSequencedataGridView_CellClick);
             this.ShutdownSequencedataGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.ShutdownSequencedataGridView_EditingControlShowing);
             this.ShutdownSequencedataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShutdownSequencedataGridView_KeyDown);
-            // 
-            // Order
-            // 
-            this.Order.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Order.FillWeight = 14.39858F;
-            this.Order.HeaderText = "Order";
-            this.Order.Name = "Order";
-            this.Order.ReadOnly = true;
-            this.Order.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Order.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Order.Width = 39;
-            // 
-            // CommandProgram
-            // 
-            this.CommandProgram.FillWeight = 49.43513F;
-            this.CommandProgram.HeaderText = "Command or Program";
-            this.CommandProgram.MinimumWidth = 320;
-            this.CommandProgram.Name = "CommandProgram";
-            this.CommandProgram.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.CommandProgram.Width = 320;
-            // 
-            // Arguments
-            // 
-            this.Arguments.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Arguments.FillWeight = 49.43513F;
-            this.Arguments.HeaderText = "Argument(s)";
-            this.Arguments.MinimumWidth = 225;
-            this.Arguments.Name = "Arguments";
-            this.Arguments.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Arguments.Width = 225;
-            // 
-            // WindowStyle
-            // 
-            this.WindowStyle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.WindowStyle.HeaderText = "Window Style";
-            this.WindowStyle.Items.AddRange(new object[] {
-            "Hidden",
-            "Normal",
-            "Minimized",
-            "Maximized"});
-            this.WindowStyle.MinimumWidth = 85;
-            this.WindowStyle.Name = "WindowStyle";
-            this.WindowStyle.Width = 85;
-            // 
-            // DelayBeforeExecution
-            // 
-            this.DelayBeforeExecution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.DelayBeforeExecution.FillWeight = 324.1848F;
-            this.DelayBeforeExecution.HeaderText = "Delay before execution [s]";
-            this.DelayBeforeExecution.MinimumWidth = 60;
-            this.DelayBeforeExecution.Name = "DelayBeforeExecution";
-            this.DelayBeforeExecution.Width = 60;
-            // 
-            // DelayAfterExecution
-            // 
-            this.DelayAfterExecution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.DelayAfterExecution.FillWeight = 40.71891F;
-            this.DelayAfterExecution.HeaderText = "Delay after execution [s]";
-            this.DelayAfterExecution.MinimumWidth = 60;
-            this.DelayAfterExecution.Name = "DelayAfterExecution";
-            this.DelayAfterExecution.Width = 60;
-            // 
-            // WaitUntilExit
-            // 
-            this.WaitUntilExit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.WaitUntilExit.FillWeight = 121.8274F;
-            this.WaitUntilExit.HeaderText = "Wait for exit";
-            this.WaitUntilExit.Name = "WaitUntilExit";
-            this.WaitUntilExit.Width = 48;
             // 
             // ActionProgramcheckBox
             // 
@@ -1880,8 +1811,8 @@
             this.StartupSequencedataGridView.AllowUserToDeleteRows = false;
             this.StartupSequencedataGridView.AllowUserToResizeColumns = false;
             this.StartupSequencedataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.StartupSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.StartupSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.StartupSequencedataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.StartupSequencedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StartupSequencedataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1900,75 +1831,6 @@
             this.StartupSequencedataGridView.Size = new System.Drawing.Size(881, 200);
             this.StartupSequencedataGridView.TabIndex = 39;
             this.StartupSequencedataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.StartupSequencedataGridView_CellClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn1.FillWeight = 14.39858F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Order";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn1.Width = 39;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 49.43513F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Command or Program";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 320;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn2.Width = 320;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn3.FillWeight = 49.43513F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Argument(s)";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 225;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn3.Width = 225;
-            // 
-            // dataGridViewComboBoxColumn1
-            // 
-            this.dataGridViewComboBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewComboBoxColumn1.HeaderText = "Window Style";
-            this.dataGridViewComboBoxColumn1.Items.AddRange(new object[] {
-            "Hidden",
-            "Normal",
-            "Minimized",
-            "Maximized"});
-            this.dataGridViewComboBoxColumn1.MinimumWidth = 85;
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
-            this.dataGridViewComboBoxColumn1.Width = 85;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn4.FillWeight = 324.1848F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Delay before execution [s]";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 60;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn5.FillWeight = 40.71891F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Delay after execution [s]";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 60;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 60;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewCheckBoxColumn1.FillWeight = 121.8274F;
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Wait for exit";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Width = 48;
             // 
             // label31
             // 
@@ -2535,6 +2397,148 @@
             this.ShutdownUpbutton.UseVisualStyleBackColor = true;
             this.ShutdownUpbutton.Click += new System.EventHandler(this.ShutdownUpbutton_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn1.FillWeight = 14.39858F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Order";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 39;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 49.43513F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Command or Program";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 320;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn2.Width = 320;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn3.FillWeight = 49.43513F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Argument(s)";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 225;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn3.Width = 225;
+            // 
+            // dataGridViewComboBoxColumn1
+            // 
+            this.dataGridViewComboBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewComboBoxColumn1.HeaderText = "Window Style";
+            this.dataGridViewComboBoxColumn1.Items.AddRange(new object[] {
+            "Hidden",
+            "Normal",
+            "Minimized",
+            "Maximized"});
+            this.dataGridViewComboBoxColumn1.MinimumWidth = 85;
+            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            this.dataGridViewComboBoxColumn1.Width = 85;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn4.FillWeight = 324.1848F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Delay before execution [s]";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 60;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn5.FillWeight = 40.71891F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Delay after execution [s]";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 60;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 60;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewCheckBoxColumn1.FillWeight = 121.8274F;
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Wait for exit";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 40;
+            // 
+            // Order
+            // 
+            this.Order.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Order.FillWeight = 14.39858F;
+            this.Order.HeaderText = "Order";
+            this.Order.Name = "Order";
+            this.Order.ReadOnly = true;
+            this.Order.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Order.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Order.Width = 39;
+            // 
+            // CommandProgram
+            // 
+            this.CommandProgram.FillWeight = 49.43513F;
+            this.CommandProgram.HeaderText = "Command or Program";
+            this.CommandProgram.MinimumWidth = 320;
+            this.CommandProgram.Name = "CommandProgram";
+            this.CommandProgram.ReadOnly = true;
+            this.CommandProgram.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CommandProgram.Width = 320;
+            // 
+            // Arguments
+            // 
+            this.Arguments.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Arguments.FillWeight = 49.43513F;
+            this.Arguments.HeaderText = "Argument(s)";
+            this.Arguments.MinimumWidth = 225;
+            this.Arguments.Name = "Arguments";
+            this.Arguments.ReadOnly = true;
+            this.Arguments.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Arguments.Width = 225;
+            // 
+            // WindowStyle
+            // 
+            this.WindowStyle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.WindowStyle.HeaderText = "Window Style";
+            this.WindowStyle.Items.AddRange(new object[] {
+            "Hidden",
+            "Normal",
+            "Minimized",
+            "Maximized"});
+            this.WindowStyle.MinimumWidth = 85;
+            this.WindowStyle.Name = "WindowStyle";
+            this.WindowStyle.Width = 85;
+            // 
+            // DelayBeforeExecution
+            // 
+            this.DelayBeforeExecution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DelayBeforeExecution.FillWeight = 324.1848F;
+            this.DelayBeforeExecution.HeaderText = "Delay before execution [s]";
+            this.DelayBeforeExecution.MinimumWidth = 60;
+            this.DelayBeforeExecution.Name = "DelayBeforeExecution";
+            this.DelayBeforeExecution.Width = 60;
+            // 
+            // DelayAfterExecution
+            // 
+            this.DelayAfterExecution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DelayAfterExecution.FillWeight = 40.71891F;
+            this.DelayAfterExecution.HeaderText = "Delay after execution [s]";
+            this.DelayAfterExecution.MinimumWidth = 60;
+            this.DelayAfterExecution.Name = "DelayAfterExecution";
+            this.DelayAfterExecution.Width = 60;
+            // 
+            // WaitUntilExit
+            // 
+            this.WaitUntilExit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.WaitUntilExit.FillWeight = 121.8274F;
+            this.WaitUntilExit.HeaderText = "Wait for exit";
+            this.WaitUntilExit.Name = "WaitUntilExit";
+            this.WaitUntilExit.Width = 40;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2734,23 +2738,9 @@
         private System.Windows.Forms.DataGridView ShutdownSequencedataGridView;
         private System.Windows.Forms.Button ShutdownAddbutton;
         private System.Windows.Forms.Button ShutdownRemovebutton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Order;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CommandProgram;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Arguments;
-        private System.Windows.Forms.DataGridViewComboBoxColumn WindowStyle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DelayBeforeExecution;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DelayAfterExecution;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn WaitUntilExit;
         private System.Windows.Forms.Button StartupRemovebutton;
         private System.Windows.Forms.Button StartAddbutton;
         private System.Windows.Forms.DataGridView StartupSequencedataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.CheckBox DisableScreensavercheckBox;
         private System.Windows.Forms.TabPage tabPage3;
@@ -2772,6 +2762,20 @@
         private System.Windows.Forms.Button StartupUpbutton;
         private System.Windows.Forms.Button ShutdownDownbutton;
         private System.Windows.Forms.Button ShutdownUpbutton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Order;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CommandProgram;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Arguments;
+        private System.Windows.Forms.DataGridViewComboBoxColumn WindowStyle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DelayBeforeExecution;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DelayAfterExecution;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn WaitUntilExit;
     }
 }
 

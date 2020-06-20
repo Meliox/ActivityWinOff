@@ -905,7 +905,7 @@ namespace ActivityWinOff
 
         private void ShutdownSequencedataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewHelpers.DataGridViewFileInput(sender, e);
+            DataGridViewHelpers.InputHandler(sender, e);
         }
 
         private void ShutdownRemovebutton_Click(object sender, EventArgs e)
@@ -995,7 +995,7 @@ namespace ActivityWinOff
 
         private void StartupSequencedataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewHelpers.DataGridViewFileInput(sender, e);
+            DataGridViewHelpers.InputHandler(sender, e);
         }
 
         private void SelectFocusProgrambutton_Click(object sender, EventArgs e)
@@ -1068,7 +1068,6 @@ namespace ActivityWinOff
                 key.DeleteValue("ActivityWinOff", false);
             }
         }
-
 
         private void StartupProgramscheckBox_CheckChanged(object sender, EventArgs e)
         {
