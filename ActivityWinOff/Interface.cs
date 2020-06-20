@@ -53,6 +53,8 @@ namespace ActivityWinOff
             ShutdownForced = (bool)Properties.Settings.Default["ShutdownForced"];
             StartupProgramsEnabled = (bool)Properties.Settings.Default["StartupProgramsEnabled"];
             LogLevel = (int)Properties.Settings.Default["LogLevel"];
+            ShellStartProgramEnabled = (bool)Properties.Settings.Default["ShellStartProgramEnabled"];
+            ShellStartProgramPath = (string)Properties.Settings.Default["ShellStartProgramPath"];
         }
 
         public static void SaveSettings()
@@ -96,11 +98,13 @@ namespace ActivityWinOff
             Properties.Settings.Default["DisableScreensaver"] = DisableScreensaver;
             Properties.Settings.Default["FocusProgramEnabled"] = FocusProgramEnabled;
             Properties.Settings.Default["FocusProgram"] = FocusProgram;
-            Properties.Settings.Default["FocusProgramPoolInterval"] = FocusProgramPoolInterval; 
+            Properties.Settings.Default["FocusProgramPoolInterval"] = FocusProgramPoolInterval;
             Properties.Settings.Default["EnableLogger"] = EnableLogger;
             Properties.Settings.Default["ShutdownForced"] = ShutdownForced;
             Properties.Settings.Default["StartupProgramsEnabled"] = StartupProgramsEnabled;
             Properties.Settings.Default["LogLevel"] = LogLevel;
+            Properties.Settings.Default["ShellStartProgramEnabled"] = ShellStartProgramEnabled;
+            Properties.Settings.Default["ShellStartProgramPath"] = ShellStartProgramPath;
 
             Properties.Settings.Default.Save();
             Properties.Settings.Default.Upgrade();
@@ -174,5 +178,7 @@ namespace ActivityWinOff
         public static bool ShutdownForced { get => Settings.ShutdownForced; set => Settings.ShutdownForced = value; }
         public static bool StartupProgramsEnabled { get => Settings.StartupProgramsEnabled; set => Settings.StartupProgramsEnabled = value; }
         public static int LogLevel { get => Settings.LogLevel; set => Settings.LogLevel = value; }
+        public static bool ShellStartProgramEnabled { get => Settings.ShellStartProgramEnabled; set => Settings.ShellStartProgramEnabled = value; }
+        public static string ShellStartProgramPath { get => Settings.ShellStartProgramPath; set => Settings.ShellStartProgramPath = value; }
     }
 }

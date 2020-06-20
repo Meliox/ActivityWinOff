@@ -23,6 +23,7 @@ namespace ActivityWinOff
     {
         public static Form MainForm;
         public static BackgroundWorker workerWatchdogTrigger = null;
+        BackgroundWorker watchShellExplorer = null;
         BackgroundWorker workerGUIUpdate = null;
         KeyboardInput keyboard;
         MouseInput mouse;
@@ -45,7 +46,7 @@ namespace ActivityWinOff
             InitGuiElements();
 
             Logger.add(1, "---------------------------------------------------------------------------------------------------------------");
-            Logger.add(1, "ActivityWinOff " + Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            Logger.add(1, "ActivityWinOff " + Application.ProductVersion.ToString());
             Logger.add(1, "Settings: Loaded " + Interface.PathConfig);
             Logger.add(1, "LogLevel: " + LogLevelcomboBox.SelectedItem.ToString());
 
@@ -153,6 +154,9 @@ namespace ActivityWinOff
             ForceShutdowncheckBox.Checked = Interface.ShutdownForced;
             StartupProgramscheckBox.Checked = Interface.StartupProgramsEnabled;
 
+            ShellStartProgramEnabledcheckBox.Checked = Interface.ShellStartProgramEnabled;
+            ShellStartProgramtextBox.Text = Interface.ShellStartProgramPath;
+
             SetBootMethod();
 
             // set shutdown type
@@ -222,6 +226,41 @@ namespace ActivityWinOff
             workerGUIUpdate.WorkerSupportsCancellation = true;
             workerGUIUpdate.RunWorkerAsync();
         }
+
+        public void RestartShellExplorer(object sender, DoWorkEventArgs e)
+        {
+            string ProcessName = Path.GetFileNameWithoutExtension(Interface.ShellStartProgramPath);
+            while (!watchShellExplorer.CancellationPending)
+            {
+                try
+                {
+                    var t = Process.GetProcesses();
+                    Process process = Process.GetProcessesByName(ProcessName)[0];
+                    if (process == null)
+                        Logger.add(1, "ShellExplorer: Program is stopped running. Starting Windows explorer");
+                    else
+                        Logger.add(2, "ShellExplorer: Program is still running");
+                }
+                catch (Exception)
+                {
+                    Logger.add(1, "ShellExplorer: Program is stopped running. Starting Windows explorer");
+                }
+                Thread.Sleep(1000);
+            }
+
+            //start explorer
+            // reset shell 
+            Helper.SetCurrentShell("\"explorer.exe\"");
+
+            Process.Start("explorer.exe");
+
+            //reset shell to what is selected in program
+            if (Interface.StartupProgramsEnabled)
+                Helper.SetCurrentShell("\"" + Process.GetCurrentProcess().MainModule.FileName + "\"" + " /autostart");
+            else
+                Helper.SetCurrentShell("\"" + Process.GetCurrentProcess().MainModule.FileName + "\"");
+        }
+
 
         private void OnWorkerCompleted(object sender, RunWorkerCompletedEventArgs runWorkerCompletedEventArgs)
         {
@@ -551,7 +590,7 @@ namespace ActivityWinOff
 
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString() + Environment.NewLine + Environment.NewLine + "MIT Licence 2020, Meliox");
+            MessageBox.Show("Version: " + Application.ProductVersion.ToString() + Environment.NewLine + Environment.NewLine + "MIT Licence 2020, Meliox", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void UserActivityKeyboardcheckBox_CheckedChanged(object sender, EventArgs e)
@@ -922,7 +961,7 @@ namespace ActivityWinOff
             ShutdownRemovebutton_Click(null, null);
         }
 
-        private void ShutdownSequencedataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        private void SequencedataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             DataGridViewHelpers.DataGridViewHandleKeyPress(sender, e);
         }
@@ -947,6 +986,14 @@ namespace ActivityWinOff
                         {
                             Logger.add(2, "Console: /autostart");
                             DataGridViewHelpers.DataGridViewExecutor(StartupSequencedataGridView);
+                            if (Interface.CurrentShell != "explorer.exe" && Interface.ShellStartProgramEnabled)
+                            {
+                                watchShellExplorer = new BackgroundWorker();
+                                watchShellExplorer.DoWork += RestartShellExplorer;
+                                watchShellExplorer.WorkerReportsProgress = false;
+                                watchShellExplorer.WorkerSupportsCancellation = true;
+                                watchShellExplorer.RunWorkerAsync();
+                            }
                             MinimizeToTraybutton_Click(null, null);
                         }
                         break;
@@ -1007,7 +1054,6 @@ namespace ActivityWinOff
                 FocusProgramtextBox.Text = dialog.FileName;
                 Interface.FocusProgram = dialog.FileName;
             }
-
         }
 
         private void FocusProgramClearbutton_Click(object sender, EventArgs e)
@@ -1027,12 +1073,6 @@ namespace ActivityWinOff
             TextBox senderTextBox = (TextBox)sender;
             if (senderTextBox.Text != "")
                 Interface.FocusProgramPoolInterval = Convert.ToInt32(senderTextBox.Text);
-        }
-
-        private void TextboxOnlyAllowInteger_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-                e.Handled = true;
         }
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1084,6 +1124,8 @@ namespace ActivityWinOff
                 workerWatchdogTrigger.CancelAsync();
             if (workerGUIUpdate.IsBusy)
                 workerGUIUpdate.CancelAsync();
+            if (watchShellExplorer != null && watchShellExplorer.IsBusy)
+                watchShellExplorer.CancelAsync();
             Thread.Sleep(100);
         }
 
@@ -1120,6 +1162,28 @@ namespace ActivityWinOff
         private void ShutdownDownbutton_Click(object sender, EventArgs e)
         {
             DataGridViewHelpers.DataGridViewMoveDown(ShutdownSequencedataGridView, ShutdownSequencedataGridView.CurrentRow);
+        }
+
+        private void ShellStartProgramcheckBoxEnabled_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox senderCheckBox = (CheckBox)sender;
+            Interface.ShellStartProgramEnabled = senderCheckBox.Checked;
+        }
+
+        private void ShellStartProgramSelectbutton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "exe (*.exe)|*.exe";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                ShellStartProgramtextBox.Text = dialog.FileName;
+                Interface.ShellStartProgramPath = dialog.FileName;
+            }
+        }
+
+        private void ShellStartProgramClearbutton_Click(object sender, EventArgs e)
+        {
+            ShellStartProgramtextBox.Text = "";
         }
     }
 

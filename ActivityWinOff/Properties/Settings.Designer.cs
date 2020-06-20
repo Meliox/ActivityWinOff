@@ -561,5 +561,29 @@ namespace ActivityWinOff.Properties {
                 this["LogLevel"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShellStartProgramEnabled {
+            get {
+                return ((bool)(this["ShellStartProgramEnabled"]));
+            }
+            set {
+                this["ShellStartProgramEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ShellStartProgramPath {
+            get {
+                return ((string)(this["ShellStartProgramPath"]));
+            }
+            set {
+                this["ShellStartProgramPath"] = value;
+            }
+        }
     }
 }

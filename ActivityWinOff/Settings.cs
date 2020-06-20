@@ -84,5 +84,8 @@ namespace ActivityWinOff
         public static bool EnableLogger;
         public static bool StartupProgramsEnabled;
         public static int LogLevel;
+
+        public static bool ShellStartProgramEnabled;
+        public static string ShellStartProgramPath;
     }
 }

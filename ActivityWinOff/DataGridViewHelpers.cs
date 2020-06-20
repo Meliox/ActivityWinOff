@@ -149,20 +149,25 @@ namespace ActivityWinOff
                 bool WaitForExit = Boolean.Parse(row.Cells[6].Value.ToString());
 
                 Logger.add(1, "Action: Program=" + ProgramPath + ", Args=" + Arguments + ", WindowStyle=" + row.Cells[3].Value.ToString() + ", PreDelay=" + DelayBeforeExecution + ", PostDelay=" + DelayAfterExecution);
+                try
+                {
+                    await Task.Delay(DelayBeforeExecution * 1000);
 
-                await Task.Delay(DelayBeforeExecution * 1000);
+                    ProcessStartInfo pInfo = new ProcessStartInfo();
+                    pInfo.FileName = @ProgramPath;
+                    pInfo.Arguments = Arguments;
+                    pInfo.WindowStyle = WindowStyle;
+                    Process p = Process.Start(pInfo);
+                    if (WaitForExit)
+                        await Task.Run(() => p.WaitForExit());
 
-                ProcessStartInfo pInfo = new ProcessStartInfo();
-                pInfo.FileName = @ProgramPath;
-                pInfo.Arguments = Arguments;
-                pInfo.WindowStyle = WindowStyle;
-                Process p = Process.Start(pInfo);
-                if (WaitForExit)
-                    await Task.Run(() => p.WaitForExit());
-
-                await Task.Delay(DelayAfterExecution * 1000);
+                    await Task.Delay(DelayAfterExecution * 1000);
+                }
+                catch
+                {
+                    Logger.add(1, "Action (Failed): Program=" + ProgramPath + ", Args=" + Arguments + ", WindowStyle=" + row.Cells[3].Value.ToString() + ", PreDelay=" + DelayBeforeExecution + ", PostDelay=" + DelayAfterExecution);
+                }
             }
-
         }
 
         public static void DataGridViewMoveUp(DataGridView dgv, DataGridViewRow row)

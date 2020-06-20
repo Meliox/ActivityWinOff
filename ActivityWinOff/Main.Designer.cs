@@ -125,21 +125,43 @@
             this.label36 = new System.Windows.Forms.Label();
             this.SpecificTimercheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ShutdownDownbutton = new System.Windows.Forms.Button();
+            this.ShutdownUpbutton = new System.Windows.Forms.Button();
             this.ShutdownRemovebutton = new System.Windows.Forms.Button();
             this.ShutdownAddbutton = new System.Windows.Forms.Button();
             this.ShutdownSequencedataGridView = new System.Windows.Forms.DataGridView();
+            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CommandProgram = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arguments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WindowStyle = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.DelayBeforeExecution = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelayAfterExecution = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WaitUntilExit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ActionProgramcheckBox = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.StartupDownbutton = new System.Windows.Forms.Button();
+            this.StartupUpbutton = new System.Windows.Forms.Button();
             this.StartupRemovebutton = new System.Windows.Forms.Button();
             this.StartAddbutton = new System.Windows.Forms.Button();
             this.StartupSequencedataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label31 = new System.Windows.Forms.Label();
             this.StartupProgramscheckBox = new System.Windows.Forms.CheckBox();
             this.ShellgroupBox = new System.Windows.Forms.GroupBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.ShellStartProgramtextBox = new System.Windows.Forms.TextBox();
+            this.ShellStartProgramClearbutton = new System.Windows.Forms.Button();
+            this.label41 = new System.Windows.Forms.Label();
+            this.ShellStartProgramSelectbutton = new System.Windows.Forms.Button();
+            this.ShellStartProgramEnabledcheckBox = new System.Windows.Forms.CheckBox();
             this.ShellActivityWinOffradioButton = new System.Windows.Forms.RadioButton();
             this.ShellExplorerradioButton = new System.Windows.Forms.RadioButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -182,24 +204,6 @@
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.FinalActionlabel = new System.Windows.Forms.Label();
             this.ReloadSettingsbutton = new System.Windows.Forms.Button();
-            this.StartupUpbutton = new System.Windows.Forms.Button();
-            this.StartupDownbutton = new System.Windows.Forms.Button();
-            this.ShutdownDownbutton = new System.Windows.Forms.Button();
-            this.ShutdownUpbutton = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CommandProgram = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Arguments = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WindowStyle = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.DelayBeforeExecution = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DelayAfterExecution = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WaitUntilExit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             this.ShutdownTypegroupBox.SuspendLayout();
             this.ConditiongroupBox.SuspendLayout();
@@ -355,6 +359,7 @@
             this.SpeedtextBox.Size = new System.Drawing.Size(38, 20);
             this.SpeedtextBox.TabIndex = 13;
             this.SpeedtextBox.TextChanged += new System.EventHandler(this.SpeedtextBox_TextChanged);
+            this.SpeedtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyAllowNumericNumbers);
             // 
             // label11
             // 
@@ -429,7 +434,7 @@
             this.NetworkTriggerTimetextBox.Size = new System.Drawing.Size(38, 20);
             this.NetworkTriggerTimetextBox.TabIndex = 9;
             this.NetworkTriggerTimetextBox.TextChanged += new System.EventHandler(this.NetworkTriggerTimetextBox_TextChanged);
-            this.NetworkTriggerTimetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextboxOnlyAllowInteger_KeyPress);
+            this.NetworkTriggerTimetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyAllowNumericNumbers);
             // 
             // label5
             // 
@@ -786,6 +791,7 @@
             this.CPUUtilTriggerTimetextBox.Size = new System.Drawing.Size(38, 20);
             this.CPUUtilTriggerTimetextBox.TabIndex = 11;
             this.CPUUtilTriggerTimetextBox.TextChanged += new System.EventHandler(this.CPUUtilTriggerTimetextBox_TextChanged);
+            this.CPUUtilTriggerTimetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyAllowNumericNumbers);
             // 
             // label8
             // 
@@ -897,6 +903,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1153, 550);
             this.tabControl1.TabIndex = 18;
+            this.tabControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShutdownSequencedataGridView_KeyDown);
             // 
             // tabPage1
             // 
@@ -1142,7 +1149,7 @@
             this.WaitForProgramTriggerTimetextBox.Size = new System.Drawing.Size(38, 20);
             this.WaitForProgramTriggerTimetextBox.TabIndex = 32;
             this.WaitForProgramTriggerTimetextBox.TextChanged += new System.EventHandler(this.WaitForProgramTriggerTimetextBox_TextChanged);
-            this.WaitForProgramTriggerTimetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextboxOnlyAllowInteger_KeyPress);
+            this.WaitForProgramTriggerTimetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyAllowNumericNumbers);
             // 
             // label27
             // 
@@ -1670,6 +1677,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Shutdown sequence";
             // 
+            // ShutdownDownbutton
+            // 
+            this.ShutdownDownbutton.Location = new System.Drawing.Point(907, 147);
+            this.ShutdownDownbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.ShutdownDownbutton.Name = "ShutdownDownbutton";
+            this.ShutdownDownbutton.Size = new System.Drawing.Size(66, 25);
+            this.ShutdownDownbutton.TabIndex = 45;
+            this.ShutdownDownbutton.Text = "Down";
+            this.ShutdownDownbutton.UseVisualStyleBackColor = true;
+            this.ShutdownDownbutton.Click += new System.EventHandler(this.ShutdownDownbutton_Click);
+            // 
+            // ShutdownUpbutton
+            // 
+            this.ShutdownUpbutton.Location = new System.Drawing.Point(907, 118);
+            this.ShutdownUpbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.ShutdownUpbutton.Name = "ShutdownUpbutton";
+            this.ShutdownUpbutton.Size = new System.Drawing.Size(66, 25);
+            this.ShutdownUpbutton.TabIndex = 44;
+            this.ShutdownUpbutton.Text = "Up";
+            this.ShutdownUpbutton.UseVisualStyleBackColor = true;
+            this.ShutdownUpbutton.Click += new System.EventHandler(this.ShutdownUpbutton_Click);
+            // 
             // ShutdownRemovebutton
             // 
             this.ShutdownRemovebutton.Location = new System.Drawing.Point(907, 89);
@@ -1718,8 +1747,79 @@
             this.ShutdownSequencedataGridView.Size = new System.Drawing.Size(881, 200);
             this.ShutdownSequencedataGridView.TabIndex = 35;
             this.ShutdownSequencedataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShutdownSequencedataGridView_CellClick);
-            this.ShutdownSequencedataGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.ShutdownSequencedataGridView_EditingControlShowing);
+            this.ShutdownSequencedataGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.SequencedataGridView_EditingControlShowing);
             this.ShutdownSequencedataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShutdownSequencedataGridView_KeyDown);
+            // 
+            // Order
+            // 
+            this.Order.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Order.FillWeight = 14.39858F;
+            this.Order.HeaderText = "Order";
+            this.Order.Name = "Order";
+            this.Order.ReadOnly = true;
+            this.Order.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Order.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Order.Width = 39;
+            // 
+            // CommandProgram
+            // 
+            this.CommandProgram.FillWeight = 49.43513F;
+            this.CommandProgram.HeaderText = "Command or Program";
+            this.CommandProgram.MinimumWidth = 320;
+            this.CommandProgram.Name = "CommandProgram";
+            this.CommandProgram.ReadOnly = true;
+            this.CommandProgram.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CommandProgram.Width = 320;
+            // 
+            // Arguments
+            // 
+            this.Arguments.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Arguments.FillWeight = 49.43513F;
+            this.Arguments.HeaderText = "Argument(s)";
+            this.Arguments.MinimumWidth = 225;
+            this.Arguments.Name = "Arguments";
+            this.Arguments.ReadOnly = true;
+            this.Arguments.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Arguments.Width = 225;
+            // 
+            // WindowStyle
+            // 
+            this.WindowStyle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.WindowStyle.HeaderText = "Window Style";
+            this.WindowStyle.Items.AddRange(new object[] {
+            "Hidden",
+            "Normal",
+            "Minimized",
+            "Maximized"});
+            this.WindowStyle.MinimumWidth = 85;
+            this.WindowStyle.Name = "WindowStyle";
+            this.WindowStyle.Width = 85;
+            // 
+            // DelayBeforeExecution
+            // 
+            this.DelayBeforeExecution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DelayBeforeExecution.FillWeight = 324.1848F;
+            this.DelayBeforeExecution.HeaderText = "Delay before execution [s]";
+            this.DelayBeforeExecution.MinimumWidth = 60;
+            this.DelayBeforeExecution.Name = "DelayBeforeExecution";
+            this.DelayBeforeExecution.Width = 60;
+            // 
+            // DelayAfterExecution
+            // 
+            this.DelayAfterExecution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DelayAfterExecution.FillWeight = 40.71891F;
+            this.DelayAfterExecution.HeaderText = "Delay after execution [s]";
+            this.DelayAfterExecution.MinimumWidth = 60;
+            this.DelayAfterExecution.Name = "DelayAfterExecution";
+            this.DelayAfterExecution.Width = 60;
+            // 
+            // WaitUntilExit
+            // 
+            this.WaitUntilExit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.WaitUntilExit.FillWeight = 121.8274F;
+            this.WaitUntilExit.HeaderText = "Wait for exit";
+            this.WaitUntilExit.Name = "WaitUntilExit";
+            this.WaitUntilExit.Width = 48;
             // 
             // ActionProgramcheckBox
             // 
@@ -1783,6 +1883,28 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Startup";
             // 
+            // StartupDownbutton
+            // 
+            this.StartupDownbutton.Location = new System.Drawing.Point(911, 145);
+            this.StartupDownbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.StartupDownbutton.Name = "StartupDownbutton";
+            this.StartupDownbutton.Size = new System.Drawing.Size(66, 25);
+            this.StartupDownbutton.TabIndex = 43;
+            this.StartupDownbutton.Text = "Down";
+            this.StartupDownbutton.UseVisualStyleBackColor = true;
+            this.StartupDownbutton.Click += new System.EventHandler(this.StartupDownbutton_Click);
+            // 
+            // StartupUpbutton
+            // 
+            this.StartupUpbutton.Location = new System.Drawing.Point(911, 116);
+            this.StartupUpbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.StartupUpbutton.Name = "StartupUpbutton";
+            this.StartupUpbutton.Size = new System.Drawing.Size(66, 25);
+            this.StartupUpbutton.TabIndex = 42;
+            this.StartupUpbutton.Text = "Up";
+            this.StartupUpbutton.UseVisualStyleBackColor = true;
+            this.StartupUpbutton.Click += new System.EventHandler(this.StartupUpbutton_Click);
+            // 
             // StartupRemovebutton
             // 
             this.StartupRemovebutton.Location = new System.Drawing.Point(911, 87);
@@ -1831,6 +1953,78 @@
             this.StartupSequencedataGridView.Size = new System.Drawing.Size(881, 200);
             this.StartupSequencedataGridView.TabIndex = 39;
             this.StartupSequencedataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.StartupSequencedataGridView_CellClick);
+            this.StartupSequencedataGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.SequencedataGridView_EditingControlShowing);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn1.FillWeight = 14.39858F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Order";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 39;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 49.43513F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Command or Program";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 320;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn2.Width = 320;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn3.FillWeight = 49.43513F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Argument(s)";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 225;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn3.Width = 225;
+            // 
+            // dataGridViewComboBoxColumn1
+            // 
+            this.dataGridViewComboBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewComboBoxColumn1.HeaderText = "Window Style";
+            this.dataGridViewComboBoxColumn1.Items.AddRange(new object[] {
+            "Hidden",
+            "Normal",
+            "Minimized",
+            "Maximized"});
+            this.dataGridViewComboBoxColumn1.MinimumWidth = 85;
+            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            this.dataGridViewComboBoxColumn1.Width = 85;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn4.FillWeight = 324.1848F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Delay before execution [s]";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 60;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn5.FillWeight = 40.71891F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Delay after execution [s]";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 60;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 60;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewCheckBoxColumn1.FillWeight = 121.8274F;
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Wait for exit";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 48;
             // 
             // label31
             // 
@@ -1856,28 +2050,74 @@
             // 
             // ShellgroupBox
             // 
-            this.ShellgroupBox.Controls.Add(this.checkBox4);
+            this.ShellgroupBox.Controls.Add(this.ShellStartProgramtextBox);
+            this.ShellgroupBox.Controls.Add(this.ShellStartProgramClearbutton);
+            this.ShellgroupBox.Controls.Add(this.label41);
+            this.ShellgroupBox.Controls.Add(this.ShellStartProgramSelectbutton);
+            this.ShellgroupBox.Controls.Add(this.ShellStartProgramEnabledcheckBox);
             this.ShellgroupBox.Controls.Add(this.ShellActivityWinOffradioButton);
             this.ShellgroupBox.Controls.Add(this.ShellExplorerradioButton);
             this.ShellgroupBox.Location = new System.Drawing.Point(2, 280);
             this.ShellgroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.ShellgroupBox.Name = "ShellgroupBox";
             this.ShellgroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.ShellgroupBox.Size = new System.Drawing.Size(1131, 70);
+            this.ShellgroupBox.Size = new System.Drawing.Size(1131, 108);
             this.ShellgroupBox.TabIndex = 11;
             this.ShellgroupBox.TabStop = false;
             this.ShellgroupBox.Text = "Shell";
             // 
-            // checkBox4
+            // ShellStartProgramtextBox
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(17, 38);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(216, 17);
-            this.checkBox4.TabIndex = 8;
-            this.checkBox4.Text = "Start Windows Explorer if Program1 exits";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.ShellStartProgramtextBox.Location = new System.Drawing.Point(94, 68);
+            this.ShellStartProgramtextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ShellStartProgramtextBox.Name = "ShellStartProgramtextBox";
+            this.ShellStartProgramtextBox.ReadOnly = true;
+            this.ShellStartProgramtextBox.Size = new System.Drawing.Size(340, 20);
+            this.ShellStartProgramtextBox.TabIndex = 12;
+            // 
+            // ShellStartProgramClearbutton
+            // 
+            this.ShellStartProgramClearbutton.Location = new System.Drawing.Point(509, 65);
+            this.ShellStartProgramClearbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.ShellStartProgramClearbutton.Name = "ShellStartProgramClearbutton";
+            this.ShellStartProgramClearbutton.Size = new System.Drawing.Size(62, 25);
+            this.ShellStartProgramClearbutton.TabIndex = 15;
+            this.ShellStartProgramClearbutton.Text = "Clear";
+            this.ShellStartProgramClearbutton.UseVisualStyleBackColor = true;
+            this.ShellStartProgramClearbutton.Click += new System.EventHandler(this.ShellStartProgramClearbutton_Click);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(44, 68);
+            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(46, 13);
+            this.label41.TabIndex = 13;
+            this.label41.Text = "Program";
+            // 
+            // ShellStartProgramSelectbutton
+            // 
+            this.ShellStartProgramSelectbutton.Location = new System.Drawing.Point(438, 65);
+            this.ShellStartProgramSelectbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.ShellStartProgramSelectbutton.Name = "ShellStartProgramSelectbutton";
+            this.ShellStartProgramSelectbutton.Size = new System.Drawing.Size(67, 25);
+            this.ShellStartProgramSelectbutton.TabIndex = 14;
+            this.ShellStartProgramSelectbutton.Text = "Select";
+            this.ShellStartProgramSelectbutton.UseVisualStyleBackColor = true;
+            this.ShellStartProgramSelectbutton.Click += new System.EventHandler(this.ShellStartProgramSelectbutton_Click);
+            // 
+            // ShellStartProgramEnabledcheckBox
+            // 
+            this.ShellStartProgramEnabledcheckBox.AutoSize = true;
+            this.ShellStartProgramEnabledcheckBox.Location = new System.Drawing.Point(17, 38);
+            this.ShellStartProgramEnabledcheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ShellStartProgramEnabledcheckBox.Name = "ShellStartProgramEnabledcheckBox";
+            this.ShellStartProgramEnabledcheckBox.Size = new System.Drawing.Size(313, 17);
+            this.ShellStartProgramEnabledcheckBox.TabIndex = 8;
+            this.ShellStartProgramEnabledcheckBox.Text = "Start Windows Explorer if the following program is not running";
+            this.ShellStartProgramEnabledcheckBox.UseVisualStyleBackColor = true;
+            this.ShellStartProgramEnabledcheckBox.CheckedChanged += new System.EventHandler(this.ShellStartProgramcheckBoxEnabled_CheckedChanged);
             // 
             // ShellActivityWinOffradioButton
             // 
@@ -1963,6 +2203,7 @@
             this.FocusProgramtextBox.Location = new System.Drawing.Point(66, 39);
             this.FocusProgramtextBox.Margin = new System.Windows.Forms.Padding(2);
             this.FocusProgramtextBox.Name = "FocusProgramtextBox";
+            this.FocusProgramtextBox.ReadOnly = true;
             this.FocusProgramtextBox.Size = new System.Drawing.Size(340, 20);
             this.FocusProgramtextBox.TabIndex = 8;
             // 
@@ -2026,7 +2267,7 @@
             this.FocusProgramPoolIntervaltextBox.Size = new System.Drawing.Size(40, 20);
             this.FocusProgramPoolIntervaltextBox.TabIndex = 13;
             this.FocusProgramPoolIntervaltextBox.TextChanged += new System.EventHandler(this.FocusProgramPoolIntervaltextBox_TextChanged);
-            this.FocusProgramPoolIntervaltextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextboxOnlyAllowInteger_KeyPress);
+            this.FocusProgramPoolIntervaltextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyAllowNumericNumbers);
             // 
             // tabPage4
             // 
@@ -2353,192 +2594,6 @@
             this.ReloadSettingsbutton.UseVisualStyleBackColor = true;
             this.ReloadSettingsbutton.Click += new System.EventHandler(this.ReloadSettingsbutton_Click);
             // 
-            // StartupUpbutton
-            // 
-            this.StartupUpbutton.Location = new System.Drawing.Point(911, 116);
-            this.StartupUpbutton.Margin = new System.Windows.Forms.Padding(2);
-            this.StartupUpbutton.Name = "StartupUpbutton";
-            this.StartupUpbutton.Size = new System.Drawing.Size(66, 25);
-            this.StartupUpbutton.TabIndex = 42;
-            this.StartupUpbutton.Text = "Up";
-            this.StartupUpbutton.UseVisualStyleBackColor = true;
-            this.StartupUpbutton.Click += new System.EventHandler(this.StartupUpbutton_Click);
-            // 
-            // StartupDownbutton
-            // 
-            this.StartupDownbutton.Location = new System.Drawing.Point(911, 145);
-            this.StartupDownbutton.Margin = new System.Windows.Forms.Padding(2);
-            this.StartupDownbutton.Name = "StartupDownbutton";
-            this.StartupDownbutton.Size = new System.Drawing.Size(66, 25);
-            this.StartupDownbutton.TabIndex = 43;
-            this.StartupDownbutton.Text = "Down";
-            this.StartupDownbutton.UseVisualStyleBackColor = true;
-            this.StartupDownbutton.Click += new System.EventHandler(this.StartupDownbutton_Click);
-            // 
-            // ShutdownDownbutton
-            // 
-            this.ShutdownDownbutton.Location = new System.Drawing.Point(907, 147);
-            this.ShutdownDownbutton.Margin = new System.Windows.Forms.Padding(2);
-            this.ShutdownDownbutton.Name = "ShutdownDownbutton";
-            this.ShutdownDownbutton.Size = new System.Drawing.Size(66, 25);
-            this.ShutdownDownbutton.TabIndex = 45;
-            this.ShutdownDownbutton.Text = "Down";
-            this.ShutdownDownbutton.UseVisualStyleBackColor = true;
-            this.ShutdownDownbutton.Click += new System.EventHandler(this.ShutdownDownbutton_Click);
-            // 
-            // ShutdownUpbutton
-            // 
-            this.ShutdownUpbutton.Location = new System.Drawing.Point(907, 118);
-            this.ShutdownUpbutton.Margin = new System.Windows.Forms.Padding(2);
-            this.ShutdownUpbutton.Name = "ShutdownUpbutton";
-            this.ShutdownUpbutton.Size = new System.Drawing.Size(66, 25);
-            this.ShutdownUpbutton.TabIndex = 44;
-            this.ShutdownUpbutton.Text = "Up";
-            this.ShutdownUpbutton.UseVisualStyleBackColor = true;
-            this.ShutdownUpbutton.Click += new System.EventHandler(this.ShutdownUpbutton_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn1.FillWeight = 14.39858F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Order";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn1.Width = 39;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 49.43513F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Command or Program";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 320;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn2.Width = 320;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn3.FillWeight = 49.43513F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Argument(s)";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 225;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn3.Width = 225;
-            // 
-            // dataGridViewComboBoxColumn1
-            // 
-            this.dataGridViewComboBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewComboBoxColumn1.HeaderText = "Window Style";
-            this.dataGridViewComboBoxColumn1.Items.AddRange(new object[] {
-            "Hidden",
-            "Normal",
-            "Minimized",
-            "Maximized"});
-            this.dataGridViewComboBoxColumn1.MinimumWidth = 85;
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
-            this.dataGridViewComboBoxColumn1.Width = 85;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn4.FillWeight = 324.1848F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Delay before execution [s]";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 60;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn5.FillWeight = 40.71891F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Delay after execution [s]";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 60;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 60;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewCheckBoxColumn1.FillWeight = 121.8274F;
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Wait for exit";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Width = 40;
-            // 
-            // Order
-            // 
-            this.Order.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Order.FillWeight = 14.39858F;
-            this.Order.HeaderText = "Order";
-            this.Order.Name = "Order";
-            this.Order.ReadOnly = true;
-            this.Order.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Order.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Order.Width = 39;
-            // 
-            // CommandProgram
-            // 
-            this.CommandProgram.FillWeight = 49.43513F;
-            this.CommandProgram.HeaderText = "Command or Program";
-            this.CommandProgram.MinimumWidth = 320;
-            this.CommandProgram.Name = "CommandProgram";
-            this.CommandProgram.ReadOnly = true;
-            this.CommandProgram.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.CommandProgram.Width = 320;
-            // 
-            // Arguments
-            // 
-            this.Arguments.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Arguments.FillWeight = 49.43513F;
-            this.Arguments.HeaderText = "Argument(s)";
-            this.Arguments.MinimumWidth = 225;
-            this.Arguments.Name = "Arguments";
-            this.Arguments.ReadOnly = true;
-            this.Arguments.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Arguments.Width = 225;
-            // 
-            // WindowStyle
-            // 
-            this.WindowStyle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.WindowStyle.HeaderText = "Window Style";
-            this.WindowStyle.Items.AddRange(new object[] {
-            "Hidden",
-            "Normal",
-            "Minimized",
-            "Maximized"});
-            this.WindowStyle.MinimumWidth = 85;
-            this.WindowStyle.Name = "WindowStyle";
-            this.WindowStyle.Width = 85;
-            // 
-            // DelayBeforeExecution
-            // 
-            this.DelayBeforeExecution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.DelayBeforeExecution.FillWeight = 324.1848F;
-            this.DelayBeforeExecution.HeaderText = "Delay before execution [s]";
-            this.DelayBeforeExecution.MinimumWidth = 60;
-            this.DelayBeforeExecution.Name = "DelayBeforeExecution";
-            this.DelayBeforeExecution.Width = 60;
-            // 
-            // DelayAfterExecution
-            // 
-            this.DelayAfterExecution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.DelayAfterExecution.FillWeight = 40.71891F;
-            this.DelayAfterExecution.HeaderText = "Delay after execution [s]";
-            this.DelayAfterExecution.MinimumWidth = 60;
-            this.DelayAfterExecution.Name = "DelayAfterExecution";
-            this.DelayAfterExecution.Width = 60;
-            // 
-            // WaitUntilExit
-            // 
-            this.WaitUntilExit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.WaitUntilExit.FillWeight = 121.8274F;
-            this.WaitUntilExit.HeaderText = "Wait for exit";
-            this.WaitUntilExit.Name = "WaitUntilExit";
-            this.WaitUntilExit.Width = 40;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2723,7 +2778,7 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.CheckBox StartupProgramscheckBox;
         private System.Windows.Forms.GroupBox ShellgroupBox;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox ShellStartProgramEnabledcheckBox;
         private System.Windows.Forms.RadioButton ShellActivityWinOffradioButton;
         private System.Windows.Forms.RadioButton ShellExplorerradioButton;
         private System.Windows.Forms.GroupBox groupBox11;
@@ -2776,6 +2831,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DelayBeforeExecution;
         private System.Windows.Forms.DataGridViewTextBoxColumn DelayAfterExecution;
         private System.Windows.Forms.DataGridViewCheckBoxColumn WaitUntilExit;
+        private System.Windows.Forms.TextBox ShellStartProgramtextBox;
+        private System.Windows.Forms.Button ShellStartProgramClearbutton;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Button ShellStartProgramSelectbutton;
     }
 }
 
