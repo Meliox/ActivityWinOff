@@ -46,13 +46,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4F25C6E46471CFA3B1A78D8187A30BEB"
+        "OwnerKey" = "8:_2B29C19F0EB09307FCF771B3D26B8C37"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2B29C19F0EB09307FCF771B3D26B8C37"
+        "OwnerKey" = "8:_4F25C6E46471CFA3B1A78D8187A30BEB"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -75,7 +75,7 @@
         "InstallerBootstrapper" = "3:2"
             "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
             {
-            "Enabled" = "11:TRUE"
+            "Enabled" = "11:FALSE"
             "PromptEnabled" = "11:TRUE"
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
@@ -187,6 +187,11 @@
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_2B29C19F0EB09307FCF771B3D26B8C37"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Newtonsoft.Json.dll"
             "TargetName" = "8:"
@@ -213,6 +218,11 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
+                    "_4F25C6E46471CFA3B1A78D8187A30BEB"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -309,7 +319,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ActivityWinOff"
         "ProductCode" = "8:{75606A78-4840-46B9-A373-6901C3594DB5}"
-        "PackageCode" = "8:{112F499B-6185-4FB4-BCE0-7264335314CD}"
+        "PackageCode" = "8:{19599640-29D2-4CAE-BED0-27B8F6FEAB0A}"
         "UpgradeCode" = "8:{717F3A75-7C38-4870-A76D-EC40C6564840}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

@@ -31,6 +31,9 @@ namespace ActivityWinOff
         public static Logger logger;
         Thread LoggerThread;
 
+        [DllImport("PowrProf.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        public static extern bool SetSuspendState(bool hiberate, bool forceCritical, bool disableWakeEvent);
+
         public Main(string[] args)
         {
             InitializeComponent();
@@ -361,11 +364,13 @@ namespace ActivityWinOff
             {
                 Statusbutton.Text = "Active";
                 Statusbutton.BackColor = Color.Green;
+                ActivateDeactivatebutton.Text = "Deactivate";
             }
             else
             {
                 Statusbutton.Text = "Inactive";
                 Statusbutton.BackColor = Color.White;
+                ActivateDeactivatebutton.Text = "Activate";
             }
         }
 
@@ -724,21 +729,24 @@ namespace ActivityWinOff
                 switch (Action)
                 {
                     case "PowerOff":
-                        shutdownCmd += "/s /t 0 /c \"ActivityWinOff\"";
+                        shutdownCmd += "/s /t 0";
+                        if (Interface.ShutdownForced)
+                            shutdownCmd += " /f";
+                        Process.Start("shutdown", shutdownCmd);
                         break;
                     case "Restart":
-                        shutdownCmd += "/r /t 0 /c \"ActivityWinOff\"";
+                        shutdownCmd += "/r /t 0";
+                        if (Interface.ShutdownForced)
+                            shutdownCmd += " /f";
+                        Process.Start("shutdown", shutdownCmd);
                         break;
                     case "Sleep":
-                        shutdownCmd += "/d /hybrid 0 /c \"ActivityWinOff\"";
+                        SetSuspendState(false, true, true);
                         break;
                     case "Hibernate":
-                        shutdownCmd += "/h /t 0 /c \"ActivityWinOff\"";
+                        SetSuspendState(true, true, true);
                         break;
                 }
-                if (Interface.ShutdownForced)
-                    shutdownCmd += "/f";
-                Process.Start("psshutdown", shutdownCmd);
             }
         }
 
