@@ -28,8 +28,9 @@ ActivityWinOff is an .NET 4.8 application for:
 If you find this application helpful, a small donation is always appreciated, [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K8XPMSEBERH3W).
 
 ## Install
-Run installer.
+Prerequisite: .NET Framework 4.8 Runtime must be installed. Found [here](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
+Download most [recent release](https://github.com/Meliox/ActivityWinOff/releases) and run installer.
 
 ## Build
 Install .NET 4.8.
