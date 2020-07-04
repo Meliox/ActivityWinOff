@@ -1016,6 +1016,21 @@ namespace ActivityWinOff
                         break;
                 }
             }
+
+            //only attempt to start if not already lunched from console
+            if (!ApplicationArguments.Contains("/active"))
+            {
+                if (Interface.StartActivated)
+                {
+                    Interface.Enabled = true;
+                    StartTrigger();
+                }
+                else
+                {
+                    Interface.Enabled = false;
+                    SetStatusInGui();
+                }
+            }
         }
 
         private void StartAddbutton_Click(object sender, EventArgs e)
