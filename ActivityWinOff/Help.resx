@@ -131,10 +131,10 @@
 
 Command line:
 	ActivityWinOff.exe [argument]
-		/?     Show help
-		/active Start activated
-		/boot Start startup applications if enabled
-		/min   Start minimized</value>
+		/?		Show help
+		/active		Start application in an activated state
+		/autostart		Start startup application at windows startup
+		/min 		Start minimized</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

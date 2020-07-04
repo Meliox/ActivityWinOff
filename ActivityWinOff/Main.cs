@@ -93,6 +93,9 @@ namespace ActivityWinOff
 
         public void InitGuiElements()
         {
+            // Upgrade config
+            Interface.UpdateRequired();
+
             // Load settings
             Interface.LoadSettings();
 
@@ -737,7 +740,7 @@ namespace ActivityWinOff
                 }
                 if (Interface.ShutdownForced)
                     shutdownCmd += "/f";
-                //Process.Start("psshutdown", shutdownCmd);
+                Process.Start("psshutdown", shutdownCmd);
             }
         }
 
@@ -984,7 +987,8 @@ namespace ActivityWinOff
                     case "/autostart":
                         if (Interface.StartupProgramsEnabled)
                         {
-                            Logger.add(2, "Console: /autostart");
+                            MinimizeToTraybutton_Click(null, null);
+                            Logger.add(2, "Console args: /autostart");
                             DataGridViewHelpers.DataGridViewExecutor(StartupSequencedataGridView);
                             if (Interface.CurrentShell != "explorer.exe" && Interface.ShellStartProgramEnabled)
                             {
@@ -994,35 +998,18 @@ namespace ActivityWinOff
                                 watchShellExplorer.WorkerSupportsCancellation = true;
                                 watchShellExplorer.RunWorkerAsync();
                             }
-                            MinimizeToTraybutton_Click(null, null);
                         }
                         break;
                     case "/min":
-                        Logger.add(2, "Console: /min");
+                        Logger.add(2, "Console args: /min");
                         MinimizeToTraybutton_Click(null, null);
                         break;
                     case "/active":
-                        Logger.add(2, "Console: /active");
+                        Logger.add(2, "Console args: /active");
                         StartTrigger();
                         break;
                 }
             }
-            //only attempt to start if not already lunched from console
-            if (!ApplicationArguments.Contains("activate"))
-            {
-                Logger.add(2, "Console: no arguments");
-                if (Interface.StartActivated)
-                {
-                    Interface.Enabled = true;
-                    StartTrigger();
-                }
-                else
-                {
-                    Interface.Enabled = false;
-                    SetStatusInGui();
-                }
-            }
-            Logger.add(1, "Running: " + Interface.Enabled.ToString());
         }
 
         private void StartAddbutton_Click(object sender, EventArgs e)

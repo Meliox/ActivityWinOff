@@ -7,7 +7,19 @@ namespace ActivityWinOff
 {
     class Interface
     {
-        public static void LoadSettings()
+        public static void UpdateRequired()
+        {
+            if (Properties.Settings.Default.UpgradeRequired)
+            {
+                Logger.add(2, "Upgrading config");
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.UpgradeRequired = false;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+
+    public static void LoadSettings()
         {
             Properties.Settings.Default.Reload();
             NetworkAdapter = (string)Properties.Settings.Default["NetworkAdapter"];
@@ -107,7 +119,6 @@ namespace ActivityWinOff
             Properties.Settings.Default["ShellStartProgramPath"] = ShellStartProgramPath;
 
             Properties.Settings.Default.Save();
-            Properties.Settings.Default.Upgrade();
         }
 
         public static bool NetworkTrafficEnabled { get => Settings.NetworkTrafficEnabled; set => Settings.NetworkTrafficEnabled = value; }

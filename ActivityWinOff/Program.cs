@@ -74,8 +74,8 @@ namespace ActivityWinOff
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("Format: ActivityWinOff [/args]" + Environment.NewLine
                 + "     /?     Show help" + Environment.NewLine
-                + "     /activate   Start activated" + Environment.NewLine
-                + "     /autostart   Start on windows startup" + Environment.NewLine
+                + "     /activate   Start application in an activated state" + Environment.NewLine
+                + "     /autostart   Start startup application at windows startup" + Environment.NewLine
                 + "     /min   Start minimized" + Environment.NewLine
                 );
             SendKeys.SendWait("{ENTER}");
