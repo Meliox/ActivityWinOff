@@ -267,7 +267,7 @@ namespace ActivityWinOff
 
         private void OnWorkerCompleted(object sender, RunWorkerCompletedEventArgs runWorkerCompletedEventArgs)
         {
-            if ((bool)runWorkerCompletedEventArgs.Result)
+            if (runWorkerCompletedEventArgs.Result != null && (bool)runWorkerCompletedEventArgs.Result)
                 PerformShutdownAction();
         }
 
@@ -359,15 +359,13 @@ namespace ActivityWinOff
         {
             if (Interface.Enabled)
             {
-                Enabledlabel.Text = "True";
-                Enabledlabel.ForeColor = System.Drawing.Color.Green;
-                ActivateDeactivatebutton.Text = "Deactivate";
+                Statusbutton.Text = "Active";
+                Statusbutton.BackColor = Color.Green;
             }
             else
             {
-                Enabledlabel.Text = "False";
-                Enabledlabel.ForeColor = System.Drawing.Color.Red;
-                ActivateDeactivatebutton.Text = "Activate";
+                Statusbutton.Text = "Inactive";
+                Statusbutton.BackColor = Color.White;
             }
         }
 

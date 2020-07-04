@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NetworkAdapterscomboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,8 +75,6 @@
             this.Savebutton = new System.Windows.Forms.Button();
             this.MinimizeToTraybutton = new System.Windows.Forms.Button();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.label14 = new System.Windows.Forms.Label();
-            this.Enabledlabel = new System.Windows.Forms.Label();
             this.ActivateDeactivatebutton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -204,6 +202,7 @@
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.FinalActionlabel = new System.Windows.Forms.Label();
             this.ReloadSettingsbutton = new System.Windows.Forms.Button();
+            this.Statusbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.ShutdownTypegroupBox.SuspendLayout();
             this.ConditiongroupBox.SuspendLayout();
@@ -290,6 +289,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label26);
             this.groupBox1.Controls.Add(this.NetworkAveragecheckBox);
             this.groupBox1.Controls.Add(this.label12);
@@ -448,6 +449,8 @@
             // 
             // ShutdownTypegroupBox
             // 
+            this.ShutdownTypegroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ShutdownTypegroupBox.Controls.Add(this.ForceShutdowncheckBox);
             this.ShutdownTypegroupBox.Controls.Add(this.ShutdownTypeHibernateradioButton);
             this.ShutdownTypegroupBox.Controls.Add(this.ShutdownTypeSleepradioButton);
@@ -528,6 +531,8 @@
             // 
             // ConditiongroupBox
             // 
+            this.ConditiongroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ConditiongroupBox.Controls.Add(this.ConditionAllradioButton);
             this.ConditiongroupBox.Controls.Add(this.ConditionOneradioButton);
             this.ConditiongroupBox.Location = new System.Drawing.Point(2, 2);
@@ -567,6 +572,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.label24);
             this.groupBox4.Controls.Add(this.CPUUtilcomboBox);
             this.groupBox4.Controls.Add(this.label15);
@@ -853,29 +860,6 @@
             this.notifyIcon.Text = "ActivityWinOff";
             this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
             // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(999, 33);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 25);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Running";
-            // 
-            // Enabledlabel
-            // 
-            this.Enabledlabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Enabledlabel.AutoSize = true;
-            this.Enabledlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Enabledlabel.Location = new System.Drawing.Point(1095, 33);
-            this.Enabledlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Enabledlabel.Name = "Enabledlabel";
-            this.Enabledlabel.Size = new System.Drawing.Size(0, 25);
-            this.Enabledlabel.TabIndex = 15;
-            // 
             // ActivateDeactivatebutton
             // 
             this.ActivateDeactivatebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -919,6 +903,9 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.ConditiongroupBox);
             this.flowLayoutPanel1.Controls.Add(this.groupBox6);
@@ -929,7 +916,6 @@
             this.flowLayoutPanel1.Controls.Add(this.groupBox11);
             this.flowLayoutPanel1.Controls.Add(this.ShutdownTypegroupBox);
             this.flowLayoutPanel1.Controls.Add(this.groupBox2);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 2);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -938,6 +924,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.Keyboardlabel);
             this.groupBox6.Controls.Add(this.Mouselabel);
@@ -1084,6 +1072,8 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.label32);
             this.groupBox7.Controls.Add(this.WaitForProgramTimeFormatcomboBox);
             this.groupBox7.Controls.Add(this.WaitForProgramActionlabel);
@@ -1216,6 +1206,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.label39);
             this.groupBox3.Controls.Add(this.TimerNextActionlabel);
             this.groupBox3.Controls.Add(this.label23);
@@ -1565,6 +1557,8 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox11.Controls.Add(this.label40);
             this.groupBox11.Controls.Add(this.label38);
             this.groupBox11.Controls.Add(this.label37);
@@ -1661,6 +1655,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.ShutdownDownbutton);
             this.groupBox2.Controls.Add(this.ShutdownUpbutton);
             this.groupBox2.Controls.Add(this.ShutdownRemovebutton);
@@ -1727,8 +1723,8 @@
             this.ShutdownSequencedataGridView.AllowUserToDeleteRows = false;
             this.ShutdownSequencedataGridView.AllowUserToResizeColumns = false;
             this.ShutdownSequencedataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ShutdownSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ShutdownSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.ShutdownSequencedataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.ShutdownSequencedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ShutdownSequencedataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1856,17 +1852,21 @@
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel2.AutoScroll = true;
             this.flowLayoutPanel2.Controls.Add(this.groupBox9);
             this.flowLayoutPanel2.Controls.Add(this.ShellgroupBox);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1145, 497);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1145, 519);
             this.flowLayoutPanel2.TabIndex = 11;
             // 
             // groupBox9
             // 
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox9.Controls.Add(this.StartupDownbutton);
             this.groupBox9.Controls.Add(this.StartupUpbutton);
             this.groupBox9.Controls.Add(this.StartupRemovebutton);
@@ -1933,8 +1933,8 @@
             this.StartupSequencedataGridView.AllowUserToDeleteRows = false;
             this.StartupSequencedataGridView.AllowUserToResizeColumns = false;
             this.StartupSequencedataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.StartupSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.StartupSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.StartupSequencedataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.StartupSequencedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StartupSequencedataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2050,6 +2050,8 @@
             // 
             // ShellgroupBox
             // 
+            this.ShellgroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ShellgroupBox.Controls.Add(this.ShellStartProgramtextBox);
             this.ShellgroupBox.Controls.Add(this.ShellStartProgramClearbutton);
             this.ShellgroupBox.Controls.Add(this.label41);
@@ -2158,6 +2160,8 @@
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel3.Controls.Add(this.FocusgroupBox);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
@@ -2283,6 +2287,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.LogLevelcomboBox);
             this.groupBox5.Controls.Add(this.DisableScreensavercheckBox);
             this.groupBox5.Controls.Add(this.OpenLogbutton);
@@ -2303,7 +2309,7 @@
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(1137, 401);
+            this.groupBox5.Size = new System.Drawing.Size(1137, 515);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             // 
@@ -2594,17 +2600,32 @@
             this.ReloadSettingsbutton.UseVisualStyleBackColor = true;
             this.ReloadSettingsbutton.Click += new System.EventHandler(this.ReloadSettingsbutton_Click);
             // 
+            // Statusbutton
+            // 
+            this.Statusbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Statusbutton.BackColor = System.Drawing.Color.White;
+            this.Statusbutton.CausesValidation = false;
+            this.Statusbutton.Enabled = false;
+            this.Statusbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Statusbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Statusbutton.Location = new System.Drawing.Point(1020, 37);
+            this.Statusbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.Statusbutton.Name = "Statusbutton";
+            this.Statusbutton.Size = new System.Drawing.Size(140, 49);
+            this.Statusbutton.TabIndex = 33;
+            this.Statusbutton.Text = "Inactive";
+            this.Statusbutton.UseVisualStyleBackColor = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1170, 632);
+            this.Controls.Add(this.Statusbutton);
             this.Controls.Add(this.ReloadSettingsbutton);
             this.Controls.Add(this.FinalActionlabel);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.ActivateDeactivatebutton);
-            this.Controls.Add(this.Enabledlabel);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.MinimizeToTraybutton);
             this.Controls.Add(this.Savebutton);
             this.Controls.Add(this.menuStrip1);
@@ -2700,8 +2721,6 @@
         private System.Windows.Forms.Button Savebutton;
         private System.Windows.Forms.Button MinimizeToTraybutton;
         private System.Windows.Forms.NotifyIcon notifyIcon;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label Enabledlabel;
         private System.Windows.Forms.Button ActivateDeactivatebutton;
         private System.Windows.Forms.CheckBox NetworkAveragecheckBox;
         private System.Windows.Forms.Label label15;
@@ -2835,6 +2854,7 @@
         private System.Windows.Forms.Button ShellStartProgramClearbutton;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Button ShellStartProgramSelectbutton;
+        private System.Windows.Forms.Button Statusbutton;
     }
 }
 
