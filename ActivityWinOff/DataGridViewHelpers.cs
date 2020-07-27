@@ -64,8 +64,11 @@ namespace ActivityWinOff
             if (e.ColumnIndex == 1 && e.RowIndex != -1)
             {
                 OpenFileDialog dialog = new OpenFileDialog();
-                if (dgv[e.ColumnIndex, e.RowIndex].Value != null)
+                if (dgv[e.ColumnIndex, e.RowIndex].Value != null && dgv[e.ColumnIndex, e.RowIndex].Value.ToString() != "")
+                {
+                    dialog.InitialDirectory = System.IO.Path.GetDirectoryName(dgv[e.ColumnIndex, e.RowIndex].Value.ToString());
                     dialog.FileName = dgv[e.ColumnIndex, e.RowIndex].Value.ToString();
+                }
                 if (dialog.ShowDialog() == DialogResult.OK)
                     dgv[e.ColumnIndex, e.RowIndex].Value = dialog.FileName;
             }
