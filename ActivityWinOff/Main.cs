@@ -725,6 +725,11 @@ namespace ActivityWinOff
 
                 string Action = Interface.ShutdownType;
                 Logger.add(1, "Shutdown type: " + Interface.ShutdownType + ", Forced=" + Interface.ShutdownForced.ToString());
+
+                // Flush log
+                LoggerThread.Abort();
+                logger.saveNow();
+
                 string shutdownCmd = "";
                 switch (Action)
                 {
