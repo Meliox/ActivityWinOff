@@ -128,7 +128,6 @@
             ShutdownRemovebutton = new Button();
             ShutdownAddbutton = new Button();
             ShutdownSequencedataGridView = new DataGridView();
-            Order = new DataGridViewTextBoxColumn();
             CommandProgram = new DataGridViewTextBoxColumn();
             Arguments = new DataGridViewTextBoxColumn();
             WindowStyle = new DataGridViewComboBoxColumn();
@@ -145,7 +144,6 @@
             StartupRemovebutton = new Button();
             StartAddbutton = new Button();
             StartupSequencedataGridView = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewComboBoxColumn1 = new DataGridViewComboBoxColumn();
@@ -924,7 +922,6 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1345, 635);
             tabControl1.TabIndex = 18;
-            tabControl1.KeyDown += ShutdownSequencedataGridView_KeyDown;
             // 
             // tabPage1
             // 
@@ -1430,7 +1427,7 @@
             ShutdownSequencedataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             ShutdownSequencedataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ShutdownSequencedataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ShutdownSequencedataGridView.Columns.AddRange(new DataGridViewColumn[] { Order, CommandProgram, Arguments, WindowStyle, DelayBeforeExecution, DelayAfterExecution, WaitUntilExit });
+            ShutdownSequencedataGridView.Columns.AddRange(new DataGridViewColumn[] { CommandProgram, Arguments, WindowStyle, DelayBeforeExecution, DelayAfterExecution, WaitUntilExit });
             ShutdownSequencedataGridView.Location = new Point(25, 78);
             ShutdownSequencedataGridView.Margin = new Padding(2);
             ShutdownSequencedataGridView.MultiSelect = false;
@@ -1439,17 +1436,7 @@
             ShutdownSequencedataGridView.Size = new Size(1197, 268);
             ShutdownSequencedataGridView.TabIndex = 35;
             ShutdownSequencedataGridView.CellClick += ShutdownSequencedataGridView_CellClick;
-            // 
-            // Order
-            // 
-            Order.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            Order.FillWeight = 14.39858F;
-            Order.HeaderText = "Order";
-            Order.Name = "Order";
-            Order.ReadOnly = true;
-            Order.Resizable = DataGridViewTriState.False;
-            Order.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Order.Width = 43;
+            ShutdownSequencedataGridView.EditingControlShowing += SequencedataGridView_EditingControlShowing;
             // 
             // CommandProgram
             // 
@@ -1504,7 +1491,7 @@
             WaitUntilExit.FillWeight = 121.8274F;
             WaitUntilExit.HeaderText = "Wait for exit";
             WaitUntilExit.Name = "WaitUntilExit";
-            WaitUntilExit.Width = 45;
+            WaitUntilExit.Width = 52;
             // 
             // ActionProgramcheckBox
             // 
@@ -1635,7 +1622,7 @@
             StartupSequencedataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             StartupSequencedataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             StartupSequencedataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            StartupSequencedataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewComboBoxColumn1, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewCheckBoxColumn1 });
+            StartupSequencedataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewComboBoxColumn1, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewCheckBoxColumn1 });
             StartupSequencedataGridView.Location = new Point(20, 69);
             StartupSequencedataGridView.Margin = new Padding(2);
             StartupSequencedataGridView.MultiSelect = false;
@@ -1645,17 +1632,6 @@
             StartupSequencedataGridView.TabIndex = 39;
             StartupSequencedataGridView.CellClick += StartupSequencedataGridView_CellClick;
             StartupSequencedataGridView.EditingControlShowing += SequencedataGridView_EditingControlShowing;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewTextBoxColumn1.FillWeight = 14.39858F;
-            dataGridViewTextBoxColumn1.HeaderText = "Order";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.False;
-            dataGridViewTextBoxColumn1.SortMode = DataGridViewColumnSortMode.NotSortable;
-            dataGridViewTextBoxColumn1.Width = 43;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -1710,7 +1686,7 @@
             dataGridViewCheckBoxColumn1.FillWeight = 121.8274F;
             dataGridViewCheckBoxColumn1.HeaderText = "Wait for exit";
             dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            dataGridViewCheckBoxColumn1.Width = 45;
+            dataGridViewCheckBoxColumn1.Width = 52;
             // 
             // label31
             // 
@@ -2495,13 +2471,6 @@
         private System.Windows.Forms.Button Statusbutton;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private TableLayoutPanel tableLayoutPanel3;
         private GroupBox groupBox5;
         private ComboBox LogLevelcomboBox;
@@ -2528,7 +2497,12 @@
         private DataGridView ShutdownSequencedataGridView;
         private CheckBox ActionProgramcheckBox;
         private Label label16;
-        private DataGridViewTextBoxColumn Order;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private DataGridViewTextBoxColumn CommandProgram;
         private DataGridViewTextBoxColumn Arguments;
         private DataGridViewComboBoxColumn WindowStyle;

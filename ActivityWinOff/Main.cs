@@ -1067,7 +1067,7 @@ namespace ActivityWinOff
 
         private void ShutdownAddbutton_Click(object sender, EventArgs e)
         {
-            ShutdownSequencedataGridView.Rows.Add("", "", "", "Normal", 0, 0, false);
+            ShutdownSequencedataGridView.Rows.Add("", "", "Normal", 0, 0, false);
             DataGridViewHelpers.DataGridViewAddOrder(ShutdownSequencedataGridView);
         }
 
@@ -1083,11 +1083,6 @@ namespace ActivityWinOff
                 ShutdownSequencedataGridView.Rows.RemoveAt(ShutdownSequencedataGridView.CurrentRow.Index);
                 DataGridViewHelpers.DataGridViewAddOrder(ShutdownSequencedataGridView);
             }
-        }
-
-        private void ShutdownSequencedataGridView_KeyDown(object sender, KeyEventArgs e)
-        {
-            ShutdownRemovebutton_Click(null, null);
         }
 
         private void SequencedataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -1155,7 +1150,7 @@ namespace ActivityWinOff
 
         private void StartAddbutton_Click(object sender, EventArgs e)
         {
-            StartupSequencedataGridView.Rows.Add("", "", "", "Normal", 0, 0, false);
+            StartupSequencedataGridView.Rows.Add("", "", "Normal", 0, 0, false);
             DataGridViewHelpers.DataGridViewAddOrder(StartupSequencedataGridView);
         }
 
