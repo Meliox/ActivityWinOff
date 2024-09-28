@@ -563,7 +563,7 @@ namespace ActivityWinOff
         {
             System.Windows.Forms.TextBox senderTextBox = (System.Windows.Forms.TextBox)sender;
             if (senderTextBox.Text != "")
-            {   
+            {
                 Interface.NetworkTriggerTime = Convert.ToInt32(senderTextBox.Text);
             }
             else
@@ -749,7 +749,7 @@ namespace ActivityWinOff
         {
             if (lockGUI)
             {
-                IEnumerable<Control> controls = flowLayoutPanel1.Controls.Cast<Control>();
+                IEnumerable<Control> controls = tableLayoutPanel3.Controls.Cast<Control>();
                 foreach (Control childControl in controls)
                 {
                     if (childControl.GetType() == typeof(GroupBox))
@@ -761,7 +761,7 @@ namespace ActivityWinOff
             }
             else
             {
-                IEnumerable<Control> controls = flowLayoutPanel1.Controls.Cast<Control>();
+                IEnumerable<Control> controls = tableLayoutPanel3.Controls.Cast<Control>();
                 foreach (Control childControl in controls)
                 {
                     if (childControl.GetType() == typeof(GroupBox))

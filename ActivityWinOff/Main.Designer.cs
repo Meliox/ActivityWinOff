@@ -59,6 +59,18 @@
             ConditiongroupBox = new GroupBox();
             ConditionAllradioButton = new RadioButton();
             ConditionOneradioButton = new RadioButton();
+            groupBox6 = new GroupBox();
+            label25 = new Label();
+            Keyboardlabel = new Label();
+            Mouselabel = new Label();
+            label20 = new Label();
+            UserActivityKeyboardcheckBox = new CheckBox();
+            UserActivityMousecheckBox = new CheckBox();
+            UserActivityEnabledcheckBox = new CheckBox();
+            label18 = new Label();
+            UserActivityTriggerTimeFormatcomboBox = new ComboBox();
+            UserActivityTriggerTimetextBox = new TextBox();
+            label19 = new Label();
             groupBox4 = new GroupBox();
             label24 = new Label();
             CPUUtilcomboBox = new ComboBox();
@@ -78,30 +90,15 @@
             ActivateDeactivatebutton = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            groupBox6 = new GroupBox();
-            label25 = new Label();
-            Keyboardlabel = new Label();
-            Mouselabel = new Label();
-            label20 = new Label();
-            UserActivityKeyboardcheckBox = new CheckBox();
-            UserActivityMousecheckBox = new CheckBox();
-            UserActivityEnabledcheckBox = new CheckBox();
-            label18 = new Label();
-            UserActivityTriggerTimeFormatcomboBox = new ComboBox();
-            UserActivityTriggerTimetextBox = new TextBox();
-            label19 = new Label();
-            groupBox7 = new GroupBox();
-            label32 = new Label();
-            WaitForProgramTimeFormatcomboBox = new ComboBox();
-            WaitForProgramActionlabel = new Label();
-            WaitForProgramTriggerTimetextBox = new TextBox();
-            label27 = new Label();
-            WaitForProgramCleanbutton = new Button();
-            WaitForProgrambutton = new Button();
-            WaitForProgramtextBox = new TextBox();
-            WaitForProgramcheckBox = new CheckBox();
-            label3 = new Label();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            groupBox11 = new GroupBox();
+            label40 = new Label();
+            label38 = new Label();
+            label37 = new Label();
+            SpecificTimerTime = new DateTimePicker();
+            SpecificTimerDate = new DateTimePicker();
+            label36 = new Label();
+            SpecificTimercheckBox = new CheckBox();
             groupBox3 = new GroupBox();
             label39 = new Label();
             TimerNextActionlabel = new Label();
@@ -114,14 +111,17 @@
             label4 = new Label();
             TimerMinscomboBox = new ComboBox();
             TimercheckBox = new CheckBox();
-            groupBox11 = new GroupBox();
-            label40 = new Label();
-            label38 = new Label();
-            label37 = new Label();
-            SpecificTimerTime = new DateTimePicker();
-            SpecificTimerDate = new DateTimePicker();
-            label36 = new Label();
-            SpecificTimercheckBox = new CheckBox();
+            groupBox7 = new GroupBox();
+            label32 = new Label();
+            WaitForProgramTimeFormatcomboBox = new ComboBox();
+            WaitForProgramActionlabel = new Label();
+            WaitForProgramTriggerTimetextBox = new TextBox();
+            label27 = new Label();
+            WaitForProgramCleanbutton = new Button();
+            WaitForProgrambutton = new Button();
+            WaitForProgramtextBox = new TextBox();
+            WaitForProgramcheckBox = new CheckBox();
+            label3 = new Label();
             groupBox2 = new GroupBox();
             ShutdownDownbutton = new Button();
             ShutdownUpbutton = new Button();
@@ -138,7 +138,7 @@
             ActionProgramcheckBox = new CheckBox();
             label16 = new Label();
             tabPage2 = new TabPage();
-            flowLayoutPanel2 = new FlowLayoutPanel();
+            tableLayoutPanel2 = new TableLayoutPanel();
             groupBox9 = new GroupBox();
             StartupDownbutton = new Button();
             StartupUpbutton = new Button();
@@ -163,7 +163,7 @@
             ShellActivityWinOffradioButton = new RadioButton();
             ShellExplorerradioButton = new RadioButton();
             tabPage3 = new TabPage();
-            flowLayoutPanel3 = new FlowLayoutPanel();
+            tableLayoutPanel1 = new TableLayoutPanel();
             FocusgroupBox = new GroupBox();
             FocusProgramcheckBox = new CheckBox();
             FocusProgramtextBox = new TextBox();
@@ -206,23 +206,23 @@
             groupBox1.SuspendLayout();
             ShutdownTypegroupBox.SuspendLayout();
             ConditiongroupBox.SuspendLayout();
+            groupBox6.SuspendLayout();
             groupBox4.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
-            groupBox6.SuspendLayout();
-            groupBox7.SuspendLayout();
-            groupBox3.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             groupBox11.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox7.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ShutdownSequencedataGridView).BeginInit();
             tabPage2.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)StartupSequencedataGridView).BeginInit();
             ShellgroupBox.SuspendLayout();
             tabPage3.SuspendLayout();
-            flowLayoutPanel3.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             FocusgroupBox.SuspendLayout();
             tabPage4.SuspendLayout();
             groupBox5.SuspendLayout();
@@ -286,7 +286,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             groupBox1.Controls.Add(label26);
             groupBox1.Controls.Add(NetworkAveragecheckBox);
             groupBox1.Controls.Add(label12);
@@ -304,11 +303,14 @@
             groupBox1.Controls.Add(TrafficTypecomboBox);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(2, 296);
+            groupBox1.Dock = DockStyle.Fill;
+            groupBox1.Location = new Point(2, 491);
             groupBox1.Margin = new Padding(2);
+            groupBox1.MaximumSize = new Size(0, 150);
+            groupBox1.MinimumSize = new Size(1322, 150);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(2);
-            groupBox1.Size = new Size(1301, 152);
+            groupBox1.Size = new Size(1329, 150);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Network traffic";
@@ -442,17 +444,19 @@
             // 
             // ShutdownTypegroupBox
             // 
-            ShutdownTypegroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             ShutdownTypegroupBox.Controls.Add(ForceShutdowncheckBox);
             ShutdownTypegroupBox.Controls.Add(ShutdownTypeHibernateradioButton);
             ShutdownTypegroupBox.Controls.Add(ShutdownTypeSleepradioButton);
             ShutdownTypegroupBox.Controls.Add(ShutdownTypeRestartradioButton);
             ShutdownTypegroupBox.Controls.Add(ShutdownTypePoweroffradioButton);
-            ShutdownTypegroupBox.Location = new Point(2, 777);
+            ShutdownTypegroupBox.Dock = DockStyle.Fill;
+            ShutdownTypegroupBox.Location = new Point(2, 2);
             ShutdownTypegroupBox.Margin = new Padding(2);
+            ShutdownTypegroupBox.MaximumSize = new Size(0, 50);
+            ShutdownTypegroupBox.MinimumSize = new Size(1322, 50);
             ShutdownTypegroupBox.Name = "ShutdownTypegroupBox";
             ShutdownTypegroupBox.Padding = new Padding(2);
-            ShutdownTypegroupBox.Size = new Size(1301, 66);
+            ShutdownTypegroupBox.Size = new Size(1329, 50);
             ShutdownTypegroupBox.TabIndex = 9;
             ShutdownTypegroupBox.TabStop = false;
             ShutdownTypegroupBox.Text = "Shutdown type";
@@ -523,14 +527,16 @@
             // 
             // ConditiongroupBox
             // 
-            ConditiongroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ConditiongroupBox.Controls.Add(ConditionAllradioButton);
             ConditiongroupBox.Controls.Add(ConditionOneradioButton);
-            ConditiongroupBox.Location = new Point(2, 2);
+            ConditiongroupBox.Dock = DockStyle.Fill;
+            ConditiongroupBox.Location = new Point(2, 56);
             ConditiongroupBox.Margin = new Padding(2);
+            ConditiongroupBox.MaximumSize = new Size(0, 50);
+            ConditiongroupBox.MinimumSize = new Size(1322, 50);
             ConditiongroupBox.Name = "ConditiongroupBox";
             ConditiongroupBox.Padding = new Padding(2);
-            ConditiongroupBox.Size = new Size(1301, 57);
+            ConditiongroupBox.Size = new Size(1329, 50);
             ConditiongroupBox.TabIndex = 10;
             ConditiongroupBox.TabStop = false;
             ConditiongroupBox.Text = "Condition Behavior";
@@ -561,9 +567,154 @@
             ConditionOneradioButton.UseVisualStyleBackColor = true;
             ConditionOneradioButton.CheckedChanged += Condition_CheckedChanged;
             // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(label25);
+            groupBox6.Controls.Add(Keyboardlabel);
+            groupBox6.Controls.Add(Mouselabel);
+            groupBox6.Controls.Add(label20);
+            groupBox6.Controls.Add(UserActivityKeyboardcheckBox);
+            groupBox6.Controls.Add(UserActivityMousecheckBox);
+            groupBox6.Controls.Add(UserActivityEnabledcheckBox);
+            groupBox6.Controls.Add(label18);
+            groupBox6.Controls.Add(UserActivityTriggerTimeFormatcomboBox);
+            groupBox6.Controls.Add(UserActivityTriggerTimetextBox);
+            groupBox6.Controls.Add(label19);
+            groupBox6.Dock = DockStyle.Fill;
+            groupBox6.Location = new Point(2, 194);
+            groupBox6.Margin = new Padding(2);
+            groupBox6.MaximumSize = new Size(0, 100);
+            groupBox6.MinimumSize = new Size(1322, 100);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Padding = new Padding(2);
+            groupBox6.Size = new Size(1329, 100);
+            groupBox6.TabIndex = 13;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "User activity";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label25.ForeColor = SystemColors.ControlText;
+            label25.Location = new Point(845, 62);
+            label25.Margin = new Padding(2, 0, 2, 0);
+            label25.Name = "label25";
+            label25.Size = new Size(99, 20);
+            label25.TabIndex = 30;
+            label25.Text = "Next action";
+            label25.Visible = false;
+            // 
+            // Keyboardlabel
+            // 
+            Keyboardlabel.AutoSize = true;
+            Keyboardlabel.Location = new Point(612, 59);
+            Keyboardlabel.Margin = new Padding(2, 0, 2, 0);
+            Keyboardlabel.Name = "Keyboardlabel";
+            Keyboardlabel.Size = new Size(57, 15);
+            Keyboardlabel.TabIndex = 26;
+            Keyboardlabel.Text = "Keyboard";
+            // 
+            // Mouselabel
+            // 
+            Mouselabel.AutoSize = true;
+            Mouselabel.Location = new Point(612, 44);
+            Mouselabel.Margin = new Padding(2, 0, 2, 0);
+            Mouselabel.Name = "Mouselabel";
+            Mouselabel.Size = new Size(46, 15);
+            Mouselabel.TabIndex = 25;
+            Mouselabel.Text = "Mouse:";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(612, 17);
+            label20.Margin = new Padding(2, 0, 2, 0);
+            label20.Name = "label20";
+            label20.Size = new Size(81, 15);
+            label20.TabIndex = 20;
+            label20.Text = "Last idle timer";
+            // 
+            // UserActivityKeyboardcheckBox
+            // 
+            UserActivityKeyboardcheckBox.AutoSize = true;
+            UserActivityKeyboardcheckBox.Location = new Point(98, 44);
+            UserActivityKeyboardcheckBox.Margin = new Padding(2);
+            UserActivityKeyboardcheckBox.Name = "UserActivityKeyboardcheckBox";
+            UserActivityKeyboardcheckBox.Size = new Size(76, 19);
+            UserActivityKeyboardcheckBox.TabIndex = 24;
+            UserActivityKeyboardcheckBox.Text = "Keyboard";
+            UserActivityKeyboardcheckBox.UseVisualStyleBackColor = true;
+            UserActivityKeyboardcheckBox.CheckedChanged += UserActivityKeyboardcheckBox_CheckedChanged;
+            // 
+            // UserActivityMousecheckBox
+            // 
+            UserActivityMousecheckBox.AutoSize = true;
+            UserActivityMousecheckBox.Location = new Point(26, 44);
+            UserActivityMousecheckBox.Margin = new Padding(2);
+            UserActivityMousecheckBox.Name = "UserActivityMousecheckBox";
+            UserActivityMousecheckBox.Size = new Size(62, 19);
+            UserActivityMousecheckBox.TabIndex = 20;
+            UserActivityMousecheckBox.Text = "Mouse";
+            UserActivityMousecheckBox.UseVisualStyleBackColor = true;
+            UserActivityMousecheckBox.CheckedChanged += UserActivityMousecheckBox_CheckChanged;
+            // 
+            // UserActivityEnabledcheckBox
+            // 
+            UserActivityEnabledcheckBox.AutoSize = true;
+            UserActivityEnabledcheckBox.Location = new Point(20, 20);
+            UserActivityEnabledcheckBox.Margin = new Padding(2);
+            UserActivityEnabledcheckBox.Name = "UserActivityEnabledcheckBox";
+            UserActivityEnabledcheckBox.Size = new Size(68, 19);
+            UserActivityEnabledcheckBox.TabIndex = 20;
+            UserActivityEnabledcheckBox.Text = "Enabled";
+            UserActivityEnabledcheckBox.UseVisualStyleBackColor = true;
+            UserActivityEnabledcheckBox.CheckedChanged += UserActivityEnabledcheckBox_CheckedChanged;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(38, 70);
+            label18.Margin = new Padding(2, 0, 2, 0);
+            label18.Name = "label18";
+            label18.Size = new Size(43, 15);
+            label18.TabIndex = 23;
+            label18.Text = "Trigger";
+            // 
+            // UserActivityTriggerTimeFormatcomboBox
+            // 
+            UserActivityTriggerTimeFormatcomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            UserActivityTriggerTimeFormatcomboBox.FormattingEnabled = true;
+            UserActivityTriggerTimeFormatcomboBox.Items.AddRange(new object[] { "sec", "min", "hour" });
+            UserActivityTriggerTimeFormatcomboBox.Location = new Point(164, 68);
+            UserActivityTriggerTimeFormatcomboBox.Margin = new Padding(2);
+            UserActivityTriggerTimeFormatcomboBox.Name = "UserActivityTriggerTimeFormatcomboBox";
+            UserActivityTriggerTimeFormatcomboBox.Size = new Size(54, 23);
+            UserActivityTriggerTimeFormatcomboBox.TabIndex = 20;
+            UserActivityTriggerTimeFormatcomboBox.SelectedIndexChanged += UserActivityTriggerTimeFormatcomboBox_SelectedIndexChanged;
+            // 
+            // UserActivityTriggerTimetextBox
+            // 
+            UserActivityTriggerTimetextBox.Location = new Point(118, 68);
+            UserActivityTriggerTimetextBox.Margin = new Padding(2);
+            UserActivityTriggerTimetextBox.Name = "UserActivityTriggerTimetextBox";
+            UserActivityTriggerTimetextBox.Size = new Size(44, 23);
+            UserActivityTriggerTimetextBox.TabIndex = 21;
+            UserActivityTriggerTimetextBox.TextChanged += UserActivityTriggerTimetextBox_TextChanged;
+            UserActivityTriggerTimetextBox.KeyPress += OnlyAllowNumericNumbers;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(86, 70);
+            label19.Margin = new Padding(2, 0, 2, 0);
+            label19.Name = "label19";
+            label19.Size = new Size(24, 15);
+            label19.TabIndex = 22;
+            label19.Text = "For";
+            // 
             // groupBox4
             // 
-            groupBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox4.Controls.Add(label24);
             groupBox4.Controls.Add(CPUUtilcomboBox);
             groupBox4.Controls.Add(label15);
@@ -576,11 +727,14 @@
             groupBox4.Controls.Add(label8);
             groupBox4.Controls.Add(label7);
             groupBox4.Controls.Add(label6);
-            groupBox4.Location = new Point(2, 170);
+            groupBox4.Dock = DockStyle.Fill;
+            groupBox4.Location = new Point(2, 377);
             groupBox4.Margin = new Padding(2);
+            groupBox4.MaximumSize = new Size(0, 110);
+            groupBox4.MinimumSize = new Size(1322, 110);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(2);
-            groupBox4.Size = new Size(1301, 122);
+            groupBox4.Size = new Size(1329, 110);
             groupBox4.TabIndex = 11;
             groupBox4.TabStop = false;
             groupBox4.Text = "CPU load";
@@ -774,7 +928,7 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(flowLayoutPanel1);
+            tabPage1.Controls.Add(tableLayoutPanel3);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Margin = new Padding(2);
             tabPage1.Name = "tabPage1";
@@ -784,302 +938,137 @@
             tabPage1.Text = "Shutdown plan";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // tableLayoutPanel3
             // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Controls.Add(ConditiongroupBox);
-            flowLayoutPanel1.Controls.Add(groupBox6);
-            flowLayoutPanel1.Controls.Add(groupBox4);
-            flowLayoutPanel1.Controls.Add(groupBox1);
-            flowLayoutPanel1.Controls.Add(groupBox7);
-            flowLayoutPanel1.Controls.Add(groupBox3);
-            flowLayoutPanel1.Controls.Add(groupBox11);
-            flowLayoutPanel1.Controls.Add(ShutdownTypegroupBox);
-            flowLayoutPanel1.Controls.Add(groupBox2);
-            flowLayoutPanel1.Location = new Point(2, 2);
-            flowLayoutPanel1.Margin = new Padding(2);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1331, 600);
-            flowLayoutPanel1.TabIndex = 14;
+            tableLayoutPanel3.AutoScroll = true;
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.Controls.Add(groupBox11, 0, 4);
+            tableLayoutPanel3.Controls.Add(ShutdownTypegroupBox, 0, 0);
+            tableLayoutPanel3.Controls.Add(groupBox3, 0, 2);
+            tableLayoutPanel3.Controls.Add(ConditiongroupBox, 0, 1);
+            tableLayoutPanel3.Controls.Add(groupBox6, 0, 3);
+            tableLayoutPanel3.Controls.Add(groupBox4, 0, 5);
+            tableLayoutPanel3.Controls.Add(groupBox1, 0, 6);
+            tableLayoutPanel3.Controls.Add(groupBox7, 0, 7);
+            tableLayoutPanel3.Controls.Add(groupBox2, 0, 8);
+            tableLayoutPanel3.Dock = DockStyle.Fill;
+            tableLayoutPanel3.Location = new Point(2, 2);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 9;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle());
+            tableLayoutPanel3.RowStyles.Add(new RowStyle());
+            tableLayoutPanel3.RowStyles.Add(new RowStyle());
+            tableLayoutPanel3.RowStyles.Add(new RowStyle());
+            tableLayoutPanel3.RowStyles.Add(new RowStyle());
+            tableLayoutPanel3.RowStyles.Add(new RowStyle());
+            tableLayoutPanel3.RowStyles.Add(new RowStyle());
+            tableLayoutPanel3.RowStyles.Add(new RowStyle());
+            tableLayoutPanel3.RowStyles.Add(new RowStyle());
+            tableLayoutPanel3.Size = new Size(1333, 603);
+            tableLayoutPanel3.TabIndex = 1;
             // 
-            // groupBox6
+            // groupBox11
             // 
-            groupBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox6.Controls.Add(label25);
-            groupBox6.Controls.Add(Keyboardlabel);
-            groupBox6.Controls.Add(Mouselabel);
-            groupBox6.Controls.Add(label20);
-            groupBox6.Controls.Add(UserActivityKeyboardcheckBox);
-            groupBox6.Controls.Add(UserActivityMousecheckBox);
-            groupBox6.Controls.Add(UserActivityEnabledcheckBox);
-            groupBox6.Controls.Add(label18);
-            groupBox6.Controls.Add(UserActivityTriggerTimeFormatcomboBox);
-            groupBox6.Controls.Add(UserActivityTriggerTimetextBox);
-            groupBox6.Controls.Add(label19);
-            groupBox6.Location = new Point(2, 63);
-            groupBox6.Margin = new Padding(2);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Padding = new Padding(2);
-            groupBox6.Size = new Size(1301, 103);
-            groupBox6.TabIndex = 13;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "User activity";
+            groupBox11.Controls.Add(label40);
+            groupBox11.Controls.Add(label38);
+            groupBox11.Controls.Add(label37);
+            groupBox11.Controls.Add(SpecificTimerTime);
+            groupBox11.Controls.Add(SpecificTimerDate);
+            groupBox11.Controls.Add(label36);
+            groupBox11.Controls.Add(SpecificTimercheckBox);
+            groupBox11.Dock = DockStyle.Fill;
+            groupBox11.Location = new Point(2, 298);
+            groupBox11.Margin = new Padding(2);
+            groupBox11.MaximumSize = new Size(0, 75);
+            groupBox11.MinimumSize = new Size(1322, 75);
+            groupBox11.Name = "groupBox11";
+            groupBox11.Padding = new Padding(2);
+            groupBox11.Size = new Size(1329, 75);
+            groupBox11.TabIndex = 28;
+            groupBox11.TabStop = false;
+            groupBox11.Text = "Specific time";
             // 
-            // label25
+            // label40
             // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label25.ForeColor = SystemColors.ControlText;
-            label25.Location = new Point(845, 62);
-            label25.Margin = new Padding(2, 0, 2, 0);
-            label25.Name = "label25";
-            label25.Size = new Size(99, 20);
-            label25.TabIndex = 30;
-            label25.Text = "Next action";
-            label25.Visible = false;
+            label40.AutoSize = true;
+            label40.Location = new Point(22, 42);
+            label40.Margin = new Padding(2, 0, 2, 0);
+            label40.Name = "label40";
+            label40.Size = new Size(44, 15);
+            label40.TabIndex = 29;
+            label40.Text = "Start at";
             // 
-            // Keyboardlabel
+            // label38
             // 
-            Keyboardlabel.AutoSize = true;
-            Keyboardlabel.Location = new Point(612, 59);
-            Keyboardlabel.Margin = new Padding(2, 0, 2, 0);
-            Keyboardlabel.Name = "Keyboardlabel";
-            Keyboardlabel.Size = new Size(57, 15);
-            Keyboardlabel.TabIndex = 26;
-            Keyboardlabel.Text = "Keyboard";
+            label38.AutoSize = true;
+            label38.Location = new Point(75, 42);
+            label38.Margin = new Padding(2, 0, 2, 0);
+            label38.Name = "label38";
+            label38.Size = new Size(30, 15);
+            label38.TabIndex = 31;
+            label38.Text = "date";
             // 
-            // Mouselabel
+            // label37
             // 
-            Mouselabel.AutoSize = true;
-            Mouselabel.Location = new Point(612, 44);
-            Mouselabel.Margin = new Padding(2, 0, 2, 0);
-            Mouselabel.Name = "Mouselabel";
-            Mouselabel.Size = new Size(46, 15);
-            Mouselabel.TabIndex = 25;
-            Mouselabel.Text = "Mouse:";
+            label37.AutoSize = true;
+            label37.Location = new Point(220, 42);
+            label37.Margin = new Padding(2, 0, 2, 0);
+            label37.Name = "label37";
+            label37.Size = new Size(31, 15);
+            label37.TabIndex = 30;
+            label37.Text = "time";
             // 
-            // label20
+            // SpecificTimerTime
             // 
-            label20.AutoSize = true;
-            label20.Location = new Point(612, 17);
-            label20.Margin = new Padding(2, 0, 2, 0);
-            label20.Name = "label20";
-            label20.Size = new Size(81, 15);
-            label20.TabIndex = 20;
-            label20.Text = "Last idle timer";
+            SpecificTimerTime.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            SpecificTimerTime.Format = DateTimePickerFormat.Time;
+            SpecificTimerTime.Location = new Point(255, 39);
+            SpecificTimerTime.Margin = new Padding(2);
+            SpecificTimerTime.Name = "SpecificTimerTime";
+            SpecificTimerTime.ShowUpDown = true;
+            SpecificTimerTime.Size = new Size(89, 23);
+            SpecificTimerTime.TabIndex = 29;
+            SpecificTimerTime.ValueChanged += SpecificTimer_ValueChanged;
             // 
-            // UserActivityKeyboardcheckBox
+            // SpecificTimerDate
             // 
-            UserActivityKeyboardcheckBox.AutoSize = true;
-            UserActivityKeyboardcheckBox.Location = new Point(98, 44);
-            UserActivityKeyboardcheckBox.Margin = new Padding(2);
-            UserActivityKeyboardcheckBox.Name = "UserActivityKeyboardcheckBox";
-            UserActivityKeyboardcheckBox.Size = new Size(76, 19);
-            UserActivityKeyboardcheckBox.TabIndex = 24;
-            UserActivityKeyboardcheckBox.Text = "Keyboard";
-            UserActivityKeyboardcheckBox.UseVisualStyleBackColor = true;
-            UserActivityKeyboardcheckBox.CheckedChanged += UserActivityKeyboardcheckBox_CheckedChanged;
+            SpecificTimerDate.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            SpecificTimerDate.Format = DateTimePickerFormat.Short;
+            SpecificTimerDate.Location = new Point(110, 39);
+            SpecificTimerDate.Margin = new Padding(2);
+            SpecificTimerDate.Name = "SpecificTimerDate";
+            SpecificTimerDate.Size = new Size(98, 23);
+            SpecificTimerDate.TabIndex = 28;
+            SpecificTimerDate.ValueChanged += SpecificTimer_ValueChanged;
             // 
-            // UserActivityMousecheckBox
+            // label36
             // 
-            UserActivityMousecheckBox.AutoSize = true;
-            UserActivityMousecheckBox.Location = new Point(26, 44);
-            UserActivityMousecheckBox.Margin = new Padding(2);
-            UserActivityMousecheckBox.Name = "UserActivityMousecheckBox";
-            UserActivityMousecheckBox.Size = new Size(62, 19);
-            UserActivityMousecheckBox.TabIndex = 20;
-            UserActivityMousecheckBox.Text = "Mouse";
-            UserActivityMousecheckBox.UseVisualStyleBackColor = true;
-            UserActivityMousecheckBox.CheckedChanged += UserActivityMousecheckBox_CheckChanged;
+            label36.AutoSize = true;
+            label36.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label36.ForeColor = SystemColors.ControlText;
+            label36.Location = new Point(845, 20);
+            label36.Margin = new Padding(2, 0, 2, 0);
+            label36.Name = "label36";
+            label36.Size = new Size(99, 20);
+            label36.TabIndex = 27;
+            label36.Text = "Next action";
+            label36.Visible = false;
             // 
-            // UserActivityEnabledcheckBox
+            // SpecificTimercheckBox
             // 
-            UserActivityEnabledcheckBox.AutoSize = true;
-            UserActivityEnabledcheckBox.Location = new Point(20, 20);
-            UserActivityEnabledcheckBox.Margin = new Padding(2);
-            UserActivityEnabledcheckBox.Name = "UserActivityEnabledcheckBox";
-            UserActivityEnabledcheckBox.Size = new Size(68, 19);
-            UserActivityEnabledcheckBox.TabIndex = 20;
-            UserActivityEnabledcheckBox.Text = "Enabled";
-            UserActivityEnabledcheckBox.UseVisualStyleBackColor = true;
-            UserActivityEnabledcheckBox.CheckedChanged += UserActivityEnabledcheckBox_CheckedChanged;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(38, 70);
-            label18.Margin = new Padding(2, 0, 2, 0);
-            label18.Name = "label18";
-            label18.Size = new Size(43, 15);
-            label18.TabIndex = 23;
-            label18.Text = "Trigger";
-            // 
-            // UserActivityTriggerTimeFormatcomboBox
-            // 
-            UserActivityTriggerTimeFormatcomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            UserActivityTriggerTimeFormatcomboBox.FormattingEnabled = true;
-            UserActivityTriggerTimeFormatcomboBox.Items.AddRange(new object[] { "sec", "min", "hour" });
-            UserActivityTriggerTimeFormatcomboBox.Location = new Point(164, 68);
-            UserActivityTriggerTimeFormatcomboBox.Margin = new Padding(2);
-            UserActivityTriggerTimeFormatcomboBox.Name = "UserActivityTriggerTimeFormatcomboBox";
-            UserActivityTriggerTimeFormatcomboBox.Size = new Size(54, 23);
-            UserActivityTriggerTimeFormatcomboBox.TabIndex = 20;
-            UserActivityTriggerTimeFormatcomboBox.SelectedIndexChanged += UserActivityTriggerTimeFormatcomboBox_SelectedIndexChanged;
-            // 
-            // UserActivityTriggerTimetextBox
-            // 
-            UserActivityTriggerTimetextBox.Location = new Point(118, 68);
-            UserActivityTriggerTimetextBox.Margin = new Padding(2);
-            UserActivityTriggerTimetextBox.Name = "UserActivityTriggerTimetextBox";
-            UserActivityTriggerTimetextBox.Size = new Size(44, 23);
-            UserActivityTriggerTimetextBox.TabIndex = 21;
-            UserActivityTriggerTimetextBox.TextChanged += UserActivityTriggerTimetextBox_TextChanged;
-            UserActivityTriggerTimetextBox.KeyPress += OnlyAllowNumericNumbers;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(86, 70);
-            label19.Margin = new Padding(2, 0, 2, 0);
-            label19.Name = "label19";
-            label19.Size = new Size(24, 15);
-            label19.TabIndex = 22;
-            label19.Text = "For";
-            // 
-            // groupBox7
-            // 
-            groupBox7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox7.Controls.Add(label32);
-            groupBox7.Controls.Add(WaitForProgramTimeFormatcomboBox);
-            groupBox7.Controls.Add(WaitForProgramActionlabel);
-            groupBox7.Controls.Add(WaitForProgramTriggerTimetextBox);
-            groupBox7.Controls.Add(label27);
-            groupBox7.Controls.Add(WaitForProgramCleanbutton);
-            groupBox7.Controls.Add(WaitForProgrambutton);
-            groupBox7.Controls.Add(WaitForProgramtextBox);
-            groupBox7.Controls.Add(WaitForProgramcheckBox);
-            groupBox7.Controls.Add(label3);
-            groupBox7.Location = new Point(2, 452);
-            groupBox7.Margin = new Padding(2);
-            groupBox7.Name = "groupBox7";
-            groupBox7.Padding = new Padding(2);
-            groupBox7.Size = new Size(1301, 133);
-            groupBox7.TabIndex = 15;
-            groupBox7.TabStop = false;
-            groupBox7.Text = "Wait for program";
-            // 
-            // label32
-            // 
-            label32.AutoSize = true;
-            label32.Location = new Point(34, 95);
-            label32.Margin = new Padding(2, 0, 2, 0);
-            label32.Name = "label32";
-            label32.Size = new Size(43, 15);
-            label32.TabIndex = 31;
-            label32.Text = "Trigger";
-            // 
-            // WaitForProgramTimeFormatcomboBox
-            // 
-            WaitForProgramTimeFormatcomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            WaitForProgramTimeFormatcomboBox.FormattingEnabled = true;
-            WaitForProgramTimeFormatcomboBox.Items.AddRange(new object[] { "sec", "min", "hour" });
-            WaitForProgramTimeFormatcomboBox.Location = new Point(164, 90);
-            WaitForProgramTimeFormatcomboBox.Margin = new Padding(2);
-            WaitForProgramTimeFormatcomboBox.Name = "WaitForProgramTimeFormatcomboBox";
-            WaitForProgramTimeFormatcomboBox.Size = new Size(54, 23);
-            WaitForProgramTimeFormatcomboBox.TabIndex = 33;
-            WaitForProgramTimeFormatcomboBox.SelectedIndexChanged += WaitForProgramTimeFormatcomboBox_SelectedIndexChanged;
-            // 
-            // WaitForProgramActionlabel
-            // 
-            WaitForProgramActionlabel.AutoSize = true;
-            WaitForProgramActionlabel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            WaitForProgramActionlabel.ForeColor = SystemColors.ControlText;
-            WaitForProgramActionlabel.Location = new Point(845, 17);
-            WaitForProgramActionlabel.Margin = new Padding(2, 0, 2, 0);
-            WaitForProgramActionlabel.Name = "WaitForProgramActionlabel";
-            WaitForProgramActionlabel.Size = new Size(99, 20);
-            WaitForProgramActionlabel.TabIndex = 28;
-            WaitForProgramActionlabel.Text = "Next action";
-            WaitForProgramActionlabel.Visible = false;
-            // 
-            // WaitForProgramTriggerTimetextBox
-            // 
-            WaitForProgramTriggerTimetextBox.Location = new Point(118, 91);
-            WaitForProgramTriggerTimetextBox.Margin = new Padding(2);
-            WaitForProgramTriggerTimetextBox.Name = "WaitForProgramTriggerTimetextBox";
-            WaitForProgramTriggerTimetextBox.Size = new Size(44, 23);
-            WaitForProgramTriggerTimetextBox.TabIndex = 32;
-            WaitForProgramTriggerTimetextBox.TextChanged += WaitForProgramTriggerTimetextBox_TextChanged;
-            WaitForProgramTriggerTimetextBox.KeyPress += OnlyAllowNumericNumbers;
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Location = new Point(94, 95);
-            label27.Margin = new Padding(2, 0, 2, 0);
-            label27.Name = "label27";
-            label27.Size = new Size(24, 15);
-            label27.TabIndex = 31;
-            label27.Text = "For";
-            // 
-            // WaitForProgramCleanbutton
-            // 
-            WaitForProgramCleanbutton.Location = new Point(1220, 37);
-            WaitForProgramCleanbutton.Margin = new Padding(2);
-            WaitForProgramCleanbutton.Name = "WaitForProgramCleanbutton";
-            WaitForProgramCleanbutton.Size = new Size(74, 28);
-            WaitForProgramCleanbutton.TabIndex = 20;
-            WaitForProgramCleanbutton.Text = "Clear";
-            WaitForProgramCleanbutton.UseVisualStyleBackColor = true;
-            WaitForProgramCleanbutton.Click += WaitForProgramCleanbutton_Click;
-            // 
-            // WaitForProgrambutton
-            // 
-            WaitForProgrambutton.Location = new Point(1136, 37);
-            WaitForProgrambutton.Margin = new Padding(2);
-            WaitForProgrambutton.Name = "WaitForProgrambutton";
-            WaitForProgrambutton.Size = new Size(79, 28);
-            WaitForProgrambutton.TabIndex = 4;
-            WaitForProgrambutton.Text = "Select";
-            WaitForProgrambutton.UseVisualStyleBackColor = true;
-            WaitForProgrambutton.Click += WaitForProgrambutton_Click;
-            // 
-            // WaitForProgramtextBox
-            // 
-            WaitForProgramtextBox.Location = new Point(169, 40);
-            WaitForProgramtextBox.Margin = new Padding(2);
-            WaitForProgramtextBox.Name = "WaitForProgramtextBox";
-            WaitForProgramtextBox.ReadOnly = true;
-            WaitForProgramtextBox.Size = new Size(963, 23);
-            WaitForProgramtextBox.TabIndex = 3;
-            // 
-            // WaitForProgramcheckBox
-            // 
-            WaitForProgramcheckBox.AutoSize = true;
-            WaitForProgramcheckBox.Location = new Point(22, 23);
-            WaitForProgramcheckBox.Margin = new Padding(2);
-            WaitForProgramcheckBox.Name = "WaitForProgramcheckBox";
-            WaitForProgramcheckBox.Size = new Size(68, 19);
-            WaitForProgramcheckBox.TabIndex = 19;
-            WaitForProgramcheckBox.Text = "Enabled";
-            WaitForProgramcheckBox.UseVisualStyleBackColor = true;
-            WaitForProgramcheckBox.CheckedChanged += WaitForProgramcheckBox_CheckChanged;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(22, 44);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(136, 15);
-            label3.TabIndex = 0;
-            label3.Text = "Select program to watch";
+            SpecificTimercheckBox.AutoSize = true;
+            SpecificTimercheckBox.Location = new Point(20, 20);
+            SpecificTimercheckBox.Margin = new Padding(2);
+            SpecificTimercheckBox.Name = "SpecificTimercheckBox";
+            SpecificTimercheckBox.Size = new Size(68, 19);
+            SpecificTimercheckBox.TabIndex = 20;
+            SpecificTimercheckBox.Text = "Enabled";
+            SpecificTimercheckBox.UseVisualStyleBackColor = true;
+            SpecificTimercheckBox.CheckedChanged += SpecificTimercheckBox_CheckedChanged;
             // 
             // groupBox3
             // 
-            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox3.Controls.Add(label39);
             groupBox3.Controls.Add(TimerNextActionlabel);
             groupBox3.Controls.Add(label23);
@@ -1091,11 +1080,14 @@
             groupBox3.Controls.Add(label4);
             groupBox3.Controls.Add(TimerMinscomboBox);
             groupBox3.Controls.Add(TimercheckBox);
-            groupBox3.Location = new Point(2, 589);
+            groupBox3.Dock = DockStyle.Fill;
+            groupBox3.Location = new Point(2, 110);
             groupBox3.Margin = new Padding(2);
+            groupBox3.MaximumSize = new Size(0, 80);
+            groupBox3.MinimumSize = new Size(1322, 80);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(2);
-            groupBox3.Size = new Size(1301, 91);
+            groupBox3.Size = new Size(1329, 80);
             groupBox3.TabIndex = 14;
             groupBox3.TabStop = false;
             groupBox3.Text = "Timer";
@@ -1223,106 +1215,143 @@
             TimercheckBox.UseVisualStyleBackColor = true;
             TimercheckBox.CheckedChanged += TimercheckBox_CheckedChanged;
             // 
-            // groupBox11
+            // groupBox7
             // 
-            groupBox11.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox11.Controls.Add(label40);
-            groupBox11.Controls.Add(label38);
-            groupBox11.Controls.Add(label37);
-            groupBox11.Controls.Add(SpecificTimerTime);
-            groupBox11.Controls.Add(SpecificTimerDate);
-            groupBox11.Controls.Add(label36);
-            groupBox11.Controls.Add(SpecificTimercheckBox);
-            groupBox11.Location = new Point(2, 684);
-            groupBox11.Margin = new Padding(2);
-            groupBox11.Name = "groupBox11";
-            groupBox11.Padding = new Padding(2);
-            groupBox11.Size = new Size(1301, 89);
-            groupBox11.TabIndex = 28;
-            groupBox11.TabStop = false;
-            groupBox11.Text = "Specific time";
+            groupBox7.Controls.Add(label32);
+            groupBox7.Controls.Add(WaitForProgramTimeFormatcomboBox);
+            groupBox7.Controls.Add(WaitForProgramActionlabel);
+            groupBox7.Controls.Add(WaitForProgramTriggerTimetextBox);
+            groupBox7.Controls.Add(label27);
+            groupBox7.Controls.Add(WaitForProgramCleanbutton);
+            groupBox7.Controls.Add(WaitForProgrambutton);
+            groupBox7.Controls.Add(WaitForProgramtextBox);
+            groupBox7.Controls.Add(WaitForProgramcheckBox);
+            groupBox7.Controls.Add(label3);
+            groupBox7.Dock = DockStyle.Fill;
+            groupBox7.Location = new Point(2, 645);
+            groupBox7.Margin = new Padding(2);
+            groupBox7.MaximumSize = new Size(0, 125);
+            groupBox7.MinimumSize = new Size(1322, 125);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Padding = new Padding(2);
+            groupBox7.Size = new Size(1329, 125);
+            groupBox7.TabIndex = 15;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "Wait for program";
             // 
-            // label40
+            // label32
             // 
-            label40.AutoSize = true;
-            label40.Location = new Point(22, 42);
-            label40.Margin = new Padding(2, 0, 2, 0);
-            label40.Name = "label40";
-            label40.Size = new Size(44, 15);
-            label40.TabIndex = 29;
-            label40.Text = "Start at";
+            label32.AutoSize = true;
+            label32.Location = new Point(34, 95);
+            label32.Margin = new Padding(2, 0, 2, 0);
+            label32.Name = "label32";
+            label32.Size = new Size(43, 15);
+            label32.TabIndex = 31;
+            label32.Text = "Trigger";
             // 
-            // label38
+            // WaitForProgramTimeFormatcomboBox
             // 
-            label38.AutoSize = true;
-            label38.Location = new Point(75, 42);
-            label38.Margin = new Padding(2, 0, 2, 0);
-            label38.Name = "label38";
-            label38.Size = new Size(30, 15);
-            label38.TabIndex = 31;
-            label38.Text = "date";
+            WaitForProgramTimeFormatcomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            WaitForProgramTimeFormatcomboBox.FormattingEnabled = true;
+            WaitForProgramTimeFormatcomboBox.Items.AddRange(new object[] { "sec", "min", "hour" });
+            WaitForProgramTimeFormatcomboBox.Location = new Point(164, 90);
+            WaitForProgramTimeFormatcomboBox.Margin = new Padding(2);
+            WaitForProgramTimeFormatcomboBox.Name = "WaitForProgramTimeFormatcomboBox";
+            WaitForProgramTimeFormatcomboBox.Size = new Size(54, 23);
+            WaitForProgramTimeFormatcomboBox.TabIndex = 33;
+            WaitForProgramTimeFormatcomboBox.SelectedIndexChanged += WaitForProgramTimeFormatcomboBox_SelectedIndexChanged;
             // 
-            // label37
+            // WaitForProgramActionlabel
             // 
-            label37.AutoSize = true;
-            label37.Location = new Point(220, 42);
-            label37.Margin = new Padding(2, 0, 2, 0);
-            label37.Name = "label37";
-            label37.Size = new Size(31, 15);
-            label37.TabIndex = 30;
-            label37.Text = "time";
+            WaitForProgramActionlabel.AutoSize = true;
+            WaitForProgramActionlabel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            WaitForProgramActionlabel.ForeColor = SystemColors.ControlText;
+            WaitForProgramActionlabel.Location = new Point(845, 17);
+            WaitForProgramActionlabel.Margin = new Padding(2, 0, 2, 0);
+            WaitForProgramActionlabel.Name = "WaitForProgramActionlabel";
+            WaitForProgramActionlabel.Size = new Size(99, 20);
+            WaitForProgramActionlabel.TabIndex = 28;
+            WaitForProgramActionlabel.Text = "Next action";
+            WaitForProgramActionlabel.Visible = false;
             // 
-            // SpecificTimerTime
+            // WaitForProgramTriggerTimetextBox
             // 
-            SpecificTimerTime.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            SpecificTimerTime.Format = DateTimePickerFormat.Time;
-            SpecificTimerTime.Location = new Point(255, 39);
-            SpecificTimerTime.Margin = new Padding(2);
-            SpecificTimerTime.Name = "SpecificTimerTime";
-            SpecificTimerTime.ShowUpDown = true;
-            SpecificTimerTime.Size = new Size(89, 23);
-            SpecificTimerTime.TabIndex = 29;
-            SpecificTimerTime.ValueChanged += SpecificTimer_ValueChanged;
+            WaitForProgramTriggerTimetextBox.Location = new Point(118, 91);
+            WaitForProgramTriggerTimetextBox.Margin = new Padding(2);
+            WaitForProgramTriggerTimetextBox.Name = "WaitForProgramTriggerTimetextBox";
+            WaitForProgramTriggerTimetextBox.Size = new Size(44, 23);
+            WaitForProgramTriggerTimetextBox.TabIndex = 32;
+            WaitForProgramTriggerTimetextBox.TextChanged += WaitForProgramTriggerTimetextBox_TextChanged;
+            WaitForProgramTriggerTimetextBox.KeyPress += OnlyAllowNumericNumbers;
             // 
-            // SpecificTimerDate
+            // label27
             // 
-            SpecificTimerDate.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            SpecificTimerDate.Format = DateTimePickerFormat.Short;
-            SpecificTimerDate.Location = new Point(110, 39);
-            SpecificTimerDate.Margin = new Padding(2);
-            SpecificTimerDate.Name = "SpecificTimerDate";
-            SpecificTimerDate.Size = new Size(98, 23);
-            SpecificTimerDate.TabIndex = 28;
-            SpecificTimerDate.ValueChanged += SpecificTimer_ValueChanged;
+            label27.AutoSize = true;
+            label27.Location = new Point(94, 95);
+            label27.Margin = new Padding(2, 0, 2, 0);
+            label27.Name = "label27";
+            label27.Size = new Size(24, 15);
+            label27.TabIndex = 31;
+            label27.Text = "For";
             // 
-            // label36
+            // WaitForProgramCleanbutton
             // 
-            label36.AutoSize = true;
-            label36.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label36.ForeColor = SystemColors.ControlText;
-            label36.Location = new Point(845, 20);
-            label36.Margin = new Padding(2, 0, 2, 0);
-            label36.Name = "label36";
-            label36.Size = new Size(99, 20);
-            label36.TabIndex = 27;
-            label36.Text = "Next action";
-            label36.Visible = false;
+            WaitForProgramCleanbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            WaitForProgramCleanbutton.Location = new Point(1239, 37);
+            WaitForProgramCleanbutton.Margin = new Padding(2);
+            WaitForProgramCleanbutton.Name = "WaitForProgramCleanbutton";
+            WaitForProgramCleanbutton.Size = new Size(74, 28);
+            WaitForProgramCleanbutton.TabIndex = 20;
+            WaitForProgramCleanbutton.Text = "Clear";
+            WaitForProgramCleanbutton.UseVisualStyleBackColor = true;
+            WaitForProgramCleanbutton.Click += WaitForProgramCleanbutton_Click;
             // 
-            // SpecificTimercheckBox
+            // WaitForProgrambutton
             // 
-            SpecificTimercheckBox.AutoSize = true;
-            SpecificTimercheckBox.Location = new Point(20, 20);
-            SpecificTimercheckBox.Margin = new Padding(2);
-            SpecificTimercheckBox.Name = "SpecificTimercheckBox";
-            SpecificTimercheckBox.Size = new Size(68, 19);
-            SpecificTimercheckBox.TabIndex = 20;
-            SpecificTimercheckBox.Text = "Enabled";
-            SpecificTimercheckBox.UseVisualStyleBackColor = true;
-            SpecificTimercheckBox.CheckedChanged += SpecificTimercheckBox_CheckedChanged;
+            WaitForProgrambutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            WaitForProgrambutton.Location = new Point(1156, 37);
+            WaitForProgrambutton.Margin = new Padding(2);
+            WaitForProgrambutton.Name = "WaitForProgrambutton";
+            WaitForProgrambutton.Size = new Size(79, 28);
+            WaitForProgrambutton.TabIndex = 4;
+            WaitForProgrambutton.Text = "Select";
+            WaitForProgrambutton.UseVisualStyleBackColor = true;
+            WaitForProgrambutton.Click += WaitForProgrambutton_Click;
+            // 
+            // WaitForProgramtextBox
+            // 
+            WaitForProgramtextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            WaitForProgramtextBox.Location = new Point(169, 40);
+            WaitForProgramtextBox.Margin = new Padding(2);
+            WaitForProgramtextBox.Name = "WaitForProgramtextBox";
+            WaitForProgramtextBox.ReadOnly = true;
+            WaitForProgramtextBox.Size = new Size(970, 23);
+            WaitForProgramtextBox.TabIndex = 3;
+            // 
+            // WaitForProgramcheckBox
+            // 
+            WaitForProgramcheckBox.AutoSize = true;
+            WaitForProgramcheckBox.Location = new Point(22, 23);
+            WaitForProgramcheckBox.Margin = new Padding(2);
+            WaitForProgramcheckBox.Name = "WaitForProgramcheckBox";
+            WaitForProgramcheckBox.Size = new Size(68, 19);
+            WaitForProgramcheckBox.TabIndex = 19;
+            WaitForProgramcheckBox.Text = "Enabled";
+            WaitForProgramcheckBox.UseVisualStyleBackColor = true;
+            WaitForProgramcheckBox.CheckedChanged += WaitForProgramcheckBox_CheckChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(22, 44);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(136, 15);
+            label3.TabIndex = 0;
+            label3.Text = "Select program to watch";
             // 
             // groupBox2
             // 
-            groupBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox2.Controls.Add(ShutdownDownbutton);
             groupBox2.Controls.Add(ShutdownUpbutton);
             groupBox2.Controls.Add(ShutdownRemovebutton);
@@ -1330,19 +1359,22 @@
             groupBox2.Controls.Add(ShutdownSequencedataGridView);
             groupBox2.Controls.Add(ActionProgramcheckBox);
             groupBox2.Controls.Add(label16);
-            groupBox2.Location = new Point(2, 847);
+            groupBox2.Dock = DockStyle.Fill;
+            groupBox2.Location = new Point(2, 774);
             groupBox2.Margin = new Padding(2);
+            groupBox2.MaximumSize = new Size(0, 350);
+            groupBox2.MinimumSize = new Size(1322, 350);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(2);
-            groupBox2.Size = new Size(1301, 331);
-            groupBox2.TabIndex = 12;
+            groupBox2.Size = new Size(1329, 350);
+            groupBox2.TabIndex = 29;
             groupBox2.TabStop = false;
             groupBox2.Text = "Shutdown sequence";
             // 
             // ShutdownDownbutton
             // 
             ShutdownDownbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            ShutdownDownbutton.Location = new Point(1220, 170);
+            ShutdownDownbutton.Location = new Point(1236, 178);
             ShutdownDownbutton.Margin = new Padding(2);
             ShutdownDownbutton.Name = "ShutdownDownbutton";
             ShutdownDownbutton.Size = new Size(77, 29);
@@ -1354,7 +1386,7 @@
             // ShutdownUpbutton
             // 
             ShutdownUpbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            ShutdownUpbutton.Location = new Point(1220, 136);
+            ShutdownUpbutton.Location = new Point(1236, 144);
             ShutdownUpbutton.Margin = new Padding(2);
             ShutdownUpbutton.Name = "ShutdownUpbutton";
             ShutdownUpbutton.Size = new Size(77, 29);
@@ -1366,7 +1398,7 @@
             // ShutdownRemovebutton
             // 
             ShutdownRemovebutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            ShutdownRemovebutton.Location = new Point(1220, 103);
+            ShutdownRemovebutton.Location = new Point(1236, 111);
             ShutdownRemovebutton.Margin = new Padding(2);
             ShutdownRemovebutton.Name = "ShutdownRemovebutton";
             ShutdownRemovebutton.Size = new Size(77, 29);
@@ -1378,7 +1410,7 @@
             // ShutdownAddbutton
             // 
             ShutdownAddbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            ShutdownAddbutton.Location = new Point(1220, 69);
+            ShutdownAddbutton.Location = new Point(1236, 77);
             ShutdownAddbutton.Margin = new Padding(2);
             ShutdownAddbutton.Name = "ShutdownAddbutton";
             ShutdownAddbutton.Size = new Size(77, 29);
@@ -1395,20 +1427,18 @@
             ShutdownSequencedataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(224, 224, 224);
             ShutdownSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            ShutdownSequencedataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ShutdownSequencedataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             ShutdownSequencedataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ShutdownSequencedataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ShutdownSequencedataGridView.Columns.AddRange(new DataGridViewColumn[] { Order, CommandProgram, Arguments, WindowStyle, DelayBeforeExecution, DelayAfterExecution, WaitUntilExit });
-            ShutdownSequencedataGridView.Location = new Point(26, 69);
+            ShutdownSequencedataGridView.Location = new Point(25, 78);
             ShutdownSequencedataGridView.Margin = new Padding(2);
             ShutdownSequencedataGridView.MultiSelect = false;
             ShutdownSequencedataGridView.Name = "ShutdownSequencedataGridView";
             ShutdownSequencedataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            ShutdownSequencedataGridView.Size = new Size(1190, 231);
+            ShutdownSequencedataGridView.Size = new Size(1197, 268);
             ShutdownSequencedataGridView.TabIndex = 35;
             ShutdownSequencedataGridView.CellClick += ShutdownSequencedataGridView_CellClick;
-            ShutdownSequencedataGridView.EditingControlShowing += SequencedataGridView_EditingControlShowing;
-            ShutdownSequencedataGridView.KeyDown += ShutdownSequencedataGridView_KeyDown;
             // 
             // Order
             // 
@@ -1454,7 +1484,7 @@
             // 
             DelayBeforeExecution.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             DelayBeforeExecution.FillWeight = 324.1848F;
-            DelayBeforeExecution.HeaderText = "Delay before execution [s]";
+            DelayBeforeExecution.HeaderText = "Delay before [s]";
             DelayBeforeExecution.MinimumWidth = 60;
             DelayBeforeExecution.Name = "DelayBeforeExecution";
             DelayBeforeExecution.Width = 60;
@@ -1463,7 +1493,7 @@
             // 
             DelayAfterExecution.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             DelayAfterExecution.FillWeight = 40.71891F;
-            DelayAfterExecution.HeaderText = "Delay after execution [s]";
+            DelayAfterExecution.HeaderText = "Delay after [s]";
             DelayAfterExecution.MinimumWidth = 60;
             DelayAfterExecution.Name = "DelayAfterExecution";
             DelayAfterExecution.Width = 60;
@@ -1479,19 +1509,18 @@
             // ActionProgramcheckBox
             // 
             ActionProgramcheckBox.AutoSize = true;
-            ActionProgramcheckBox.Location = new Point(20, 20);
+            ActionProgramcheckBox.Location = new Point(19, 19);
             ActionProgramcheckBox.Margin = new Padding(2);
             ActionProgramcheckBox.Name = "ActionProgramcheckBox";
             ActionProgramcheckBox.Size = new Size(68, 19);
             ActionProgramcheckBox.TabIndex = 20;
             ActionProgramcheckBox.Text = "Enabled";
             ActionProgramcheckBox.UseVisualStyleBackColor = true;
-            ActionProgramcheckBox.CheckedChanged += ActionProgramcheckBox_CheckedChanged;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(22, 50);
+            label16.Location = new Point(21, 49);
             label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
             label16.Size = new Size(199, 15);
@@ -1500,7 +1529,7 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(flowLayoutPanel2);
+            tabPage2.Controls.Add(tableLayoutPanel2);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Margin = new Padding(2);
             tabPage2.Name = "tabPage2";
@@ -1510,21 +1539,24 @@
             tabPage2.Text = "Startup plan";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel2
+            // tableLayoutPanel2
             // 
-            flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel2.AutoScroll = true;
-            flowLayoutPanel2.Controls.Add(groupBox9);
-            flowLayoutPanel2.Controls.Add(ShellgroupBox);
-            flowLayoutPanel2.Location = new Point(2, 2);
-            flowLayoutPanel2.Margin = new Padding(2);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(1332, 599);
-            flowLayoutPanel2.TabIndex = 11;
+            tableLayoutPanel2.AutoScroll = true;
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Controls.Add(groupBox9, 0, 0);
+            tableLayoutPanel2.Controls.Add(ShellgroupBox, 0, 1);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(2, 2);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle());
+            tableLayoutPanel2.RowStyles.Add(new RowStyle());
+            tableLayoutPanel2.Size = new Size(1333, 603);
+            tableLayoutPanel2.TabIndex = 0;
             // 
             // groupBox9
             // 
-            groupBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox9.Controls.Add(StartupDownbutton);
             groupBox9.Controls.Add(StartupUpbutton);
             groupBox9.Controls.Add(StartupRemovebutton);
@@ -1532,18 +1564,22 @@
             groupBox9.Controls.Add(StartupSequencedataGridView);
             groupBox9.Controls.Add(label31);
             groupBox9.Controls.Add(StartupProgramscheckBox);
+            groupBox9.Dock = DockStyle.Fill;
             groupBox9.Location = new Point(2, 2);
             groupBox9.Margin = new Padding(2);
+            groupBox9.MaximumSize = new Size(0, 360);
+            groupBox9.MinimumSize = new Size(1322, 360);
             groupBox9.Name = "groupBox9";
             groupBox9.Padding = new Padding(2);
-            groupBox9.Size = new Size(1320, 316);
+            groupBox9.Size = new Size(1329, 360);
             groupBox9.TabIndex = 12;
             groupBox9.TabStop = false;
             groupBox9.Text = "Startup";
             // 
             // StartupDownbutton
             // 
-            StartupDownbutton.Location = new Point(1239, 165);
+            StartupDownbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            StartupDownbutton.Location = new Point(1246, 165);
             StartupDownbutton.Margin = new Padding(2);
             StartupDownbutton.Name = "StartupDownbutton";
             StartupDownbutton.Size = new Size(77, 29);
@@ -1554,7 +1590,8 @@
             // 
             // StartupUpbutton
             // 
-            StartupUpbutton.Location = new Point(1239, 132);
+            StartupUpbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            StartupUpbutton.Location = new Point(1246, 132);
             StartupUpbutton.Margin = new Padding(2);
             StartupUpbutton.Name = "StartupUpbutton";
             StartupUpbutton.Size = new Size(77, 29);
@@ -1565,7 +1602,8 @@
             // 
             // StartupRemovebutton
             // 
-            StartupRemovebutton.Location = new Point(1239, 98);
+            StartupRemovebutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            StartupRemovebutton.Location = new Point(1246, 98);
             StartupRemovebutton.Margin = new Padding(2);
             StartupRemovebutton.Name = "StartupRemovebutton";
             StartupRemovebutton.Size = new Size(77, 29);
@@ -1576,7 +1614,8 @@
             // 
             // StartAddbutton
             // 
-            StartAddbutton.Location = new Point(1239, 67);
+            StartAddbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            StartAddbutton.Location = new Point(1246, 67);
             StartAddbutton.Margin = new Padding(2);
             StartAddbutton.Name = "StartAddbutton";
             StartAddbutton.Size = new Size(77, 29);
@@ -1593,6 +1632,7 @@
             StartupSequencedataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(224, 224, 224);
             StartupSequencedataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            StartupSequencedataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             StartupSequencedataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             StartupSequencedataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             StartupSequencedataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewComboBoxColumn1, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewCheckBoxColumn1 });
@@ -1601,7 +1641,7 @@
             StartupSequencedataGridView.MultiSelect = false;
             StartupSequencedataGridView.Name = "StartupSequencedataGridView";
             StartupSequencedataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            StartupSequencedataGridView.Size = new Size(1215, 231);
+            StartupSequencedataGridView.Size = new Size(1222, 269);
             StartupSequencedataGridView.TabIndex = 39;
             StartupSequencedataGridView.CellClick += StartupSequencedataGridView_CellClick;
             StartupSequencedataGridView.EditingControlShowing += SequencedataGridView_EditingControlShowing;
@@ -1650,7 +1690,7 @@
             // 
             dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             dataGridViewTextBoxColumn4.FillWeight = 324.1848F;
-            dataGridViewTextBoxColumn4.HeaderText = "Delay before execution [s]";
+            dataGridViewTextBoxColumn4.HeaderText = "Delay before [s]";
             dataGridViewTextBoxColumn4.MinimumWidth = 60;
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             dataGridViewTextBoxColumn4.Width = 60;
@@ -1659,7 +1699,7 @@
             // 
             dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             dataGridViewTextBoxColumn5.FillWeight = 40.71891F;
-            dataGridViewTextBoxColumn5.HeaderText = "Delay after execution [s]";
+            dataGridViewTextBoxColumn5.HeaderText = "Delay after [s]";
             dataGridViewTextBoxColumn5.MinimumWidth = 60;
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             dataGridViewTextBoxColumn5.Width = 60;
@@ -1678,9 +1718,9 @@
             label31.Location = new Point(16, 52);
             label31.Margin = new Padding(2, 0, 2, 0);
             label31.Name = "label31";
-            label31.Size = new Size(221, 15);
+            label31.Size = new Size(230, 15);
             label31.TabIndex = 38;
-            label31.Text = "Start application(s) when Windows starts";
+            label31.Text = "Execute the following with Windows starts";
             // 
             // StartupProgramscheckBox
             // 
@@ -1696,7 +1736,6 @@
             // 
             // ShellgroupBox
             // 
-            ShellgroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             ShellgroupBox.Controls.Add(ShellStartProgramtextBox);
             ShellgroupBox.Controls.Add(ShellStartProgramClearbutton);
             ShellgroupBox.Controls.Add(label41);
@@ -1704,27 +1743,32 @@
             ShellgroupBox.Controls.Add(ShellStartProgramEnabledcheckBox);
             ShellgroupBox.Controls.Add(ShellActivityWinOffradioButton);
             ShellgroupBox.Controls.Add(ShellExplorerradioButton);
-            ShellgroupBox.Location = new Point(2, 322);
+            ShellgroupBox.Dock = DockStyle.Fill;
+            ShellgroupBox.Location = new Point(2, 366);
             ShellgroupBox.Margin = new Padding(2);
+            ShellgroupBox.MaximumSize = new Size(0, 125);
+            ShellgroupBox.MinimumSize = new Size(1322, 125);
             ShellgroupBox.Name = "ShellgroupBox";
             ShellgroupBox.Padding = new Padding(2);
-            ShellgroupBox.Size = new Size(1320, 125);
+            ShellgroupBox.Size = new Size(1329, 125);
             ShellgroupBox.TabIndex = 11;
             ShellgroupBox.TabStop = false;
             ShellgroupBox.Text = "Shell";
             // 
             // ShellStartProgramtextBox
             // 
+            ShellStartProgramtextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             ShellStartProgramtextBox.Location = new Point(110, 78);
             ShellStartProgramtextBox.Margin = new Padding(2);
             ShellStartProgramtextBox.Name = "ShellStartProgramtextBox";
             ShellStartProgramtextBox.ReadOnly = true;
-            ShellStartProgramtextBox.Size = new Size(1047, 23);
+            ShellStartProgramtextBox.Size = new Size(1054, 23);
             ShellStartProgramtextBox.TabIndex = 12;
             // 
             // ShellStartProgramClearbutton
             // 
-            ShellStartProgramClearbutton.Location = new Point(1244, 78);
+            ShellStartProgramClearbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ShellStartProgramClearbutton.Location = new Point(1251, 78);
             ShellStartProgramClearbutton.Margin = new Padding(2);
             ShellStartProgramClearbutton.Name = "ShellStartProgramClearbutton";
             ShellStartProgramClearbutton.Size = new Size(72, 29);
@@ -1745,7 +1789,8 @@
             // 
             // ShellStartProgramSelectbutton
             // 
-            ShellStartProgramSelectbutton.Location = new Point(1161, 78);
+            ShellStartProgramSelectbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ShellStartProgramSelectbutton.Location = new Point(1168, 78);
             ShellStartProgramSelectbutton.Margin = new Padding(2);
             ShellStartProgramSelectbutton.Name = "ShellStartProgramSelectbutton";
             ShellStartProgramSelectbutton.Size = new Size(78, 29);
@@ -1794,7 +1839,7 @@
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(flowLayoutPanel3);
+            tabPage3.Controls.Add(tableLayoutPanel1);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Margin = new Padding(2);
             tabPage3.Name = "tabPage3";
@@ -1804,19 +1849,23 @@
             tabPage3.Text = "Other";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel3
+            // tableLayoutPanel1
             // 
-            flowLayoutPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel3.Controls.Add(FocusgroupBox);
-            flowLayoutPanel3.Location = new Point(2, 2);
-            flowLayoutPanel3.Margin = new Padding(2);
-            flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(1332, 605);
-            flowLayoutPanel3.TabIndex = 15;
+            tableLayoutPanel1.AutoScroll = true;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(FocusgroupBox, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(2, 2);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.Size = new Size(1333, 603);
+            tableLayoutPanel1.TabIndex = 0;
             // 
             // FocusgroupBox
             // 
-            FocusgroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             FocusgroupBox.Controls.Add(FocusProgramcheckBox);
             FocusgroupBox.Controls.Add(FocusProgramtextBox);
             FocusgroupBox.Controls.Add(FocusProgramClearbutton);
@@ -1825,11 +1874,14 @@
             FocusgroupBox.Controls.Add(label34);
             FocusgroupBox.Controls.Add(SelectFocusProgrambutton);
             FocusgroupBox.Controls.Add(FocusProgramPoolIntervaltextBox);
+            FocusgroupBox.Dock = DockStyle.Fill;
             FocusgroupBox.Location = new Point(2, 2);
             FocusgroupBox.Margin = new Padding(2);
+            FocusgroupBox.MaximumSize = new Size(0, 120);
+            FocusgroupBox.MinimumSize = new Size(1322, 120);
             FocusgroupBox.Name = "FocusgroupBox";
             FocusgroupBox.Padding = new Padding(2);
-            FocusgroupBox.Size = new Size(1331, 115);
+            FocusgroupBox.Size = new Size(1329, 120);
             FocusgroupBox.TabIndex = 14;
             FocusgroupBox.TabStop = false;
             FocusgroupBox.Text = "Focus";
@@ -1848,6 +1900,7 @@
             // 
             // FocusProgramtextBox
             // 
+            FocusProgramtextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             FocusProgramtextBox.Location = new Point(82, 76);
             FocusProgramtextBox.Margin = new Padding(2);
             FocusProgramtextBox.Name = "FocusProgramtextBox";
@@ -1857,6 +1910,7 @@
             // 
             // FocusProgramClearbutton
             // 
+            FocusProgramClearbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             FocusProgramClearbutton.Location = new Point(1255, 72);
             FocusProgramClearbutton.Margin = new Padding(2);
             FocusProgramClearbutton.Name = "FocusProgramClearbutton";
@@ -1898,6 +1952,7 @@
             // 
             // SelectFocusProgrambutton
             // 
+            SelectFocusProgrambutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             SelectFocusProgrambutton.Location = new Point(1172, 72);
             SelectFocusProgrambutton.Margin = new Padding(2);
             SelectFocusProgrambutton.Name = "SelectFocusProgrambutton";
@@ -1982,6 +2037,7 @@
             // 
             // OpenLogbutton
             // 
+            OpenLogbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             OpenLogbutton.Location = new Point(1265, 46);
             OpenLogbutton.Margin = new Padding(2);
             OpenLogbutton.Name = "OpenLogbutton";
@@ -1993,6 +2049,7 @@
             // 
             // OpenConfigbutton
             // 
+            OpenConfigbutton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             OpenConfigbutton.Location = new Point(1265, 15);
             OpenConfigbutton.Margin = new Padding(2);
             OpenConfigbutton.Name = "OpenConfigbutton";
@@ -2069,6 +2126,7 @@
             // 
             // ConfigLocationtextBox
             // 
+            ConfigLocationtextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             ConfigLocationtextBox.Location = new Point(103, 15);
             ConfigLocationtextBox.Margin = new Padding(2);
             ConfigLocationtextBox.Name = "ConfigLocationtextBox";
@@ -2100,6 +2158,7 @@
             // 
             // LogPathtextBox
             // 
+            LogPathtextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             LogPathtextBox.Location = new Point(103, 46);
             LogPathtextBox.Margin = new Padding(2);
             LogPathtextBox.Name = "LogPathtextBox";
@@ -2230,7 +2289,7 @@
             Statusbutton.Enabled = false;
             Statusbutton.FlatStyle = FlatStyle.Flat;
             Statusbutton.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Statusbutton.Location = new Point(1190, 43);
+            Statusbutton.Location = new Point(1184, 41);
             Statusbutton.Margin = new Padding(2);
             Statusbutton.Name = "Statusbutton";
             Statusbutton.Size = new Size(163, 57);
@@ -2267,31 +2326,31 @@
             ShutdownTypegroupBox.PerformLayout();
             ConditiongroupBox.ResumeLayout(false);
             ConditiongroupBox.PerformLayout();
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
-            groupBox6.ResumeLayout(false);
-            groupBox6.PerformLayout();
-            groupBox7.ResumeLayout(false);
-            groupBox7.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
             groupBox11.ResumeLayout(false);
             groupBox11.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox7.ResumeLayout(false);
+            groupBox7.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ShutdownSequencedataGridView).EndInit();
             tabPage2.ResumeLayout(false);
-            flowLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
             groupBox9.ResumeLayout(false);
             groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)StartupSequencedataGridView).EndInit();
             ShellgroupBox.ResumeLayout(false);
             ShellgroupBox.PerformLayout();
             tabPage3.ResumeLayout(false);
-            flowLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
             FocusgroupBox.ResumeLayout(false);
             FocusgroupBox.PerformLayout();
             tabPage4.ResumeLayout(false);
@@ -2348,13 +2407,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.CheckBox LoadOnWindowsStartcheckBox;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox LogPathtextBox;
-        private System.Windows.Forms.CheckBox EnableLoggercheckBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
@@ -2369,8 +2421,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label Keyboardlabel;
         private System.Windows.Forms.Label Mouselabel;
-        private System.Windows.Forms.CheckBox StartActivatedcheckBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button WaitForProgrambutton;
@@ -2378,7 +2428,6 @@
         private System.Windows.Forms.CheckBox WaitForProgramcheckBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox TimercheckBox;
-        private System.Windows.Forms.CheckBox ActionProgramcheckBox;
         private System.Windows.Forms.ComboBox TimerMinscomboBox;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ComboBox TimerDayscomboBox;
@@ -2399,22 +2448,12 @@
         private System.Windows.Forms.TextBox WaitForProgramTriggerTimetextBox;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button ReloadSettingsbutton;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox ConfigLocationtextBox;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveSettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reloadSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem minimizeToTrayToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.CheckBox ShowWarningcheckBox;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ComboBox WarningTimecomboBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button OpenLogbutton;
-        private System.Windows.Forms.Button OpenConfigbutton;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.CheckBox StartupProgramscheckBox;
         private System.Windows.Forms.GroupBox ShellgroupBox;
@@ -2430,16 +2469,11 @@
         private System.Windows.Forms.DateTimePicker SpecificTimerTime;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.DataGridView ShutdownSequencedataGridView;
-        private System.Windows.Forms.Button ShutdownAddbutton;
-        private System.Windows.Forms.Button ShutdownRemovebutton;
         private System.Windows.Forms.Button StartupRemovebutton;
         private System.Windows.Forms.Button StartAddbutton;
         private System.Windows.Forms.DataGridView StartupSequencedataGridView;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.CheckBox DisableScreensavercheckBox;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.GroupBox FocusgroupBox;
         private System.Windows.Forms.CheckBox FocusProgramcheckBox;
         private System.Windows.Forms.TextBox FocusProgramtextBox;
@@ -2452,30 +2486,55 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.CheckBox ForceShutdowncheckBox;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.ComboBox LogLevelcomboBox;
         private System.Windows.Forms.Button StartupDownbutton;
         private System.Windows.Forms.Button StartupUpbutton;
-        private System.Windows.Forms.Button ShutdownDownbutton;
-        private System.Windows.Forms.Button ShutdownUpbutton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Order;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CommandProgram;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Arguments;
-        private System.Windows.Forms.DataGridViewComboBoxColumn WindowStyle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DelayBeforeExecution;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DelayAfterExecution;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn WaitUntilExit;
         private System.Windows.Forms.TextBox ShellStartProgramtextBox;
         private System.Windows.Forms.Button ShellStartProgramClearbutton;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Button ShellStartProgramSelectbutton;
         private System.Windows.Forms.Button Statusbutton;
+        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanel2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private TableLayoutPanel tableLayoutPanel3;
+        private GroupBox groupBox5;
+        private ComboBox LogLevelcomboBox;
+        private CheckBox DisableScreensavercheckBox;
+        private Button OpenLogbutton;
+        private Button OpenConfigbutton;
+        private Button button1;
+        private CheckBox ShowWarningcheckBox;
+        private Label label30;
+        private Label label29;
+        private ComboBox WarningTimecomboBox;
+        private Label label28;
+        private TextBox ConfigLocationtextBox;
+        private CheckBox StartActivatedcheckBox;
+        private Label label17;
+        private TextBox LogPathtextBox;
+        private CheckBox EnableLoggercheckBox;
+        private CheckBox LoadOnWindowsStartcheckBox;
+        private GroupBox groupBox2;
+        private Button ShutdownDownbutton;
+        private Button ShutdownUpbutton;
+        private Button ShutdownRemovebutton;
+        private Button ShutdownAddbutton;
+        private DataGridView ShutdownSequencedataGridView;
+        private CheckBox ActionProgramcheckBox;
+        private Label label16;
+        private DataGridViewTextBoxColumn Order;
+        private DataGridViewTextBoxColumn CommandProgram;
+        private DataGridViewTextBoxColumn Arguments;
+        private DataGridViewComboBoxColumn WindowStyle;
+        private DataGridViewTextBoxColumn DelayBeforeExecution;
+        private DataGridViewTextBoxColumn DelayAfterExecution;
+        private DataGridViewCheckBoxColumn WaitUntilExit;
     }
 }
 
