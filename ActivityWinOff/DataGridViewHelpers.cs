@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ActivityWinOff;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -189,7 +190,7 @@ namespace ActivityWinOff
                 rows.Insert(row.Index, prevRow);
                 dgv.ClearSelection();
                 dgv.Rows[row.Index - 1].Selected = true;
-            } 
+            }
         }
 
         public static void DataGridViewMoveDown(DataGridView dgv, DataGridViewRow row)

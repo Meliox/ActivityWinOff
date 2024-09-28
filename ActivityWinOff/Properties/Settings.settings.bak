@@ -104,9 +104,9 @@
     <Setting Name="SpecificTimerEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-	<Setting Name="SpecificTimerTime" Type="System.DateTime" Scope="User">
-	  <Value Profile="(Default)">2024-01-01T00:00:00</Value>
-	</Setting>
+    <Setting Name="SpecificTimerTime" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
     <Setting Name="ShutdownSequence" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>

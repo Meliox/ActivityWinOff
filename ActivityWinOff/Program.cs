@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
+using ActivityWinOff;
 
 namespace ActivityWinOff
 {

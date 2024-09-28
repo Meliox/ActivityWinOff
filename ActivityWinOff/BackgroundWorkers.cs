@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Management;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ActivityWinOff
 {
@@ -18,7 +10,7 @@ namespace ActivityWinOff
     {
         [DllImport("user32.dll")]
         internal static extern IntPtr SetForegroundWindow(IntPtr hWnd);
-        
+
         [DllImport("user32.dll")]
         internal static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
@@ -293,7 +285,7 @@ namespace ActivityWinOff
                         e.Result = true;
                         break;
                     }
-                }   
+                }
                 Thread.Sleep(1000);
                 e.Result = false;
             }
@@ -426,13 +418,13 @@ namespace ActivityWinOff
                     if (Speed < Interface.NetworkTriggerSpeed && DateTime.Now > Interface.NetworkTriggerNext)
                     {
                         Interface.NetworkTriggered = true;
-                        Logger.add(2, "Watchdog: network activity (speed = " + Math.Round(Speed,1) + ") - true");
+                        Logger.add(2, "Watchdog: network activity (speed = " + Math.Round(Speed, 1) + ") - true");
                     }
                     else
                     {
                         // Reset timer
                         Interface.NetworkTriggered = false;
-                        Logger.add(2, "Watchdog: network activity (speed = " + Math.Round(Speed,1) + ") - false");
+                        Logger.add(2, "Watchdog: network activity (speed = " + Math.Round(Speed, 1) + ") - false");
                         Interface.NetworkTriggerNext = Helper.CalculateNext(DateTime.Now, Interface.NetworkTriggerTime, Interface.NetworkTriggerTimeFormat);
                     }
                 }
@@ -500,7 +492,7 @@ namespace ActivityWinOff
             {
                 if (Interface.UserActivityMouse && Interface.UserActivityLastActivityMouse > Interface.UserActivityNextTrigger)
                 {
-                    Interface.UserActivityNextTrigger = Helper.CalculateNext(Interface.UserActivityLastActivityMouse,Interface.UserActivityTriggerTime, Interface.UserActivityTriggerTimeFormat);
+                    Interface.UserActivityNextTrigger = Helper.CalculateNext(Interface.UserActivityLastActivityMouse, Interface.UserActivityTriggerTime, Interface.UserActivityTriggerTimeFormat);
                     Interface.UserActivityShutdown = false;
                     Logger.add(2, "Watchdog: user activity - false");
                 }
@@ -510,7 +502,7 @@ namespace ActivityWinOff
                     Interface.UserActivityShutdown = false;
                     Logger.add(2, "Watchdog: user activity - false");
                 }
-                
+
                 if (DateTime.Now > Interface.UserActivityNextTrigger)
                 {
                     Interface.UserActivityShutdown = true;

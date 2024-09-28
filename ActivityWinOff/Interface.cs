@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ActivityWinOff;
 namespace ActivityWinOff
 {
     class Interface
@@ -18,8 +19,7 @@ namespace ActivityWinOff
             }
         }
 
-
-    public static void LoadSettings()
+        public static void LoadSettings()
         {
             Properties.Settings.Default.Reload();
             NetworkAdapter = (string)Properties.Settings.Default["NetworkAdapter"];

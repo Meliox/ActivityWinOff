@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +16,7 @@ using System.IO;
 using System.Collections;
 using System.Globalization;
 using System.Reflection;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ActivityWinOff
 {
@@ -30,6 +31,7 @@ namespace ActivityWinOff
         string[] ApplicationArguments;
         public static Logger logger;
         Thread LoggerThread;
+        private CancellationTokenSource cancellationTokenSource;
 
         [DllImport("PowrProf.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         public static extern bool SetSuspendState(bool hiberate, bool forceCritical, bool disableWakeEvent);
@@ -38,9 +40,16 @@ namespace ActivityWinOff
         {
             InitializeComponent();
 
-            // set system paths
-            Interface.PathLog = Path.GetDirectoryName(ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath) + "\\ActivityWinOff.log";
-            Interface.PathConfig = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath;
+            // Set system paths to the user's local application data directory
+            string appDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ActivityWinOff");
+
+            if (!Directory.Exists(appDirectory))
+            {
+                Directory.CreateDirectory(appDirectory);
+            }
+
+            Interface.PathLog = Path.Combine(appDirectory, "app.log");
+            Interface.PathConfig = Path.Combine(appDirectory, "app.config");
 
             //start logging
             logger = new Logger(Interface.PathLog);
@@ -58,11 +67,22 @@ namespace ActivityWinOff
             this.ResizeEnd += (s, e) => { this.ResumeLayout(true); };
 
             MainForm = this;
-            notifyIcon.Visible = true;
-            notifyIcon.ContextMenu = new ContextMenu(new MenuItem[] {
-                new MenuItem("Start", (s, e) => { StartTrigger(); }),
-                new MenuItem("Exit", (s, e) =>  { Application.Exit(); }),
-            });
+
+            // Create ContextMenuStrip
+            var contextMenu = new ContextMenuStrip();
+
+            // Add "Start" menu item
+            var startItem = new ToolStripMenuItem("Start");
+            startItem.Click += (s, e) => { StartTrigger(); };
+            contextMenu.Items.Add(startItem);
+
+            // Add "Exit" menu item
+            var exitItem = new ToolStripMenuItem("Exit");
+            exitItem.Click += (s, e) => { Application.Exit(); };
+            contextMenu.Items.Add(exitItem);
+
+            // Assign the ContextMenuStrip to NotifyIcon
+            notifyIcon.ContextMenuStrip = contextMenu;
 
             ApplicationArguments = args;
 
@@ -73,21 +93,54 @@ namespace ActivityWinOff
         {
             if (t)
             {
-                LoggerThread = new Thread(() => SaveWork());
-                LoggerThread.IsBackground = true;
-                if (!LoggerThread.ThreadState.Equals(System.Threading.ThreadState.Running))
+                // Start the logging thread
+                if (LoggerThread == null || !LoggerThread.IsAlive)
+                {
+                    cancellationTokenSource = new CancellationTokenSource();
+                    CancellationToken token = cancellationTokenSource.Token;
+
+                    LoggerThread = new Thread(() => SaveWork(token));
+                    LoggerThread.IsBackground = true;
                     LoggerThread.Start();
+                }
             }
             else
             {
-                if (LoggerThread != null)
-                     LoggerThread.Abort();
+                // Signal the thread to cancel
+                if (cancellationTokenSource != null)
+                {
+                    cancellationTokenSource.Cancel();
+                }
+
+                // Optionally wait for the thread to finish
+                if (LoggerThread != null && LoggerThread.IsAlive)
+                {
+                    LoggerThread.Join(); // Wait for the thread to finish gracefully
+                }
             }
         }
 
-        public static void SaveWork()
+        public void FlushLog()
         {
-            while (true)
+            if (Interface.EnableLogger)
+            {
+                // Request cancellation
+                cancellationTokenSource.Cancel();
+
+                // Wait for the logger thread to complete
+                if (LoggerThread != null && LoggerThread.IsAlive)
+                {
+                    LoggerThread.Join(); // Optionally wait for the thread to finish
+                }
+
+                // Flush the log
+                logger.saveNow();
+            }
+        }
+
+        public static void SaveWork(CancellationToken token)
+        {
+            while (!token.IsCancellationRequested)
             {
                 logger.saveNow();
                 Thread.Sleep(50);
@@ -207,7 +260,7 @@ namespace ActivityWinOff
             // set Shell
             Interface.CurrentShell = Helper.GetCurrentShell();
             if (Interface.CurrentShell.Contains("explorer.exe"))
-                    ShellExplorerradioButton.Checked = true;
+                ShellExplorerradioButton.Checked = true;
             else if (Interface.CurrentShell.Contains("ActivityWinOff"))
                 ShellActivityWinOffradioButton.Checked = true;
         }
@@ -276,7 +329,7 @@ namespace ActivityWinOff
 
         private void BackgroundWorkerGUIUpdate(object sender, DoWorkEventArgs e)
         {
-            while(!workerGUIUpdate.CancellationPending)
+            while (!workerGUIUpdate.CancellationPending)
             {
                 if (WindowState != FormWindowState.Minimized)
                 {
@@ -294,7 +347,7 @@ namespace ActivityWinOff
                     }
                     if (Interface.NetworkTrafficEnabled)
                     {
-                        
+
                     }
                     if (Interface.WaitForProgramEnabled)
                     {
@@ -318,10 +371,21 @@ namespace ActivityWinOff
             Helper.DisableScreensaver(Interface.DisableScreensaver);
             SetStatusInGui();
             LockSettingsInGui(true);
-            notifyIcon.ContextMenu = new ContextMenu(new MenuItem[] {
-                new MenuItem("Stop", (s, e) => { StopTrigger(); }),
-                new MenuItem("Exit", (s, e) => { Application.Exit(); }),
-            });
+            // Create ContextMenuStrip
+            var contextMenu = new ContextMenuStrip();
+
+            // Add "Start" menu item
+            var startItem = new ToolStripMenuItem("Start");
+            startItem.Click += (s, e) => { StartTrigger(); };
+            contextMenu.Items.Add(startItem);
+
+            // Add "Exit" menu item
+            var exitItem = new ToolStripMenuItem("Exit");
+            exitItem.Click += (s, e) => { Application.Exit(); };
+            contextMenu.Items.Add(exitItem);
+
+            // Assign the ContextMenuStrip to NotifyIcon
+            notifyIcon.ContextMenuStrip = contextMenu;
             workerWatchdogTrigger.RunWorkerAsync();
             notifyIcon.BalloonTipTitle = "ActivityWinOff";
             notifyIcon.BalloonTipText = "Watchdog running";
@@ -333,10 +397,21 @@ namespace ActivityWinOff
             Logger.add(2, "Stopping watchdogs");
             Helper.DisableScreensaver(false);
             SetStatusInGui();
-            notifyIcon.ContextMenu = new ContextMenu(new MenuItem[] {
-                new MenuItem("Start", (s, e) => { StartTrigger(); }),
-                new MenuItem("Exit", (s, e) => { Application.Exit(); }),
-            });
+            // Create ContextMenuStrip
+            var contextMenu = new ContextMenuStrip();
+
+            // Add "Start" menu item
+            var startItem = new ToolStripMenuItem("Start");
+            startItem.Click += (s, e) => { StartTrigger(); };
+            contextMenu.Items.Add(startItem);
+
+            // Add "Exit" menu item
+            var exitItem = new ToolStripMenuItem("Exit");
+            exitItem.Click += (s, e) => { Application.Exit(); };
+            contextMenu.Items.Add(exitItem);
+
+            // Assign the ContextMenuStrip to NotifyIcon
+            notifyIcon.ContextMenuStrip = contextMenu;
             BackgroundWorkers.StopWatchTriggers();
             workerWatchdogTrigger.CancelAsync();
 
@@ -351,7 +426,7 @@ namespace ActivityWinOff
 
         public void UpdateNextActionAtlabel(string t)
         {
-            MainForm.BeginInvoke((MethodInvoker)delegate ()
+            MainForm.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
             {
                 FinalActionlabel.Text = t;
             }
@@ -376,7 +451,7 @@ namespace ActivityWinOff
 
         public void UpdateInputTraffic(string t)
         {
-            MainForm.BeginInvoke((MethodInvoker)delegate ()
+            MainForm.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
             {
                 InputTrafficlabel.Text = t;
             }
@@ -385,7 +460,7 @@ namespace ActivityWinOff
 
         public void UpdateCPUUtilisation(string t)
         {
-            MainForm.BeginInvoke((MethodInvoker)delegate ()
+            MainForm.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
             {
                 CPUUtilisationlabel.Text = t;
             }
@@ -394,7 +469,7 @@ namespace ActivityWinOff
 
         public void UpdateMousetime(string t)
         {
-            MainForm.BeginInvoke((MethodInvoker)delegate ()
+            MainForm.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
             {
                 Mouselabel.Text = t;
             }
@@ -403,7 +478,7 @@ namespace ActivityWinOff
 
         public void UpdateKeyboardtime(string t)
         {
-            MainForm.BeginInvoke((MethodInvoker)delegate ()
+            MainForm.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
             {
                 Keyboardlabel.Text = t;
             }
@@ -412,7 +487,7 @@ namespace ActivityWinOff
 
         public void UpdateOutputTraffic(string t)
         {
-            MainForm.BeginInvoke((MethodInvoker)delegate ()
+            MainForm.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
             {
                 OutputTrafficlabel.Text = t;
             }
@@ -440,7 +515,7 @@ namespace ActivityWinOff
 
         private void NetworkAdapterscomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
             Interface.NetworkAdapter = senderComboBox.SelectedItem.ToString();
         }
 
@@ -459,13 +534,13 @@ namespace ActivityWinOff
 
         private void TrafficTypecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
             Interface.NetworkAdapterTriggerType = senderComboBox.SelectedItem.ToString();
         }
 
         private void SpeedtextBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox senderComboBox = (TextBox)sender;
+            System.Windows.Forms.TextBox senderComboBox = (System.Windows.Forms.TextBox)sender;
             if (senderComboBox.Text != "")
             {
                 Interface.NetworkTriggerSpeed = Convert.ToInt32(senderComboBox.Text);
@@ -486,9 +561,9 @@ namespace ActivityWinOff
 
         private void NetworkTriggerTimetextBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox senderTextBox = (TextBox)sender;
+            System.Windows.Forms.TextBox senderTextBox = (System.Windows.Forms.TextBox)sender;
             if (senderTextBox.Text != "")
-            {
+            {   
                 Interface.NetworkTriggerTime = Convert.ToInt32(senderTextBox.Text);
             }
             else
@@ -499,7 +574,7 @@ namespace ActivityWinOff
 
         private void TrafficTimeFormatcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
             Interface.NetworkTriggerTimeFormat = senderComboBox.SelectedItem.ToString();
         }
 
@@ -619,7 +694,7 @@ namespace ActivityWinOff
 
         private void UserActivityTriggerTimetextBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox senderTextBox = (TextBox)sender;
+            System.Windows.Forms.TextBox senderTextBox = (System.Windows.Forms.TextBox)sender;
             if (senderTextBox.Text != "")
                 Interface.UserActivityTriggerTime = Convert.ToInt32(senderTextBox.Text);
             else
@@ -628,7 +703,7 @@ namespace ActivityWinOff
 
         private void UserActivityTriggerTimeFormatcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
             Interface.UserActivityTriggerTimeFormat = senderComboBox.SelectedItem.ToString();
         }
 
@@ -640,7 +715,7 @@ namespace ActivityWinOff
 
         public void UpdateTimerNextAction(string t)
         {
-            MainForm.BeginInvoke((MethodInvoker)delegate ()
+            MainForm.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
             {
                 if (t != "")
                 {
@@ -656,7 +731,7 @@ namespace ActivityWinOff
 
         public void UpdateWaitForProgramNextAction(string t)
         {
-            MainForm.BeginInvoke((MethodInvoker)delegate ()
+            MainForm.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
             {
                 if (t != "")
                 {
@@ -727,8 +802,7 @@ namespace ActivityWinOff
                 Logger.add(1, "Shutdown type: " + Interface.ShutdownType + ", Forced=" + Interface.ShutdownForced.ToString());
 
                 // Flush log
-                LoggerThread.Abort();
-                logger.saveNow();
+                FlushLog();
 
                 string shutdownCmd = "";
                 switch (Action)
@@ -763,25 +837,25 @@ namespace ActivityWinOff
 
         private void TimerDayscomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
             Interface.TimerDays = Convert.ToInt16(senderComboBox.SelectedItem.ToString());
         }
 
         private void TimerhourscomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
             Interface.TimerHours = Convert.ToInt16(senderComboBox.SelectedItem.ToString());
         }
 
         private void TimerMinscomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
             Interface.TimerMins = Convert.ToInt16(senderComboBox.SelectedItem.ToString());
         }
 
         private void TimerSecondscomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
             Interface.TimerSeconds = Convert.ToInt16(senderComboBox.SelectedItem.ToString());
         }
 
@@ -793,7 +867,7 @@ namespace ActivityWinOff
 
         private void CPUUtilcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
             Interface.CPUUtilLoadBelow = Convert.ToInt16(senderComboBox.SelectedItem.ToString());
         }
 
@@ -805,7 +879,7 @@ namespace ActivityWinOff
 
         private void CPUUtilTriggerTimetextBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox senderTextBox = (TextBox)sender;
+            System.Windows.Forms.TextBox senderTextBox = (System.Windows.Forms.TextBox)sender;
             if (senderTextBox.Text != "")
                 Interface.CPUUtilTriggerTime = Convert.ToInt32(senderTextBox.Text);
             else
@@ -814,7 +888,7 @@ namespace ActivityWinOff
 
         private void CPUUtilTriggerTimeFormatcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
             Interface.CPUUtilTriggerTimeFormat = senderComboBox.SelectedItem.ToString();
         }
 
@@ -841,13 +915,13 @@ namespace ActivityWinOff
 
         private void WaitForProgramTimeFormatcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
             Interface.WaitForProgramTriggerTimeFormat = senderComboBox.SelectedItem.ToString();
         }
 
         private void WaitForProgramTriggerTimetextBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox senderTextBox = (TextBox)sender;
+            System.Windows.Forms.TextBox senderTextBox = (System.Windows.Forms.TextBox)sender;
             Interface.WaitForProgramTriggerTime = Convert.ToInt16(senderTextBox.Text);
         }
 
@@ -891,7 +965,7 @@ namespace ActivityWinOff
 
         private void WarningTimecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
             Interface.WarningTime = Convert.ToInt32(senderComboBox.SelectedItem);
         }
 
@@ -909,15 +983,56 @@ namespace ActivityWinOff
 
         private void OpenConfigbutton_Click(object sender, EventArgs e)
         {
-            bool h = File.Exists(@Interface.PathConfig);
-            if (File.Exists(@Interface.PathConfig))
-                Process.Start(@Interface.PathConfig);
+            bool fileExists = File.Exists(@Interface.PathConfig);
+
+            if (fileExists)
+            {
+                // Use Process.Start to open the file with the default application
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = @Interface.PathConfig,
+                    UseShellExecute = true // This ensures the OS will use the default application for the file type
+                };
+
+                try
+                {
+                    Process.Start(psi);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("File does not exist.");
+            }
         }
 
         private void OpenLogbutton_Click(object sender, EventArgs e)
         {
             if (File.Exists(@Interface.PathLog))
-                Process.Start(@Interface.PathLog);
+            {
+                // Use Process.Start to open the log file with the default application
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = @Interface.PathLog,
+                    UseShellExecute = true // Ensures the OS uses the default application for the file type (e.g., Notepad for .log)
+                };
+
+                try
+                {
+                    Process.Start(psi);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while opening the log file: {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Log file does not exist.");
+            }
         }
 
         private void SpecificTimer_ValueChanged(object sender, EventArgs e)
@@ -1083,7 +1198,7 @@ namespace ActivityWinOff
 
         private void FocusProgramPoolIntervaltextBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox senderTextBox = (TextBox)sender;
+            System.Windows.Forms.TextBox senderTextBox = (System.Windows.Forms.TextBox)sender;
             if (senderTextBox.Text != "")
                 Interface.FocusProgramPoolInterval = Convert.ToInt32(senderTextBox.Text);
         }
@@ -1144,8 +1259,8 @@ namespace ActivityWinOff
 
         private void LogLevelcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox senderComboBox = (ComboBox)sender;
-            switch(senderComboBox.SelectedItem.ToString())
+            System.Windows.Forms.ComboBox senderComboBox = (System.Windows.Forms.ComboBox)sender;
+            switch (senderComboBox.SelectedItem.ToString())
             {
                 case "Normal":
                     Interface.LogLevel = 1;

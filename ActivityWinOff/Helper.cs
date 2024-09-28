@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Collections;
+using ActivityWinOff;
 
 namespace ActivityWinOff
 {
