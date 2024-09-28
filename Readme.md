@@ -1,5 +1,5 @@
 ### ActivityWinOff
-ActivityWinOff is an .NET 4.8 application for:
+ActivityWinOff is an .NET 8 application for:
 * Scheduling shutdown of windows based on one or more conditions. Some of the features are:
   * Time
   * User activity (Mouse and/or keyboard)
@@ -28,14 +28,14 @@ ActivityWinOff is an .NET 4.8 application for:
 If you find this application helpful, a small donation is always appreciated, [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K8XPMSEBERH3W).
 
 ## Install
-Prerequisite: .NET Framework 4.8 Runtime must be installed. Found [here](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+.NET Framework 8.0 Runtime must be installed. Found [here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 Download most [recent release](https://github.com/Meliox/ActivityWinOff/releases) and run installer.
 
 ## Build
 Install .NET 4.8.
 
-Simply get the source and set "ActivityWinOff" as Startup Project.
-Build installer: Setup > Build.
+Clone source and set "ActivityWinOff" as Startup Project.
+Build installer: Installer > Build.
 
 Pull requests are most welcome for new features and patches.
