@@ -49,7 +49,7 @@ namespace ActivityWinOff
             }
 
             Interface.PathLog = Path.Combine(appDirectory, "app.log");
-            Interface.PathConfig = Path.Combine(appDirectory, "app.config");
+            Interface.PathConfig = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath;
 
             //start logging
             logger = new Logger(Interface.PathLog);
