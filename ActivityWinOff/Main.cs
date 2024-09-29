@@ -369,6 +369,7 @@ namespace ActivityWinOff
 
         public void StartTrigger()
         {
+            Interface.Enabled = !Interface.Enabled;
             Logger.add(2, "Starting watchdogs");
             Helper.DisableScreensaver(Interface.DisableScreensaver);
             SetStatusInGui();
@@ -377,8 +378,8 @@ namespace ActivityWinOff
             var contextMenu = new ContextMenuStrip();
 
             // Add "Start" menu item
-            var startItem = new ToolStripMenuItem("Start");
-            startItem.Click += (s, e) => { StartTrigger(); };
+            var startItem = new ToolStripMenuItem("Stop");
+            startItem.Click += (s, e) => { StopTrigger(); };
             contextMenu.Items.Add(startItem);
 
             // Add "Exit" menu item
@@ -389,13 +390,14 @@ namespace ActivityWinOff
             // Assign the ContextMenuStrip to NotifyIcon
             notifyIcon.ContextMenuStrip = contextMenu;
             workerWatchdogTrigger.RunWorkerAsync();
-            notifyIcon.BalloonTipTitle = "ActivityWinOff";
-            notifyIcon.BalloonTipText = "Watchdog running";
+            notifyIcon.BalloonTipText = "Started";
             notifyIcon.ShowBalloonTip(1000);
         }
 
         public void StopTrigger()
         {
+            Interface.Enabled = !Interface.Enabled;
+
             Logger.add(2, "Stopping watchdogs");
             Helper.DisableScreensaver(false);
             SetStatusInGui();
@@ -422,6 +424,9 @@ namespace ActivityWinOff
             UpdateWaitForProgramNextAction("");
             UpdateTimerNextAction("");
 
+            notifyIcon.BalloonTipText = "Stopped";
+            notifyIcon.ShowBalloonTip(1000);
+
             // renable settings
             LockSettingsInGui(false);
         }
@@ -441,13 +446,13 @@ namespace ActivityWinOff
             {
                 Statusbutton.Text = "Active";
                 Statusbutton.BackColor = Color.Green;
-                ActivateDeactivatebutton.Text = "Deactivate";
+                ActivateDeactivatebutton.Text = "Stop";
             }
             else
             {
                 Statusbutton.Text = "Inactive";
                 Statusbutton.BackColor = Color.White;
-                ActivateDeactivatebutton.Text = "Activate";
+                ActivateDeactivatebutton.Text = "Start";
             }
         }
 
@@ -591,15 +596,16 @@ namespace ActivityWinOff
             WindowState = FormWindowState.Minimized;
             ShowInTaskbar = false;
             Hide();
-            notifyIcon.Text = "ActivityWinOff" + System.Environment.NewLine + "Running: " + Interface.Enabled;
         }
 
         private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
         {
-            ShowInTaskbar = true;
-            Show();
-            WindowState = FormWindowState.Normal;
-            notifyIcon.Text = "ActivityWinOff";
+            if (e.Button == MouseButtons.Left)
+            {
+                ShowInTaskbar = true;
+                Show();
+                WindowState = FormWindowState.Normal;
+            }
         }
 
         private void Condition_CheckedChanged(object sender, EventArgs e)
@@ -638,11 +644,12 @@ namespace ActivityWinOff
 
         private void ActivateDeactivatebutton_Click(object sender, EventArgs e)
         {
-            Interface.Enabled = !Interface.Enabled;
-            if (Interface.Enabled)
+            if (!Interface.Enabled)
                 StartTrigger();
             else
                 StopTrigger();
+
+            notifyIcon.Text = "ActivityWinOff: " + (Interface.Enabled ? "Active" : "Inactive");
         }
 
         private void NetworkAveragecheckBox_CheckChanged(object sender, EventArgs e)
@@ -1148,6 +1155,7 @@ namespace ActivityWinOff
                     SetStatusInGui();
                 }
             }
+            notifyIcon.Text = "ActivityWinOff: " + (Interface.Enabled ? "Active" : "Inactive");
         }
 
         private void StartAddbutton_Click(object sender, EventArgs e)

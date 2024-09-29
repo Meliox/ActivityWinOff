@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             NetworkAdapterscomboBox = new ComboBox();
             label1 = new Label();
             label2 = new Label();
@@ -894,7 +894,9 @@
             // 
             // notifyIcon
             // 
+            notifyIcon.Icon = (Icon)resources.GetObject("notifyIcon.Icon");
             notifyIcon.Text = "ActivityWinOff";
+            notifyIcon.Visible = true;
             notifyIcon.MouseClick += notifyIcon_MouseClick;
             // 
             // ActivateDeactivatebutton
@@ -905,7 +907,7 @@
             ActivateDeactivatebutton.Name = "ActivateDeactivatebutton";
             ActivateDeactivatebutton.Size = new Size(112, 47);
             ActivateDeactivatebutton.TabIndex = 16;
-            ActivateDeactivatebutton.Text = "Activate";
+            ActivateDeactivatebutton.Text = "Start";
             ActivateDeactivatebutton.UseVisualStyleBackColor = true;
             ActivateDeactivatebutton.Click += ActivateDeactivatebutton_Click;
             // 
