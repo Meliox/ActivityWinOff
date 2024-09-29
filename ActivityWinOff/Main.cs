@@ -680,7 +680,7 @@ namespace ActivityWinOff
 
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Version: " + Application.ProductVersion.ToString() + Environment.NewLine + Environment.NewLine + "MIT Licence 2020, Meliox", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Version: " + Application.ProductVersion.ToString(), "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void UserActivityKeyboardcheckBox_CheckedChanged(object sender, EventArgs e)
