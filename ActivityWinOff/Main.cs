@@ -159,9 +159,11 @@ namespace ActivityWinOff
             ShutdownSequencedataGridView.Rows.Clear();
             ShutdownSequencedataGridView.Refresh();
             DataGridViewHelpers.JSONToDataGridview(ShutdownSequencedataGridView, (string)Properties.Settings.Default["ShutdownSequence"]);
+            DataGridViewHelpers.AddRowLabel(ShutdownSequencedataGridView);
             StartupSequencedataGridView.Rows.Clear();
             StartupSequencedataGridView.Refresh();
             DataGridViewHelpers.JSONToDataGridview(StartupSequencedataGridView, (string)Properties.Settings.Default["StartupSequence"]);
+            DataGridViewHelpers.AddRowLabel(StartupSequencedataGridView);
 
             LogPathtextBox.Text = Interface.PathLog;
             ConfigLocationtextBox.Text = Interface.PathConfig;
@@ -1068,7 +1070,7 @@ namespace ActivityWinOff
         private void ShutdownAddbutton_Click(object sender, EventArgs e)
         {
             ShutdownSequencedataGridView.Rows.Add("", "", "Normal", 0, 0, false);
-            DataGridViewHelpers.DataGridViewAddOrder(ShutdownSequencedataGridView);
+            DataGridViewHelpers.AddRowLabel(ShutdownSequencedataGridView);
         }
 
         private void ShutdownSequencedataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1081,7 +1083,7 @@ namespace ActivityWinOff
             if (ShutdownSequencedataGridView.CurrentRow != null)
             {
                 ShutdownSequencedataGridView.Rows.RemoveAt(ShutdownSequencedataGridView.CurrentRow.Index);
-                DataGridViewHelpers.DataGridViewAddOrder(ShutdownSequencedataGridView);
+                DataGridViewHelpers.AddRowLabel(ShutdownSequencedataGridView);
             }
         }
 
@@ -1151,7 +1153,7 @@ namespace ActivityWinOff
         private void StartAddbutton_Click(object sender, EventArgs e)
         {
             StartupSequencedataGridView.Rows.Add("", "", "Normal", 0, 0, false);
-            DataGridViewHelpers.DataGridViewAddOrder(StartupSequencedataGridView);
+            DataGridViewHelpers.AddRowLabel(StartupSequencedataGridView);
         }
 
         private void StartupRemovebutton_Click(object sender, EventArgs e)
@@ -1159,7 +1161,7 @@ namespace ActivityWinOff
             if (StartupSequencedataGridView.CurrentRow != null)
             {
                 StartupSequencedataGridView.Rows.RemoveAt(StartupSequencedataGridView.CurrentRow.Index);
-                DataGridViewHelpers.DataGridViewAddOrder(StartupSequencedataGridView);
+                DataGridViewHelpers.AddRowLabel(StartupSequencedataGridView);
             }
         }
 

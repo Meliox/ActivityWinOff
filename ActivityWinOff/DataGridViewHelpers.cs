@@ -72,7 +72,7 @@ namespace ActivityWinOff
         /// The order number corresponds to the row's index + 1.
         /// </summary>
         /// <param name="dgv">The DataGridView containing the rows to be updated.</param>
-        public static void DataGridViewAddOrder(DataGridView dgv)
+        public static void AddRowLabel(DataGridView dgv)
         {
             foreach (DataGridViewRow row in dgv.Rows)
             {
