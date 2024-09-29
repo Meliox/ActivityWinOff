@@ -15,13 +15,19 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_2C7075CB4AD04407A0FDABC2AD983FE7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_95B4EDC6AD1043EA922CC65C08042CF3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C7FD1A182D964BCA9A66647ED368E744"
+        "MsmKey" = "8:_F5410EB65DBC4968A5744AB7A62ACAAC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -82,6 +88,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -119,7 +133,7 @@
             "SourcePath" = "8:..\\ActivityWinOff\\Icon.ico"
             "TargetName" = "8:Icon.ico"
             "Tag" = "8:"
-            "Folder" = "8:_C04F4BC0152247848B193B134DACBA84"
+            "Folder" = "8:_415212EEAD2F4D528C853655F3AD2D29"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -172,6 +186,17 @@
             "Property" = "8:ProgramFiles64Folder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_415212EEAD2F4D528C853655F3AD2D29"
+                    {
+                    "Name" = "8:ActivityWinOff"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_EE4D9B5DB69C46618C6F5CA46E806D08"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_DBBF082B8DE54544A7C75B8328E3D00C"
@@ -223,15 +248,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ActivityWinOff"
-        "ProductCode" = "8:{D9083433-30B2-4F49-86EC-C01A1D847B7D}"
-        "PackageCode" = "8:{F16CBB14-2729-425A-A020-6767C7E70773}"
+        "ProductCode" = "8:{37D01199-984B-4B2A-AA05-4B8A8EAAE7A3}"
+        "PackageCode" = "8:{C73B445E-09D4-4338-95BC-26FF5DD0F8F9}"
         "UpgradeCode" = "8:{2EBCD419-B949-4205-A6ED-55B08D4E5A07}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:2.1.0"
         "Manufacturer" = "8:Meliox"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -344,31 +369,17 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3EB8A9E527DA4EAC81370CD11EF2E7A8"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_327A56EE24AF453DBEFD44CE7E51F909"
             {
-            "Name" = "8:Shortcut to %sPrimary output from ActivityWinOff (Active)"
+            "Name" = "8:ActivityWinOff"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_C7FD1A182D964BCA9A66647ED368E744"
+            "Target" = "8:_F5410EB65DBC4968A5744AB7A62ACAAC"
             "Folder" = "8:_BB590EF404D4460B8956ACD18FAA8DDD"
-            "WorkingFolder" = "8:_3744242BAEC6489B8EECA016928206E2"
-            "Icon" = "8:_95B4EDC6AD1043EA922CC65C08042CF3"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D26993A513674018A5CF10C6605E64D1"
-            {
-            "Name" = "8:Shortcut to %sPrimary output from ActivityWinOff (Active)"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_C7FD1A182D964BCA9A66647ED368E744"
-            "Folder" = "8:_EC7329F616794E77866D68B24D499E25"
-            "WorkingFolder" = "8:_3744242BAEC6489B8EECA016928206E2"
+            "WorkingFolder" = "8:_415212EEAD2F4D528C853655F3AD2D29"
             "Icon" = "8:_95B4EDC6AD1043EA922CC65C08042CF3"
             "Feature" = "8:"
             }
@@ -771,12 +782,12 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C7FD1A182D964BCA9A66647ED368E744"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2C7075CB4AD04407A0FDABC2AD983FE7"
             {
-            "SourcePath" = "8:..\\ActivityWinOff\\obj\\Debug\\net8.0-windows\\ActivityWinOff.dll"
+            "SourcePath" = "8:..\\ActivityWinOff\\obj\\Release\\net8.0-windows\\ActivityWinOff.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_C04F4BC0152247848B193B134DACBA84"
+            "Folder" = "8:_415212EEAD2F4D528C853655F3AD2D29"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -793,6 +804,34 @@
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{8E8B9C95-6738-43B8-9EDF-88AB73D41122}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_F5410EB65DBC4968A5744AB7A62ACAAC"
+            {
+            "SourcePath" = "8:..\\ActivityWinOff\\obj\\Release\\net8.0-windows\\apphost.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_415212EEAD2F4D528C853655F3AD2D29"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:PublishItems"
             "OutputProjectGuid" = "8:{8E8B9C95-6738-43B8-9EDF-88AB73D41122}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"

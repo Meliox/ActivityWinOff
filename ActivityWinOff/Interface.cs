@@ -56,7 +56,7 @@ namespace ActivityWinOff
             WarningTime = (int)Properties.Settings.Default["WarningTime"];
             WarningShowEnabled = (bool)Properties.Settings.Default["WarningShowEnabled"];
             SpecificTimerEnabled = (bool)Properties.Settings.Default["SpecificTimerEnabled"];
-            SpecificTimerTime = (DateTime)Properties.Settings.Default["SpecificTimerTime"];
+            //SpecificTimerTime = (DateTime)Properties.Settings.Default["SpecificTimerTime"];
             DisableScreensaver = (bool)Properties.Settings.Default["DisableScreensaver"];
             FocusProgramEnabled = (bool)Properties.Settings.Default["FocusProgramEnabled"];
             FocusProgram = (string)Properties.Settings.Default["FocusProgram"];

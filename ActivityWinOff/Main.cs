@@ -150,7 +150,7 @@ namespace ActivityWinOff
         public void InitGuiElements()
         {
             // Upgrade config
-            Interface.UpdateRequired();
+            //Interface.UpdateRequired();
 
             // Load settings
             Interface.LoadSettings();
