@@ -199,8 +199,8 @@ namespace ActivityWinOff
             };
 
             // Retrieve delays and wait for exit options
-            int delayBeforeExecution = row.Cells[3].Value != null ? Int32.Parse(row.Cells[4].Value.ToString()) : 0;
-            int delayAfterExecution = row.Cells[4].Value != null ? Int32.Parse(row.Cells[5].Value.ToString()) : 0;
+            int delayBeforeExecution = row.Cells[3].Value != null ? Int32.Parse(row.Cells[3].Value.ToString()) : 0;
+            int delayAfterExecution = row.Cells[4].Value != null ? Int32.Parse(row.Cells[4].Value.ToString()) : 0;
             bool waitForExit = Boolean.Parse(row.Cells[5].Value?.ToString() ?? "false");
 
             Logger.add(1, $"Action: Program={programPath}, Args={arguments}, WindowStyle={row.Cells[2].Value}, PreDelay={delayBeforeExecution}, PostDelay={delayAfterExecution}");
