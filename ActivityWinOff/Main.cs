@@ -369,53 +369,78 @@ namespace ActivityWinOff
 
         public void StartTrigger()
         {
-            Interface.Enabled = !Interface.Enabled;
-            Logger.add(2, "Starting watchdogs");
-            Helper.DisableScreensaver(Interface.DisableScreensaver);
-            SetStatusInGui();
-            LockSettingsInGui(true);
+            try
+            {
+                Interface.Enabled = true;
+                Logger.add(2, "Starting watchdogs");
+                Helper.DisableScreensaver(Interface.DisableScreensaver);
+                SetStatusInGui(Interface.Enabled);
+                LockSettingsInGui(Interface.Enabled);
+
+                // Assign the ContextMenuStrip to NotifyIcon
+                notifyIcon.ContextMenuStrip = IconContextMenu(Interface.Enabled);
+                workerWatchdogTrigger.RunWorkerAsync();
+                notifyIcon.BalloonTipText = "Started";
+                notifyIcon.ShowBalloonTip(1000);
+            }
+            catch (Exception ex)
+            {
+                Logger.add(2, "Failed to start watchdogs: " +  ex.Message.ToString());
+                // Disable trigger activties
+                Interface.Enabled = false;
+                SetStatusInGui(Interface.Enabled);
+                LockSettingsInGui(Interface.Enabled);
+                notifyIcon.ContextMenuStrip = IconContextMenu(Interface.Enabled);
+
+                // Hide gui elements
+                UpdateNextActionAtlabel("");
+                UpdateWaitForProgramNextAction("");
+                UpdateTimerNextAction("");
+
+                notifyIcon.BalloonTipText = "Failed to start.";
+                notifyIcon.ShowBalloonTip(1000);
+            }
+        }
+
+        public ContextMenuStrip IconContextMenu(bool active)
+        {
             // Create ContextMenuStrip
             var contextMenu = new ContextMenuStrip();
 
             // Add "Start" menu item
-            var startItem = new ToolStripMenuItem("Stop");
-            startItem.Click += (s, e) => { StopTrigger(); };
+            ToolStripMenuItem startItem;
+            if (active)
+            {
+                startItem = new ToolStripMenuItem("Stop");
+                startItem.Click += (s, e) => { StopTrigger(); };
+            }
+            else
+            {
+                startItem = new ToolStripMenuItem("Start");
+                startItem.Click += (s, e) => { StartTrigger(); };
+                
+            }
             contextMenu.Items.Add(startItem);
 
             // Add "Exit" menu item
-            var exitItem = new ToolStripMenuItem("Exit");
+            ToolStripMenuItem exitItem = new ToolStripMenuItem("Exit");
             exitItem.Click += (s, e) => { Application.Exit(); };
             contextMenu.Items.Add(exitItem);
 
-            // Assign the ContextMenuStrip to NotifyIcon
-            notifyIcon.ContextMenuStrip = contextMenu;
-            workerWatchdogTrigger.RunWorkerAsync();
-            notifyIcon.BalloonTipText = "Started";
-            notifyIcon.ShowBalloonTip(1000);
+            return contextMenu;
         }
 
         public void StopTrigger()
         {
-            Interface.Enabled = !Interface.Enabled;
+            Interface.Enabled = false;
 
             Logger.add(2, "Stopping watchdogs");
             Helper.DisableScreensaver(false);
-            SetStatusInGui();
-            // Create ContextMenuStrip
-            var contextMenu = new ContextMenuStrip();
-
-            // Add "Start" menu item
-            var startItem = new ToolStripMenuItem("Start");
-            startItem.Click += (s, e) => { StartTrigger(); };
-            contextMenu.Items.Add(startItem);
-
-            // Add "Exit" menu item
-            var exitItem = new ToolStripMenuItem("Exit");
-            exitItem.Click += (s, e) => { Application.Exit(); };
-            contextMenu.Items.Add(exitItem);
+            SetStatusInGui(Interface.Enabled);
+            LockSettingsInGui(Interface.Enabled);
 
             // Assign the ContextMenuStrip to NotifyIcon
-            notifyIcon.ContextMenuStrip = contextMenu;
+            notifyIcon.ContextMenuStrip = IconContextMenu(Interface.Enabled);
             BackgroundWorkers.StopWatchTriggers();
             workerWatchdogTrigger.CancelAsync();
 
@@ -440,9 +465,9 @@ namespace ActivityWinOff
             );
         }
 
-        public void SetStatusInGui()
+        public void SetStatusInGui(bool enable)
         {
-            if (Interface.Enabled)
+            if (enable)
             {
                 Statusbutton.Text = "Active";
                 Statusbutton.BackColor = Color.Green;
@@ -1152,7 +1177,7 @@ namespace ActivityWinOff
                 else
                 {
                     Interface.Enabled = false;
-                    SetStatusInGui();
+                    SetStatusInGui(Interface.Enabled);
                 }
             }
             notifyIcon.Text = "ActivityWinOff: " + (Interface.Enabled ? "Active" : "Inactive");
